@@ -1,65 +1,48 @@
-﻿const loadPlaces = function(coords) {
-  // fetch data from user coords using external APIs, or simply add places data statically
-  // please look at GeoAR.js repository on examples/click-places/places.js for full code
-}
+﻿<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-window.onload = () => {
-    const scene = document.querySelector('a-scene');
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-    // first get current user location
-    return navigator.geolocation.getCurrentPosition(function (position) {
-
-        // than use it to load from remote APIs some places nearby
-        loadPlaces(position.coords)
-            .then((places) => {
-                places.forEach((place) => {
-                    const latitude = place.location.lat;
-                    const longitude = place.location.lng;
-
-                    // add place icon
-                    const icon = document.createElement('a-image');
-                    icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-                    icon.setAttribute('name', place.name);
-                    icon.setAttribute('src', '../assets/map-marker.png');
-
-                    // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
-                    icon.setAttribute('scale', '20, 20');
-
-                    icon.addEventListener('loaded', () => window.dispatchEvent(new CustomEvent('gps-entity-place-loaded')));
-
-                    const clickListener = function(ev) {
-                        ev.stopPropagation();
-                        ev.preventDefault();
-
-                        const name = ev.target.getAttribute('name');
-
-                        const el = ev.detail.intersection && ev.detail.intersection.object.el;
-
-                        if (el && el === ev.target) {
-                            const label = document.createElement('span');
-                            const container = document.createElement('div');
-                            container.setAttribute('id', 'place-label');
-                            label.innerText = name;
-                            container.appendChild(label);
-                            document.body.appendChild(container);
-
-                            setTimeout(() => {
-                                container.parentElement.removeChild(container);
-                            }, 1500);
-                        }
-                    };
-
-                    icon.addEventListener('click', clickListener);
-
-                    scene.appendChild(icon);
-                });
-            })
-    },
-        (err) => console.error('Error in retrieving position', err),
-        {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 27000,
+        .arjs-loader div {
+            text-align: center;
+            font-size: 1.25em;
+            color: white;
         }
-    );
-};
+</style>
+
+<body style="margin : 0px; overflow: hidden;">
+    <!-- minimal loader shown until image descriptors are loaded -->
+    <div class="arjs-loader">
+        <div>Loading, please wait...</div>
+    </div>
+    <a-scene vr-mode-ui="enabled: false;"
+             renderer="logarithmicDepthBuffer: true;"
+             embedded
+             arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        <!-- we use cors proxy to avoid cross-origin problems -->
+        <a-nft type="nft"
+               url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
+               smooth="true"
+               smoothCount="10"
+               smoothTolerance=".01"
+               smoothThreshold="5">
+            <a-entity gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+                      scale="5 5 5"
+                      position="50 150 0">
+            </a-entity>
+        </a-nft>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
