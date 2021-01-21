@@ -12,13 +12,28 @@ AFRAME.registerComponent('photo-mode', {
             container.classList.remove('photo')
         })
 
-        shutterButton.addEventListener('click', () => {
-            // Emit a screenshotrequest to the xrweb component
-            this.el.sceneEl.emit('screenshotrequest')
+        take_photo_btn.addEventListener("click", function (e) {
 
-            // Show the flash while the image is being taken
-            container.classList.add('flash')
-        })
+            e.preventDefault();
+            var video = document.querySelector('video')
+            var snap = takeSnapshot(video);
+
+            // Show image. 
+            image.setAttribute('src', snap);
+            image.classList.add("visible");
+
+            // Enable delete and save buttons
+            delete_photo_btn.classList.remove("disabled");
+            download_photo_btn.classList.remove("disabled");
+
+            // Set the href attribute of the download button to the snap url.
+            download_photo_btn.href = snap;
+
+            // Pause video playback of stream.
+            //video.pause();
+
+        });
+
 
         this.el.sceneEl.addEventListener('screenshotready', e => {
             // Hide the flash
