@@ -8,6 +8,23 @@
     pointer-events: none;
 }
 
+#flash {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    z-index: 10;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.flash #flash {
+    opacity: 1;
+    transition: 0s;
+    pointer-events: auto;
+}
 
 #photoModeImage {
     position: absolute;
@@ -43,9 +60,6 @@
     pointer-events: auto;
 }
 
-#shutterButton {
-    background-image: url('camera.png');
-}
 
 .photo #shutterButton {
     display: none;
