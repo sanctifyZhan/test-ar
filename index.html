@@ -28,7 +28,7 @@
              xrweb>
         <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
             <button>
-                HIDE OBJECTS
+                HIDE OBJECTS1
             </button>
         </div>
 
@@ -37,15 +37,34 @@
             <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
             <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
         </a-assets>
+        <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+            <button>
+                HIDE OBJECTS2
+            </button>
+        </div>
 
         <a-camera position="0 4 10"></a-camera>
-
+        <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+            <button>
+                HIDE OBJECTS3
+            </button>
+        </div>
         <a-entity light="type: directional;
                intensity: 0.8;"
                   position="1 4.3 2.5">
         </a-entity>
+        <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+            <button>
+                HIDE OBJECTS4
+            </button>
+        </div>
 
         <a-light type="ambient" intensity="1"></a-light>
+        <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+            <button>
+                HIDE OBJECTS5
+            </button>
+        </div>
 
         <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
 
@@ -55,21 +74,7 @@
                     height="7"
                     radius="1.5"
                     position="0 3.5 0">
-
-
-            <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-                <button>
-                    HIDE OBJECTS
-                </button>
-            </div>
-            <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
-                <button>
-                    HIDE OBJECTS
-                </button>
-            </div>
-
         </a-cylinder>
-
     </a-scene>
 </body>
 </html>
