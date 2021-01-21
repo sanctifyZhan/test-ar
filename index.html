@@ -30,7 +30,7 @@
         </a-assets>
 
 
-        <a-camera position="0 4 1"></a-camera>
+        <a-camera position="0 4 10"></a-camera>
 
         <a-entity light="type: directional;
                intensity: 0.8;"
@@ -39,18 +39,14 @@
 
 
         <a-light type="ambient" intensity="1"></a-light>
-        <div style='position: fixed; top: 20px; width:100%; text-align: center; '>
+        <div style='top: 20px; width:100%; text-align: center; '>
             <button>
                 HIDE OBJECTS5
             </button>
         </div>
 
         <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
-        <div style=' top: 40px; text-align: center; z-index: 1;'>
-            <button>
-                HIDE OBJECTS6
-            </button>
-        </div>
+      
         <a-cylinder geometry="segments-radial: 8"
                     material="transparent:true; opacity: 0.5; color: #33ff33"
                     open-ended="true"
