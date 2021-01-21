@@ -8,10 +8,11 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="photo-mode.js"></script>
-   　 <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
-<body style="margin: 0; overflow: hidden;">
+<body>
+    <!-- These HTML elements are used to show an UI laid over the scene -->
     <div id="photoModeContainer" style="display: none">
         <img id="photoModeImage">
         <div id="flash"></div>
@@ -48,9 +49,8 @@
                     open-ended="true"
                     height="7"
                     radius="1.5"
-                    position="0 3.5 0">
+                    position="0 3.5 0"></a-cylinder>
 
-        </a-cylinder>
     </a-scene>
 </body>
 </html>
