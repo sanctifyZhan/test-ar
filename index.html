@@ -27,13 +27,11 @@
              xrextras-tap-recenter
              xrweb>
 
-
         <!-- We can define assets here to be loaded when A-Frame initializes -->
         <a-assets>
             <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
             <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
         </a-assets>
-
 
         <a-camera position="0 4 10"></a-camera>
 
@@ -42,9 +40,7 @@
                   position="1 4.3 2.5">
         </a-entity>
 
-
         <a-light type="ambient" intensity="1"></a-light>
-
 
         <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
 
@@ -55,11 +51,11 @@
                     radius="1.5"
                     position="0 3.5 0">
         </a-cylinder>
-        <div style=' top: 10px; width:100%; text-align: center; z-index: 1;'>
+        <!-- <div style=' top: 10px; width:100%; text-align: center; z-index: 1;'>
             <button>
                 HIDE OBJECTS5
             </button>
-        </div>
+        </div> -->
     </a-scene>
 </body>
 </html>
