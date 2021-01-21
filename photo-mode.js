@@ -38,3 +38,19 @@ AFRAME.registerComponent('photo-mode', {
     })
   }
 })
+
+/*AFRAME.registerComponent('photo-mode', {
+    init: function () {
+        const shutterButton = document.querySelector("button")
+        shutterButton.addEventListener('click', () => {
+            // Emit a screenshotrequest to the xrweb component
+            this.el.sceneEl.emit('screenshotrequest')
+
+            // Show the flash while the image is being taken
+            container.classList.add('flash')
+        })
+    
+    }
+})
+
+*/
