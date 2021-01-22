@@ -78,7 +78,7 @@
 }
 
 #meo {
-    background-image: url('meo.gif');
+    background-image: url('akai.png');
 }
 
 #meo {
@@ -89,13 +89,4 @@
     z-index: 1;
 }
 
-#akai {
-    background-image: url('akai.png');
-}
-
-#akai {
-    top: 10px;
-    position: center;
-    z-index: 2;
-}
 
