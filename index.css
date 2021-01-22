@@ -103,10 +103,10 @@
     width: 25vmin;
     height: 25vmin;
     background-color: none;
-    bottom: 2vmax;
-    border-radius: 7.5vmin;
+    bottom: 4vmax;
+    border-radius: 9.5vmin;
     right: 20%;
-    top: 70%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translateX(-80%);
     background-size: 50%;
 }
