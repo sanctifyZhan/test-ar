@@ -30,6 +30,8 @@
         <a-assets>
             <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
             <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
+            <a-asset-item id="meo1" src="meo.gif"></a-asset-item>
+
         </a-assets>
 
         <a-camera position="0 4 10"></a-camera>
@@ -42,6 +44,7 @@
         <a-light type="ambient" intensity="1"></a-light>
 
         <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
+        <a-entity gltf-model="#meo1" scale="200 200 200" position="0 3 0"></a-entity>
 
         <a-cylinder geometry="segments-radial: 8"
                     material="transparent:true; opacity: 0.5; color: #33ff33"
