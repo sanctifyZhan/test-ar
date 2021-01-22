@@ -10,8 +10,8 @@
     <!-- ② AR.js を読み込む -->
     <script src="//jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <style>
-            .ui {
+    <style>
+         <!--    .ui {
                 position: absolute;
                 z-index: 100;
                 bottom: 0;
@@ -24,17 +24,17 @@
                 box-sizing: border-box;
             }
 
-                .ui a {
-                    display: inline-block;
-                    width: 60px;
-                    height: 60px;
-                    background-color: #ffffff;
-                    line-height: 100%;
-                    color: #303030;
-                    margin: 10px 3px;
-                    border-radius: 50%;
-                    position: relative;
-                }
+            .ui a {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                background-color: #ffffff;
+                line-height: 100%;
+                color: #303030;
+                margin: 10px 3px;
+                border-radius: 50%;
+                position: relative;
+            }
 
                     .ui a i {
                         position: absolute;
@@ -46,24 +46,24 @@
                     .ui a:active {
                         color: #ff0000;
                     }
+        -->
+    #snap {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    ;
+    visibility: hidden;
+    }
 
-            #snap {
-                max-width: 100%;
-                height: auto;
-                display: block;
-                ;
-                visibility: hidden;
-            }
+    .ui a.disabled {
+    pointer-events: none;
+    color: #cccccc;
+    }
 
-            .ui a.disabled {
-                pointer-events: none;
-                color: #cccccc;
-            }
-
-            #snap.visible {
-                visibility: visible;
-            }
-        </style>-->
+    #snap.visible {
+    visibility: visible;
+    }
+    </style>
 
 </head>
 
