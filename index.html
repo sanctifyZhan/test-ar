@@ -70,14 +70,14 @@
 }
 
 #meo {
- 
+    position: absolute;
     width: 25vmin;
     height: 25vmin;
     background-color: none;
     top: 2vmax;
     border-radius: 7.5vmin;
-     left: 50%;
-    top: 60%;
+    left: 50%;
+    top: 70%;
     transform: translateX(-50%);
     background-size: 50%;
 }
@@ -90,14 +90,13 @@
     <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
         <a-marker preset='hiro'>
             <a-box position="0 0.5 0" wireframe="true"></a-box>
-
+            <div id="meo"></div>
         </a-marker>
-        
+
         <!-- ⑥ カメラを追加 -->
         <a-camera id="camera"
                   position="0 5 8">
         </a-camera>
-        <div id="meo"></div>
     </a-scene>
     <div class="ui">
         <img id="snap">
