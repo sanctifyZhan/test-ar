@@ -101,7 +101,8 @@
 
         <!-- ⑥ カメラを追加 -->
         <a-entity camera></a-entity>
-      
+        <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
+
     </a-scene>
     <div class="ui">
         <img id="snap">
@@ -111,6 +112,7 @@
         <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
     </div>
 </body>
+
 <script>
     var image = document.querySelector('#snap');
     var take_photo_btn = document.querySelector('#take-photo');
