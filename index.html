@@ -74,9 +74,9 @@
     width: 25vmin;
     height: 25vmin;
     background-color: none;
-    top: 2vmax;
+    top: 3vmax;
     border-radius: 7.5vmin;
-    left: 30%;
+    left: 20%;
    
     transform: translateX(-50%);
     background-size: 50%;
@@ -90,6 +90,7 @@
     <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
         <a-marker preset='hiro'>
             <a-box position="0 0.5 0" wireframe="true"></a-box>
+            <div id="meo"></div>
         </a-marker>
 
         <!-- ⑥ カメラを追加 -->
@@ -97,7 +98,7 @@
     </a-scene>
     <div class="ui">
         <img id="snap">
-        <div id="meo"></div>
+        
         <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
         <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
