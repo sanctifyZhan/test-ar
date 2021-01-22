@@ -140,7 +140,7 @@
 
     </div>
     <!-- ③ シーンを追加 -->
-    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui1="enabled: false">
+    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui1="enabled: false" ;photo-mode>
         <a-marker preset='hiro'>
             <a-box position="0 0.5 0" wireframe="true"></a-box>
         </a-marker>
@@ -152,6 +152,21 @@
 
         <!-- ⑥ カメラを追加 -->
         <a-entity camera></a-entity>
+        <a-entity light="type: directional;
+               intensity: 0.8;"
+                  position="1 4.3 2.5">
+        </a-entity>
+
+        <a-light type="ambient" intensity="1"></a-light>
+
+        <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
+
+        <a-cylinder geometry="segments-radial: 8"
+                    material="transparent:true; opacity: 0.5; color: #33ff33"
+                    open-ended="true"
+                    height="7"
+                    radius="1.5"
+                    position="0 3.5 0"></a-cylinder>
     </a-scene>
     <div id="meo"></div>
     <div class="ui">
