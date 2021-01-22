@@ -71,17 +71,12 @@
 
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
-    <a-scene  xrextras-gesture-detector
-    xrextras-almost-there
-    xrextras-loading
-    xrextras-runtime-error
-    xrweb="disableWorldTracking: true">
-
+    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
         <!--  <a-marker preset='hiro'>
-         <a-box position="0 0.5 0" wireframe="true"></a-box>
+        <a-box position="0 0.5 0" wireframe="true"></a-box>
 
-     </a-marker>
-     -->
+    </a-marker>
+    -->
         <a-assets>
             <video id="alpha-video"
                    muted
