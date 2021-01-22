@@ -84,7 +84,18 @@
 #meo {
    
     top: 10px;
-    width: 100%;
+
     text-align: center;
     z-index: 1;
 }
+
+#akai {
+    background-image: url('akai.png');
+}
+
+#akai {
+    top: 10px;
+    position: center;
+    z-index: 2;
+}
+
