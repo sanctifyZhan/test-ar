@@ -79,94 +79,21 @@
     top: 70%;
     transform: translateX(-50%);
     background-size: 50%;
-        }
-
-    #photoModeContainer {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-    pointer-events: none;
-}
-
-#flash {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: white;
-    z-index: 10;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.flash #flash {
-    opacity: 1;
-    transition: 0s;
-    pointer-events: auto;
-}
-
-#photoModeImage {
-    position: absolute;
-    max-width: 65%;
-    max-height: 65%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0px 0px 0px 5px white;
-    border-radius: 2vmax;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.photo #photoModeImage {
-    opacity: 1;
-    transition: 0s;
-    pointer-events: auto;
-}
-
+    }
 
     </style>
 
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
-    <div id="photoModeContainer" style="display: none">
-        <img id="photoModeImage">
-        <div id="flash"></div>
-
-    </div>
     <!-- ③ シーンを追加 -->
-    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui1="enabled: false" ;photo-mode>
+    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui1="enabled: false">
         <a-marker preset='hiro'>
             <a-box position="0 0.5 0" wireframe="true"></a-box>
         </a-marker>
-        <a-assets>
-            <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
-            <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
-
-        </a-assets>
 
         <!-- ⑥ カメラを追加 -->
         <a-entity camera></a-entity>
-        <a-entity light="type: directional;
-               intensity: 0.8;"
-                  position="1 4.3 2.5">
-        </a-entity>
-
-        <a-light type="ambient" intensity="1"></a-light>
-
-        <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
-
-        <a-cylinder geometry="segments-radial: 8"
-                    material="transparent:true; opacity: 0.5; color: #33ff33"
-                    open-ended="true"
-                    height="7"
-                    radius="1.5"
-                    position="0 3.5 0"></a-cylinder>
     </a-scene>
     <div id="meo"></div>
     <div class="ui">
