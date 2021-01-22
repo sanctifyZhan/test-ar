@@ -77,7 +77,7 @@
     top: 2vmax;
     border-radius: 7.5vmin;
     left: 50%;
-    top: 70%;
+    top: 60%;
     transform: translateX(-50%);
     background-size: 50%;
 }
@@ -90,9 +90,9 @@
     <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
         <a-marker preset='hiro'>
             <a-box position="0 0.5 0" wireframe="true"></a-box>
-            <div id="meo"></div>
-        </a-marker>
 
+        </a-marker>
+        <div id="meo"></div>
         <!-- ⑥ カメラを追加 -->
         <a-camera id="camera"
                   position="0 5 8">
