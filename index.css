@@ -92,5 +92,21 @@
     top: 70%;
     transform: translateX(-50%);
     background-size: 50%;
+}
 
+#dado {
+    background-image: url('dado.png');
+}
+
+#dado {
+    position: absolute;
+    width: 25vmin;
+    height: 25vmin;
+    background-color: none;
+    bottom: 2vmax;
+    border-radius: 7.5vmin;
+    right: 20%;
+    top: 70%;
+    transform: translateX(-50%);
+    background-size: 50%;
 }
