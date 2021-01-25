@@ -76,13 +76,15 @@
             <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
         </a-assets>
 
+        <a-assets>
+            <img src="akai.png">
+        </a-assets>
+
         <a-camera position="0 4 10"></a-camera>
         <!-- ⑥ カメラを追加 -->
 
-        <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
-        <a-assets>
-            <img position="0 0 -4" rotation="-90 0 0" width="4" height="4" src="akai.png">
-        </a-assets>
+        <a-entity gltf-model="#flyingSaucerModel" scale="50 50 50" position="0 7 0"></a-entity>
+
     </a-scene>
     <div class="ui">
         <img id="snap">
