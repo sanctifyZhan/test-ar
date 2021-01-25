@@ -68,17 +68,10 @@
 
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
-    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
+    <a-scene>
 
         <a-assets>
-            <video id="alpha-video"
-                   muted
-                   autoplay
-                   playsinline
-                   crossorigin="anonymous"
-                   loop="true"
-                   src="Dance.mp4">
-            </video>
+            <video id="penguin-sledding" autoplay loop="true" src="Dance.mp4"></video>
         </a-assets>
 
         <a-camera position="0 4 10"></a-camera>
