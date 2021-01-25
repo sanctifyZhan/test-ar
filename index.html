@@ -9,69 +9,15 @@
     <!-- ② AR.js を読み込む -->
     <script src="//jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        .ui {
-            position: absolute;
-            z-index: 100;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 10px 15px 30px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-            .ui a {
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                background-color: #ffffff;
-                line-height: 100%;
-                color: #303030;
-                margin: 10px 3px;
-                border-radius: 50%;
-                position: relative;
-            }
-
-                .ui a i {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                }
-
-                .ui a:active {
-                    color: #ff0000;
-                }
-
-        #snap {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            ;
-            visibility: hidden;
-        }
-
-        .ui a.disabled {
-            pointer-events: none;
-            color: #cccccc;
-        }
-
-        #snap.visible {
-            visibility: visible;
-        }
-    </style>
-
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
-    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
-
-
-    
+    <a-scene xrextras-gesture-detector
+             xrextras-almost-there
+             xrextras-loading
+             xrextras-runtime-error
+             xrweb="disableWorldTracking: true">
 
         <a-assets>
             <video id="alpha-video"
@@ -84,10 +30,17 @@
             </video>
         </a-assets>
 
-        <a-camera position="0 4 10"></a-camera>
+        <a-camera position="0 4 10"
+                  raycaster="objects: .cantap"
+                  cursor="fuse: false; rayOrigin: mouse;">
+        </a-camera>
+
+        <a-light type="directional" intensity="0.5" position="1 1 1"></a-light>
+
+        <a-light type="ambient" intensity="1"></a-light>
         <!-- ⑥ カメラを追加 -->
 
-        <a-entity gltf-model="#flyingSaucerModel" scale="100 100 100" position="1 5 0"></a-entity>
+       
 
     </a-scene>
     <div class="ui">
