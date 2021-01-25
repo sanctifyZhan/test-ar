@@ -11,60 +11,7 @@
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.js"></script>
  
-    <style>
-        .ui {
-            position: absolute;
-            z-index: 100;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 10px 15px 30px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-            .ui a {
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                background-color: #ffffff;
-                line-height: 100%;
-                color: #303030;
-                margin: 10px 3px;
-                border-radius: 50%;
-                position: relative;
-            }
-
-                .ui a i {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                }
-
-                .ui a:active {
-                    color: #ff0000;
-                }
-
-        #snap {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            ;
-            visibility: hidden;
-        }
-
-        .ui a.disabled {
-            pointer-events: none;
-            color: #cccccc;
-        }
-
-        #snap.visible {
-            visibility: visible;
-        }
-    </style>
+   
 
 </head>
 
@@ -72,9 +19,9 @@
     <!-- ③ シーンを追加 -->
     <a-scene>
         <a-assets>
-          <video id="myvideo" src="Dance.mp4"></video>
-        </a-assets>
-        <a-sky src="#myvideo"></a-sky>
+          <video id="myvideo" src="https://ucarecdn.com/bcece0a8-86ce-460e-856b-40dac4875f15/"></video>
+          </a-assets>
+        <a-sky src="#myvideo" dont-use-this-material="offset:0.5 0.5; repeat:0.5 0.5"></a-sky>
         <!-- or a-videosphere or a-video -->
       </a-scene>
     <div class="ui">
