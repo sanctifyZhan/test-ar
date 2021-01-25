@@ -13,11 +13,15 @@
 
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
-    <a-scene xrextras-gesture-detector
+    <a-scene 
+             xrextras-gesture-detector
              xrextras-almost-there
              xrextras-loading
              xrextras-runtime-error
              xrweb="disableWorldTracking: true">
+
+
+    
 
         <a-assets>
             <video id="alpha-video"
@@ -30,19 +34,8 @@
             </video>
         </a-assets>
 
-        <a-camera position="0 4 10"
-                  raycaster="objects: .cantap"
-                  cursor="fuse: false; rayOrigin: mouse;">
-        </a-camera>
-
-        <a-light type="directional" intensity="0.5" position="1 1 1"></a-light>
-
-        <a-light type="ambient" intensity="1"></a-light>
         <!-- ⑥ カメラを追加 -->
-        <a-entity target-video="name: outside; video: #alpha-video;"
-                  material="shader: chromakey; src: #alpha-video; color: 0.1 0.9 0.2"
-                  geometry="primitive: plane; height: 0.6; width: 1.38;">
-        </a-entity>
+
 
     </a-scene>
     <div class="ui">
@@ -53,42 +46,6 @@
     </div>
 </body>
 <script>
-    AFRAME.registerComponent('target-video', {
-      schema: {
-        name: { type: 'string' },
-        video: {type: 'string' },
-      },
-      init: function () {
-        const object3D = this.el.object3D
-        const name = this.data.name
-        object3D.visible = false
-        const v = document.querySelector(this.data.video)
-        const el = this.el
-        
-        const showImage = ({detail}) => {
-          if (name != detail.name) {
-            return
-          }
-          v.play()
-          object3D.position.copy(detail.position)
-          object3D.quaternion.copy(detail.rotation)
-          object3D.scale.set(detail.scale, detail.scale, detail.scale)
-          object3D.visible = true
-        }
-
-        const hideImage = ({detail}) => {
-          if (name != detail.name) {
-            return
-          }
-          v.pause() 
-          object3D.visible = false
-        }
-
-        this.el.sceneEl.addEventListener('xrimagefound', showImage)
-        this.el.sceneEl.addEventListener('xrimageupdated', showImage)
-        this.el.sceneEl.addEventListener('xrimagelost', hideImage)
-      }
-    })
     var image = document.querySelector('#snap');
     var take_photo_btn = document.querySelector('#take-photo');
     var delete_photo_btn = document.querySelector('#delete-photo');
