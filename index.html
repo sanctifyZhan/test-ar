@@ -69,12 +69,16 @@
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
     <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
-        <a-marker preset='hiro'>
-            <a-box position="0 0.5 0" wireframe="true"></a-box>
-        </a-marker>
 
+
+        <a-assets>
+            <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
+            <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
+        </a-assets>
+        <a-camera position="0 4 10"></a-camera>
         <!-- ⑥ カメラを追加 -->
-        <a-entity camera></a-entity>
+       
+        <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
     </a-scene>
     <div class="ui">
         <img id="snap">
