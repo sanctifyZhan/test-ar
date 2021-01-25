@@ -69,16 +69,12 @@
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
     <a-scene>
-
         <a-assets>
-            <video src="Dance.mp4"></video>
+          <video id="vid" src="Dance.mp4"></video>
         </a-assets>
-
-
-        <a-camera position="0 4 10"></a-camera>
-        <!-- ⑥ カメラを追加 -->
-
-    </a-scene>
+      
+        <a-video src="#vid"></a-video>
+      </a-scene>
     <div class="ui">
         <img id="snap">
         <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
