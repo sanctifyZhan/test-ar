@@ -1,99 +1,54 @@
-﻿<!DOCTYPE html>
-<html lang="ja">
+﻿<!doctype HTML>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>A-FrameとAR.js - スナップショットを撮る</title>
-    <!-- ① A-Frame を読み込む -->
-    <script src="//aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <!-- ② AR.js を読み込む -->
-    <script src="//jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        .ui {
-            position: absolute;
-            z-index: 100;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 10px 15px 30px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-            .ui a {
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                background-color: #ffffff;
-                line-height: 100%;
-                color: #303030;
-                margin: 10px 3px;
-                border-radius: 50%;
-                position: relative;
-            }
-
-                .ui a i {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                }
-
-                .ui a:active {
-                    color: #ff0000;
-                }
-
-        #snap {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            visibility: hidden;
-        }
-
-        .ui a.disabled {
-            pointer-events: none;
-            color: #cccccc;
-        }
-
-        #snap.visible {
-            visibility: visible;
-        }
-    </style>
-
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 </head>
+<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 
-<body style='margin: 0; overflow: hidden;'>
-    <!-- ③ シーンを追加 -->
-    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
+<!-- import events.js script -->
 
 
-        <!-- ⑥ カメラを追加 -->
+<body style='margin : 0px; overflow: hidden;'>
+    <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+        <a-assets>
+            <a-asset-item id="animated-asset" src="flying-saucer.glb"></a-asset-item>
+        </a-assets>
+
+    
+
+        <a-marker markerhandler preset='hiro'>
+            <a-box position="0 0.5 0" wireframe="true"></a-box>
+            <a-entity id="animated-model"
+                      gltf-model="#animated-asset"
+                      scale="2">
+            </a-entity>
+        </a-marker>
+
+
+        <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
         <a-entity camera></a-entity>
     </a-scene>
-    <div class="ui">
-        <img id="snap">
-        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-    </div>
 </body>
 <script>
-    var image = document.querySelector('#snap');
-    var take_photo_btn = document.querySelector('#take-photo');
+    AFRAME.registerComponent('markerhandler', {
 
-    //スナップショットボタン
-    take_photo_btn.addEventListener("click", function (e) {
-        e.preventDefault();
-    
-    });
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker");
+        const aEntity = document.querySelector("#animated-model");
 
-      AFRAME.registerComponent('take-photo', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-                alert('Clicked!')
-            });
-    }});
-    //-->
+        // every click, we make our model grow in size :)
+        animatedMarker.addEventListener('click', function(ev, target){
+            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+                const scale = aEntity.getAttribute('scale');
+                Object.keys(scale).forEach((key) => scale[key] = scale[key] + 1);
+                aEntity.setAttribute('scale', scale);
+            }
+        });
+}});
 </script>
 </html>
