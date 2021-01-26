@@ -68,9 +68,7 @@
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
     <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
-        <a-marker preset='kanji'>
-            <a-box position="0 0.5 0" wireframe="true"></a-box>
-        </a-marker>
+
 
         <!-- ⑥ カメラを追加 -->
         <a-entity camera></a-entity>
@@ -90,7 +88,7 @@
     
     });
 
-     AFRAME.registerComponent('clickhandler', {
+      AFRAME.registerComponent('take-photo', {
         init: function() {
             this.el.addEventListener('click', () => {
                 alert('Clicked!')
