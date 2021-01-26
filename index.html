@@ -68,26 +68,35 @@
 
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
-    <a-scene>
+    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
+        <a-marker preset='hiro'>
+            <a-box position="0 0.5 0" wireframe="true"></a-box>
+        </a-marker>
 
-        <a-assets>
-            <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
-        </a-assets>
-
-
-        <a-camera position="0 4 10"></a-camera>
         <!-- ⑥ カメラを追加 -->
-        <a-entity gltf-model="#flyingSaucerModel" scale="100 100 100" position="0 7 0"></a-entity>
-
+        <a-entity camera></a-entity>
     </a-scene>
     <div class="ui">
         <img id="snap">
-        <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-        <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
     </div>
 </body>
 <script>
-   
+    var image = document.querySelector('#snap');
+    var take_photo_btn = document.querySelector('#take-photo');
+
+    //スナップショットボタン
+    take_photo_btn.addEventListener("click", function (e) {
+        e.preventDefault();
+    
+    });
+
+     AFRAME.registerComponent('clickhandler', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!')
+            });
+    }});
+    //-->
 </script>
 </html>
