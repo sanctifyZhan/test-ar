@@ -18,8 +18,11 @@
         <a-assets>
             <video id="video" src="Dance.mp4" autoplay></video>
         </a-assets>
-        <a-video src ="#video" width="1" height="1" position=" 0 1 -1" ></a-video>
- 
+      
+ <a-camera>
+     <a-cursor></a-cursor>
+ </a-camera>
+        <a-videosphere src="#video" rotation="0 -90 0"></a-videosphere>
     </a-scene>
  
 </body>
