@@ -80,7 +80,7 @@
         </a-assets>
 
         <a-image src="#my-imaga"
-                 position="0 -2 -2"
+                 position="0 2 -5"
                  width="4.5"
                  height="1.5"
                  scale="1 1 1">
@@ -100,7 +100,7 @@
         document.getElementById("my-imaga").src = myPix[randomNum];
     }
     var take_photo_btn = document.querySelector('#take-phot');
-    take_photo_btn.addEventListener("click", function () {
+    take_photo_btn.addEventListener("click", function (e) {
         choosePic();
     });
 </script>
