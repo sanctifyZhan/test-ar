@@ -50,6 +50,7 @@
             max-width: 100%;
             height: auto;
             display: block;
+            ;
             visibility: hidden;
         }
 
@@ -61,57 +62,96 @@
         #snap.visible {
             visibility: visible;
         }
-
-      
     </style>
 
 </head>
 
-
-
 <body style='margin: 0; overflow: hidden;'>
-    <!-- ③ シーンを追加
-          #my-imaga {
-            max-width: 100%;
-            height: 300px;
+    <!-- ③ シーンを追加 -->
+    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
+        <a-marker preset='hiro'>
+            <a-box position="0 0.5 0" wireframe="true"></a-box>
+        </a-marker>
 
-            text-align: center;
-        }
-        -->
-    <a-scene>
-        <!--  <a-assets>
-            <video id="alpha-video" autoplay src="Dance.mp4"> </video>
-
-        </a-assets>-->
-
-        <a-assets>
-            <img id="my-imaga" center>
-        </a-assets>
-
-        <a-image src="#my-imaga"
-                 position="0 1.5 -3"
-                 width="1"
-                 height="1.5"
-                 scale="3 3 1">
-        </a-image>
-
+        <!-- ⑥ カメラを追加 -->
+        <a-entity camera></a-entity>
     </a-scene>
-
     <div class="ui">
-        <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
+        <img id="snap">
+        <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
+        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+        <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
     </div>
-
 </body>
 <script>
-    var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
-    function choosePic() {
-        var randomNum = Math.floor(Math.random() * myPix.length);
-        document.getElementById("my-imaga").src = myPix[randomNum];
-    }
-    var take_photo_btn = document.querySelector('#take-phot');
-    take_photo_btn.addEventListener("click", function (e) {
-        choosePic();
-    });
-</script>
+    var image = document.querySelector('#snap');
+    var take_photo_btn = document.querySelector('#take-photo');
+    var delete_photo_btn = document.querySelector('#delete-photo');
+    var download_photo_btn = document.querySelector('#download-photo');
 
+    //スナップショットボタン
+    take_photo_btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var video = document.querySelector('video');
+        var snap = takeSnapshot(video);
+
+        //スナップショット表示.
+        image.setAttribute('src', snap);
+        image.classList.add('visible');
+
+        // 削除ボタンと保存ボタン有効
+        delete_photo_btn.classList.remove("disabled");
+        download_photo_btn.classList.remove("disabled");
+
+        // 保存ボタンにスナップショットを渡す
+        download_photo_btn.href = snap;
+    });
+
+    //削除ボタン
+    delete_photo_btn.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        // スナップショットを隠す
+        image.setAttribute('src', "");
+        image.classList.remove("visible");
+
+        // 削除ボタンと保存ボタン無効
+        delete_photo_btn.classList.add("disabled");
+        download_photo_btn.classList.add("disabled");
+
+    });
+
+    //スナップショットを撮る
+    function takeSnapshot(video) {
+        var resizedCanvas = document.createElement("canvas");
+        var resizedContext = resizedCanvas.getContext("2d");
+        var width = video.videoWidth;
+        var height = video.videoHeight;
+        var aScene = document.querySelector("a-scene").components.screenshot.getCanvas("perspective");
+
+        if (width && height) {
+            //videoのサイズをキャンバスにセット
+            resizedCanvas.width = width;
+            resizedCanvas.height = height;
+            //キャンバスにvideoをコピー
+            resizedContext.drawImage(video, 0, 0, width, height);
+
+            //カメラの画角でar側の縮小処理を変える
+            if (width > height) {
+                // 横長（PC)
+                resizedContext.drawImage(aScene, 0, 0, width, height);
+            } else {
+                // 縦長（スマホ）
+                var scale = height / width;
+                var scaledWidth = height * scale;
+                var marginLeft = (width - scaledWidth) / 2;
+                resizedContext.drawImage(aScene, marginLeft, 0, scaledWidth, height);
+            }
+            return resizedCanvas.toDataURL('image/png');
+        }
+    }
+
+    //-->
+</script>
 </html>
