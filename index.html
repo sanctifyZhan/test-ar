@@ -69,15 +69,17 @@
     <!-- ③ シーンを追加 -->
     <a-scene>
         <!--  <a-assets>
-            <video id="alpha-video" autoplay src="Dance.mp4"> </video>
+        <video id="alpha-video" autoplay src="Dance.mp4"> </video>
 
-        </a-assets>-->
+    </a-assets>-->
+        <a-entity camera></a-entity>
 
         <a-assets>
             <img id="my-imaga">
         </a-assets>
+
         <a-image src="#my-imaga"
-                 position="0 1.5 -3"
+                 position="0 0 0"
                  width="2.024"
                  height="1.768"
                  scale="1 1 1">
@@ -90,7 +92,7 @@
     <div class="ui">
         <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
     </div>
-    <a-entity camera></a-entity>
+ 
 </body>
 
 <script>
