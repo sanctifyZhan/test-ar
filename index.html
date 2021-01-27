@@ -80,10 +80,7 @@
         <!-- ⑥ カメラを追加 -->
 
         <a-camera position="0 4 10"></a-camera>
-        <a-entity video: #alpha-video;"
-                  material="shader: chromakey; src: #alpha-video; color: 0.1 0.9 0.2"
-                  geometry="primitive: plane; height: 0.6; width: 1.38;">
-        </a-entity>
+      
     </a-scene>
     <div class="ui">
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
@@ -91,7 +88,7 @@
 </body>
 
 <script>
-    var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.jpg");
+    var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("myPicture").src = myPix[randomNum];
