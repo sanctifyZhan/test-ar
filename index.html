@@ -45,22 +45,6 @@
                 .ui a:active {
                     color: #ff0000;
                 }
-
-        #snap {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            visibility: hidden;
-        }
-
-        .ui a.disabled {
-            pointer-events: none;
-            color: #cccccc;
-        }
-
-        #snap.visible {
-            visibility: visible;
-        }
     </style>
 
 </head>
@@ -71,20 +55,20 @@
     <!-- ③ シーンを追加 -->
     <a-scene>
         <!--  <a-assets>
-        <video id="alpha-video" autoplay src="Dance.mp4"> </video>
+     <video id="alpha-video" autoplay src="Dance.mp4"> </video>
 
+    </a-assets>  -->
+        <a-assets>
+            <img id="my-imaga">
+        </a-assets>
 
-    <a-assets>
-        <img id="my-imaga">
-    </a-assets>
+        <a-image src="#my-imaga"
+                 position="0 2 -5"
+                 width="4.5"
+                 height="1.5"
+                 scale="1 1 1">
+        </a-image>
 
-    <a-image src="#my-imaga"
-             position="0 2 -5"
-             width="4.5"
-             height="1.5"
-             scale="1 1 1">
-    </a-image>
-    </a-assets>-->
 
     </a-scene>
 
