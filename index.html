@@ -68,8 +68,10 @@
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
     <a-scene>
-        <a-assets id="video" autoplay loop="true" src ="Dance.mp4" webkit-playsinline></a-assets>
-        <a-video src="#video" width="16" height="9" position="0 1 -1"></a-video>
+        <a-assets>
+        <video id="video" autoplay src ="Dance.mp4"> </video>
+            </a-assets>
+       
         <!-- ⑥ カメラを追加 -->
         <a-entity camera></a-entity>
     </a-scene>
