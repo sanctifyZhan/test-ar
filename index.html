@@ -13,17 +13,9 @@
 </head>
 <body>
     <!-- These HTML elements are used to show an UI laid over the scene -->
-    <div id="photoModeContainer" style="display: none">
-        <img id="photoModeImage">
-        <div id="shutterButton"></div>
-    </div>
 
-    <a-scene photo-mode
-             xrextras-almost-there
-             xrextras-loading
-             xrextras-runtime-error
-             xrextras-tap-recenter
-             xrweb>
+
+    <a-scene>
 
         <!-- We can define assets here to be loaded when A-Frame initializes -->
         <a-assets>
@@ -32,10 +24,10 @@
 
         </a-assets>
 
-        <a-camera position="0 4 10"></a-camera>
+     
 
 
-        <a-entity gltf-model="#camerapng" scale="100 100 100" position="0 3 0"></a-entity>
+        <a-entity gltf-model="#camerapng" scale="100 100 100" position="0 7 0"></a-entity>
 
   
 
