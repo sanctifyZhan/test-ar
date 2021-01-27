@@ -69,12 +69,16 @@
     <!-- ③ シーンを追加 -->
     <a-scene>
         <a-assets>
-            <video id="video" autoplay src="Dance.mp4"> </video>
+            <video id="alpha-video" autoplay src="Dance.mp4"> </video>
         </a-assets>
 
         <!-- ⑥ カメラを追加 -->
-        <a-entity gltf-model="#video" scale="100 100 100" position="0 5 0"></a-entity>
-        <a-entity camera></a-entity>
+
+        <a-camera position="0 4 10"></a-camera>
+        <a-entity video: #alpha-video;"
+                  material="shader: chromakey; src: #alpha-video; color: 0.1 0.9 0.2"
+                  geometry="primitive: plane; height: 0.6; width: 1.38;">
+        </a-entity>
     </a-scene>
     <div class="ui">
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
