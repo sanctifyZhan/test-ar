@@ -10,12 +10,6 @@
     <script src="//jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        .drawboder {
-            margin: 0;
-            min-height: 100vh;
-
-        }
-
         .ui {
             position: absolute;
             z-index: 100;
@@ -75,19 +69,22 @@
     <!-- ③ シーンを追加 -->
     <a-scene>
         <!--  <a-assets>
-            <video id="alpha-video" autoplay src="Dance.mp4"> </video>
+        <video id="alpha-video" autoplay src="Dance.mp4"> </video>
 
-        </a-assets>-->
+    </a-assets>-->
+
+
         <a-assets>
-            <img id="my-imaga" class="drawboder">
+            <img id="my-imaga">
         </a-assets>
+
+      
 
         <a-image src="#my-imaga"
                  position="-1 0 0"
-                 width="5.5"
-                 height="3.5"
+                 width="2.5"
+                 height="1.5"
                  scale="1 1 1">
-            
         </a-image>
 
     </a-scene>
@@ -95,7 +92,7 @@
     <div class="ui">
         <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
     </div>
-
+ 
 </body>
 
 <script>
