@@ -71,21 +71,17 @@
            <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
 
 
-               <a-marker preset='hiro'>
-                   <a-entity position="0 0 0"
-                             scale="0.05 0.05 0.05"
-                             gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"></a-entity>
-               </a-marker>
 
-
+               <a-image src="close.png"></a-image>
                <!-- ⑥ カメラを追加 -->
                <a-entity camera></a-entity>
            </a-scene>
            <div class="ui">
-               <img id="snap">
-               <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
-               <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-               <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
+
+
+               <a-assets>
+                   <img id="my-image" src="camera.png">
+               </a-assets>
            </div>
        </body>
        <!--  <script>
