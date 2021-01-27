@@ -15,12 +15,7 @@
     <!-- These HTML elements are used to show an UI laid over the scene -->
     <div id="photoModeContainer" style="display: none">
         <img id="photoModeImage">
-        <div id="flash"></div>
         <div id="shutterButton"></div>
-        <div id="closeButton"></div>
-        <div id="meo"></div>
-        <div id="dado"></div>
-
     </div>
 
     <a-scene photo-mode
@@ -39,21 +34,10 @@
 
         <a-camera position="0 4 10"></a-camera>
 
-        <a-entity light="type: directional;
-               intensity: 0.8;"
-                  position="1 4.3 2.5">
-        </a-entity>
-
-        <a-light type="ambient" intensity="1"></a-light>
 
         <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
 
-        <a-cylinder geometry="segments-radial: 8"
-                    material="transparent:true; opacity: 0.5; color: #33ff33"
-                    open-ended="true"
-                    height="7"
-                    radius="1.5"
-                    position="0 3.5 0"></a-cylinder>
+  
 
     </a-scene>
 </body>
