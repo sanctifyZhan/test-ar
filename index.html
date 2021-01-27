@@ -49,7 +49,17 @@
 
 </head>
 
-
+<script>
+    var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
+    function choosePic() {
+        var randomNum = Math.floor(Math.random() * myPix.length);
+        document.getElementById("my-imaga").src = myPix[randomNum];
+    }
+    var take_photo_btn = document.querySelector('#take-phot');
+    take_photo_btn.addEventListener("click", function (e) {
+        choosePic();
+    });
+</script>
 
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
@@ -58,7 +68,7 @@
      <video id="alpha-video" autoplay src="Dance.mp4"> </video>
 
     </a-assets>  -->
-        <a-assets>
+        <a-assets >
             <img id="my-imaga">
         </a-assets>
 
@@ -77,16 +87,6 @@
     </div>
 
 </body>
-<script>
-    var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
-    function choosePic() {
-        var randomNum = Math.floor(Math.random() * myPix.length);
-        document.getElementById("my-imaga").src = myPix[randomNum];
-    }
-    var take_photo_btn = document.querySelector('#take-phot');
-    take_photo_btn.addEventListener("click", function (e) {
-        choosePic();
-    });
-</script>
+
 
 </html>
