@@ -68,8 +68,13 @@
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
     <a-scene>
+        <!--  <a-assets>
+          <video id="alpha-video" autoplay src="Dance.mp4"> </video>
+
+      </a-assets>-->
+
         <a-assets>
-            <video id="alpha-video" autoplay src="Dance.mp4"> </video>
+            <img id="my-image" src="close.png">
         </a-assets>
 
         <!-- ⑥ カメラを追加 -->
@@ -93,7 +98,7 @@
 
         var take_photo_btn = document.querySelector('#take-photo');
         take_photo_btn.addEventListener("click", function (e) {
-            e.choosePic();
+            choosePic();
         });
 </script>
 
