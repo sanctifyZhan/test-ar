@@ -15,33 +15,33 @@
 <body>
     <!-- ③ シーンを追加 -->
     <a-scene>
-        <a-assets>
+        <!--   <a-assets>
             <video id="video" autoplay loop ="true" src="Dance.mp4" webkit-playsinline> </video>
         </a-assets>
         <a-video src ="#video" width="16" height="9" position=" 0 1 -1" ></a-video>
- 
+        -->
     </a-scene>
-    <div class="ui">
-        <img id="snap">
-        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-    </div>
-</body>
-<script>
-    var image = document.querySelector('#snap');
-    var take_photo_btn = document.querySelector('#take-photo');
+        <div class="ui">
+            <img id="snap">
+            <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+        </div>
+    </body>
+    <script>
+        var image = document.querySelector('#snap');
+        var take_photo_btn = document.querySelector('#take-photo');
 
-    //スナップショットボタン
-    take_photo_btn.addEventListener("click", function (e) {
-        e.preventDefault();
-    
-    });
+        //スナップショットボタン
+        take_photo_btn.addEventListener("click", function (e) {
+            e.preventDefault();
 
-      AFRAME.registerComponent('take-photo', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-                alert('Clicked!')
-            });
-    }});
-    //-->
-</script>
+        });
+
+          AFRAME.registerComponent('take-photo', {
+            init: function() {
+                this.el.addEventListener('click', () => {
+                    alert('Clicked!')
+                });
+        }});
+        //-->
+        </script>
 </html>
