@@ -45,6 +45,8 @@
                 .ui a:active {
                     color: #ff0000;
                 }
+
+                
     </style>
 
 </head>
@@ -52,14 +54,17 @@
 
 
 <body style='margin: 0; overflow: hidden;'>
-    <!-- ③ シーンを追加 -->
-    <a-scene>
+    <!-- ③ シーンを追加
+        document.getElementById("my-imaga").style.display = "none";
+    -->
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <!--  <a-assets>
-     <video id="alpha-video" autoplay src="Dance.mp4"> </video>
+         <video id="alpha-video" autoplay src="Dance.mp4"> </video>
 
-    </a-assets>  -->
+        </a-assets>  -->
         <a-assets>
-            <img id="my-imaga" >
+            <img id="my-imaga">
+           
         </a-assets>
 
         <a-image src="#my-imaga"
@@ -78,6 +83,7 @@
 
 </body>
 <script>
+    
     var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
