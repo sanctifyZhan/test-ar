@@ -55,16 +55,16 @@
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
 
 
-        <!--<a-assets>
-        <img id="my-image">
+        <a-assets>
+            <img id="my-image">
 
-    </a-assets>
+        </a-assets>
+        <!--
+        <a-image src="#my-image"
+                 position="0 1 -6">
 
-    <<a-image src="#my-image"
-             position="0 1 -6">
-
-    </a-image>
-    -->
+        </a-image>
+        -->
         alert("con cac 345");
     </a-scene>
 
@@ -73,7 +73,7 @@
     </div>
 
 </body>
-<!--<script>
+<script>
 
     var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
 
@@ -84,16 +84,16 @@
         alert("con cac 5");
     });
     function choosePic() {
-        
+
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
         document.getElementById("my-image").style.height = "4.5";
         document.getElementById("my-image").style.width = "4.5";
-    
-        
+
+
         alert("con cac 6");
     }
-     
-</script>-->
+
+</script>
 
 </html>
