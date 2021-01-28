@@ -59,7 +59,7 @@
 
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
-            <img id="my-image" position="0 0 -3" src="close.png">
+            <img id="my-image">
         </a-assets>
 
         <!--<a-image src="#my-image"
@@ -76,17 +76,18 @@
 </body>
 <script>
 
-    var myPix = new Array("ass/1.png", "ass/2.jpg", "`ass/3.png");
+    var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
     var take_photo_btn = document.querySelector('#take-phot');
     take_photo_btn.addEventListener("click", function (e) {
         choosePic();
+         $('img#my-image').attr('src', 'close.png');
     });
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("またね4");
+    alert("またね1");
 </script>
 
 </html>
