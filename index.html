@@ -71,7 +71,7 @@
 
         </a-image>-->
         <a-entity camera></a-entity>
-        alert("con cac 3665");
+        alert("con cac 36675");
     </a-scene>
 
     <div class="ui">
@@ -85,19 +85,11 @@
 
     var take_photo_btn = document.querySelector('#take-phot');
     take_photo_btn.addEventListener("click", function (e) {
-        alert("con cac 4");
         choosePic();
-        alert("con cac 5");
     });
     function choosePic() {
-
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
-        document.getElementById("my-image").style.height = "4.5";
-        document.getElementById("my-image").style.width = "4.5";
-
-
-        alert("con cac 6");
     }
 
 </script>
