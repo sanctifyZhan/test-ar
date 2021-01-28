@@ -57,13 +57,12 @@
             <img id="my-image">
         </a-assets>
 
-
+        <a-image src="#my-image"
+                 position="0 0 -3">
+        </a-image>
 
         <a-entity camera></a-entity>
     </a-scene>
-    <a-image src="#my-image"
-             position="0 0 -3">
-    </a-image>
 
     <div class="ui">
         <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
@@ -82,8 +81,9 @@
         document.getElementById("my-image").src = myPix[randomNum];
         document.getElementById("my-image").style.height = "4.5";
         document.getElementById("my-image").style.width = "5";
+        alert("Start ...");
     }
-    alert("1");
+
 </script>
 
 </html>
