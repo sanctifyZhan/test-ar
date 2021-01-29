@@ -60,7 +60,12 @@
 
 <body style='margin: 0; overflow: hidden;'>
 
-    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+    <a-scene photo-mode
+             xrextras-almost-there
+             xrextras-loading
+             xrextras-runtime-error
+             xrextras-tap-recenter
+             xrweb>
         <a-assets>
             <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
             <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
@@ -103,7 +108,7 @@
     //    document.getElementById("my-image").src = myPix[randomNum];
     //    take_photo_btn.classList.add("disabled");
     //}
-    alert("またね12");
+    alert("またね132");
 </script>
 
 </html>
