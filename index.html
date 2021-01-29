@@ -62,7 +62,9 @@
 
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
+            <a-asset-item id="wolf" src="wolf.glb"></a-asset-item>
             <img id="my-image">
+
         </a-assets>
 
         <a-image src="#my-image"
@@ -88,7 +90,7 @@
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("またね22");
+    alert("またね3");
 </script>
 
 </html>
