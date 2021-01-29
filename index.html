@@ -62,19 +62,28 @@
 
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
-            <a-asset-item id="wolf" src="wolf.gltf"></a-asset-item>
-            <!--<img id="my-image">-->
+            <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
+            <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
 
         </a-assets>
 
-        <!--<a-image src="#my-image"
-             position="0 1.6 -2">
-    </a-image>-->
-        <!--<a-entity camera position="0 1.6 0"> </a-entity>-->
         <a-camera position="0 4 10"></a-camera>
 
-        <!--<a-entity gltf-model="#wolf" scale="300 300 300" position="0 1 0"></a-entity>-->
-        <a-entity gltf-model="#wolf" scale="300 300 300" position="0 7 0"></a-entity>
+        <a-entity light="type: directional;
+               intensity: 0.8;"
+                  position="1 4.3 2.5">
+        </a-entity>
+
+        <a-light type="ambient" intensity="1"></a-light>
+
+        <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
+
+        <a-cylinder geometry="segments-radial: 8"
+                    material="transparent:true; opacity: 0.5; color: #33ff33"
+                    open-ended="true"
+                    height="7"
+                    radius="1.5"
+                    position="0 3.5 0"></a-cylinder>
     </a-scene>
 
     <div class="ui">
