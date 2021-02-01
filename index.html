@@ -60,16 +60,18 @@
 
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
-
-            <img id="my-image">
+            <video id="cityVideo" src="https://cdn.aframe.io/360-video-boilerplate/video/city.mp4"></video>
+                <img id="my-image">
 
         </a-assets>
+        <a-videopshere src="#cityVideo"></a-videopshere>
+            
 
-        <a-image src="#my-image"
-                 position="-0.05 1.6 -7"　height="2.5" width="3">
-        </a-image>
-       
-        <a-entity camera position="0 1.6 0"> </a-entity>
+            <a-image src="#my-image"
+                     position="-0.05 1.6 -7" 　height="2.5" width="3">
+            </a-image>
+
+            <a-entity camera position="0 1.6 0"> </a-entity>
     </a-scene>
 
     <div class="ui">
@@ -79,7 +81,7 @@
 </body>
 
 <script>
-    var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");5
+    var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png"); 5
     var take_photo_btn = document.querySelector('#take-phot');
     take_photo_btn.addEventListener("click", function (e) {
         choosePic();
