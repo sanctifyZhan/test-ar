@@ -60,17 +60,17 @@
 
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-marker preset='hiro'>
-            <img id="my-image">
-        </a-marker>
-        <a-assets>
-
-            
             <video id="vid"
                    muted
                    autoplay
                    playsinline
                    crossorigin="anonymous"
                    loop="true" src="Dance.mp4"></video>
+        </a-marker>
+        <a-assets>
+
+            <img id="my-image">
+        
 
         </a-assets>
         <a-video src="#vid" position="-0.05 1.6 -5" 　height="2.5" width="3"></a-video>
@@ -102,7 +102,7 @@
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("対象のコンテンツは、只今作成中です。。");
+    alert("対象のコンテンツは、只今作成中です。。1。1");
 
 </script>
 
