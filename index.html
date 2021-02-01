@@ -60,13 +60,14 @@
 
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
-            <a-asset-item id="wolf" src="wolf.glb"></a-asset-item>
-          
+         
+            <img id="my-image">
 
         </a-assets>
 
-       
-        <a-box src="#wolf" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+        <a-image src="#my-image"
+                 position="0 1.6 -2">
+        </a-image>
         <a-entity camera position="0 1.6 0"> </a-entity>
     </a-scene>
 
@@ -75,8 +76,8 @@
     </div>
 
 </body>
-<script>
 
+<script>
     var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
     var take_photo_btn = document.querySelector('#take-phot');
     take_photo_btn.addEventListener("click", function (e) {
