@@ -60,7 +60,7 @@
 
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
-         
+
             <img id="my-image">
 
         </a-assets>
@@ -68,6 +68,7 @@
         <a-image src="#my-image"
                  position="0 1.6 -4">
         </a-image>
+        <a-plane color="#ff9988" rotation="270 0 0" height="7" width="7" position="0 -2 0"></a-plane>
         <a-entity camera position="0 1.6 0"> </a-entity>
     </a-scene>
 
@@ -88,7 +89,7 @@
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("hellos");
+    alert("he１llos");
 </script>
 
 </html>
