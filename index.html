@@ -21,10 +21,10 @@
         <!-- A-Frameで利用するアセット -->
         <a-assets>
             <video id="video" src="Dance.mp4"
-                   preload="auto" muted loop="true" webkit-playsinline playsinline></video>
+                   preload="auto" muted loop="false" webkit-playsinline playsinline></video>
         </a-assets>
         <!-- 実際にVRで表示されるモデル内側に指定リソースを表示する球体オブジェクト -->
-     
+        <a-video src="#video"></a-video>
     </a-scene>
 </body>
 
@@ -40,7 +40,7 @@
         scene.addEventListener("loaded", playvideo);
         video.play();
     }
-
+    alert("1");
   
 </script>
 
