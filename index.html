@@ -90,7 +90,7 @@
     var take_photo_btn = document.querySelector('#take-phot');
    
     take_photo_btn.addEventListener("click", function (e) {
-         var assets = document.querySelector('a-assets');  
+    var assets = document.querySelector('a-assets');  
     var image2 = document.createElement("img");
     assets.appendChild(image2);
   
@@ -99,15 +99,17 @@
     image2.object3D.position.y += 1.5;
     image2.object3D.position.x += -7;
     image2.setAttribute('geometry', {
-  primitive: 'box',
-  height: 5,
-  width: 4
-});
+    primitive: 'box',
+     height: 5,
+     width: 4
+    });
         choosePic();
     });
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
+         alert("1");
         document.querySelector("img").src = myPix[randomNum];
+        alert("2");
         take_photo_btn.classList.add("disabled");
     }
     alert("対象のコンテンツは、只今作成中です。。1。");
