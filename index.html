@@ -62,14 +62,14 @@
        
         <a-assets>
 
-            <img id="my-image">
+          
           
 
         </a-assets>
         
 
         <a-image src="#my-image"
-                 position="-0.05 1.5 -7" 　height="5" width="4">
+                 position="-0.05 1.5 -7" >
         </a-image>
 
         <a-entity camera position="0 1.6 3"> </a-entity>
@@ -82,7 +82,12 @@
 </body>
 
 <script>
-   
+    var assets = document.querySelector('a-assets');
+    var image2 = document.createElement("img");
+    document.getElementById("image2").id = "my-image";
+    document.getElementById("image2").style.height = "300px";
+    document.getElementById("image2").style.width = "300px";
+    assets.add(image2);
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-phot');
    
