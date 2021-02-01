@@ -35,15 +35,13 @@
 
     if (scene.hasLoaded) {
         run();
+        video.play();
     } else {
         scene.addEventListener("loaded", playvideo);
+        video.play();
     }
 
-    function playvideo() {
-        scene.querySelector(".a-enter-vr-button").addEventListener("click", function (e) {
-            video.play();
-        }, false);
-    }
+  
 </script>
 
 </html>
