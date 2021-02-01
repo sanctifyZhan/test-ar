@@ -61,7 +61,7 @@
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
 
-            <img id="my-image">
+            <img id="my-image" cursor-listener >
 
         </a-assets>
 
@@ -81,15 +81,28 @@
 <script>
     var myPix = new Array("ass/1.png", "ass/10.png", "ass/20.png", "ass/30.png");5
     var take_photo_btn = document.querySelector('#take-phot');
-    take_photo_btn.addEventListener("click", function (e) {
+   /* take_photo_btn.addEventListener("click", function (e) {
         choosePic();
-    });
+    });*/
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
     alert("対象のコンテンツは、只今作成中です。。。");
+
+
+     AFRAME.registerComponent('cursor-listener', {
+      init: function () {
+      
+             this.el.addEventListener('click', function (evt) {
+                 choosePic();
+                 alert("対象のコンテンツは、只今作成中です。。。1");
+                  alert(evt.detail.intersection.point);
+        });
+      }
+     });
+
 </script>
 
 </html>
