@@ -58,16 +58,20 @@
 
 <body style='margin: 0; overflow: hidden'>
 
-    <a-scene>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
         <a-assets>
-            <a-asset-item id="tree" src="wolf.gltf"></a-asset-item>
+
+            <img id="my-image">
+
         </a-assets>
 
-        <!-- Using the asset management system. -->
-        <a-gltf-model src="#tree"></a-gltf-model>
 
-        <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-        <a-gltf-model src="wolf.gltf"></a-gltf-model>
+
+        <a-image src="#my-image"
+                 position="-0.05 1.6 -7" 　height="2.5" width="3">
+        </a-image>
+
+        <a-entity camera position="0 1.6 0"> </a-entity>
     </a-scene>
 
     <div class="ui">
