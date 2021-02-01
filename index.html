@@ -82,7 +82,13 @@
 </body>
 
 <script>
-  
+    var assets = document.querySelector('a-assets');
+    var image2 = document.createElement("img");
+     assets.add(image2);
+    document.getElementById("image2").id = "my-image";
+    document.getElementById("image2").style.height = "300px";
+    document.getElementById("image2").style.width = "300px";
+   
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-phot');
    
@@ -94,7 +100,7 @@
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("対象のコンテンツは、只今作成中です。。。");
+    alert("対象のコンテンツは、只今作成中です。。");
 
 </script>
 
