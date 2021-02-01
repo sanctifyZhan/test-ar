@@ -94,15 +94,17 @@
     var image2 = document.createElement("img");
     assets.appendChild(image2);
   
-
+        alert("31");
     image2.object3D.position.x += -0.05;
     image2.object3D.position.y += 1.5;
-    image2.object3D.position.x += -7;
+        image2.object3D.position.x += -7;
+        alert("41");
     image2.setAttribute('geometry', {
     primitive: 'box',
      height: 5,
      width: 4
     });
+        alert("61");
         choosePic();
     });
     function choosePic() {
