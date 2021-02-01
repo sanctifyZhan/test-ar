@@ -62,15 +62,13 @@
        
         <a-assets>
 
-            <img id="my-image">
+            
           
 
         </a-assets>
         
 
-        <a-image src="#my-image"
-                 position="-0.05 1.5 -7" 　height="5" width="4">
-        </a-image>
+     
 
         <a-entity camera position="0 1.6 3"> </a-entity>
     </a-scene>
@@ -82,12 +80,21 @@
 </body>
 
 <script>
- /* var assets = document.querySelector('a-assets');  
+    var assets = document.querySelector('a-assets');  
     var image2 = document.createElement("img");
     assets.appendChild(image2);
-    document.getElementsByName("img").id = "my-image";
+  
 
-    document.getElementsByName("img").style.height = "300px";
+    image2.object3D.position.x += -0.05;
+    image2.object3D.position.y += 1.5;
+    image2.object3D.position.x += -7;
+    image2.setAttribute('geometry', {
+  primitive: 'box',
+  height: 5,
+  width: 4
+});
+
+   /* document.getElementsByName("img").style.height = "300px";
     alert("4");
     document.getElementsByName("img").style.width = "300px";*/
 
