@@ -56,7 +56,7 @@
         </a-assets>
 
         <a-image src="#my-image"
-                 position="-0.05 1.5 -7" height="5" width="4">
+                 position="-0.05 1.5 -7" height="2" width="2">
         </a-image>
 
         <video id="vid"
@@ -88,6 +88,9 @@
     var video = document.getElementById("vid");
     video.play();
 
+    var pln = document.querySelector("#my-image");
+    pln.setAttribute('visible', false);
+
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-phot');
 
@@ -100,5 +103,5 @@
         take_photo_btn.classList.add("disabled");
     }
 
-    alert("対象のコンテンツは、只今作成中です。s3225。。");
+    alert("対象のコンテンツは、只今作成中です。。。");
 </script>
