@@ -78,7 +78,7 @@
         </a-assets>
 
         <a-image src="#my-image"
-                 position="-0.05 1.5 -7" height="2" width="2" visible="false">
+                 position="-0.05 1.5 -7" height="2" width="2">
         </a-image>
 
 
@@ -101,10 +101,11 @@
     var take_photo_btn = document.querySelector('#take-phot');
 
     take_photo_btn.addEventListener("click", function (e) {
-         let myEl = document.querySelector("#my-image");
-        myEl.setAttribute("visible", "true");
-        sceneElement.reload();
         choosePic();
+         let myEl = document.querySelector("#my-image");
+      /*  myEl.setAttribute("visible", "true");*/
+        sceneElement.reload();
+        
     });
     function choosePic() {
         pln.setAttribute('visible', true);
@@ -113,6 +114,6 @@
         take_photo_btn.classList.add("disabled");
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。!");
+    alert("対象のコンテンツは、只今作成中です。。。");
 
 </script>
