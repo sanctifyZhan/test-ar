@@ -8,17 +8,20 @@
 
     .ui {
         position: absolute;
-       
+        z-index: 100;
         bottom: 0;
         left: 0;
         right: 0;
-       
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 10px 15px 30px;
         text-align: center;
         box-sizing: border-box;
     }
 
         .ui a {
-            display: inline-block;
+          
             width: 60px;
             height: 60px;
             background-color: #ffffff;
@@ -62,7 +65,7 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-video src="#vid" position="0 0 0" rotation="-90 0 0" scale="2 2 2"></a-video>
+            <a-video src="#vid" position="-3 0 0" rotation="-90 0 0" scale="2 2 2"></a-video>
         </a-marker>
 
 
@@ -88,5 +91,5 @@
 <script>
     var video = document.getElementById("vid");
     video.play();
-    alert("対象のコンテンツは、只今作成中です。923s2。。");
+    alert("対象のコンテンツは、只今作成中です2。。。");
 </script>
