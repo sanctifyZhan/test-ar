@@ -51,13 +51,7 @@
 </style>
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
-        <a-assets>
-            <img id="my-image">
-        </a-assets>
 
-        <a-image src="#my-image"
-                 position="-0.05 1.5 -7" height="2" width="2">
-        </a-image>
 
         <video id="vid"
                src="Dance.mp4"
@@ -79,9 +73,14 @@
 
         <a-entity camera></a-entity>
 
-        <a-entity animation="property: visible; to: true; startEvents: materialtextureloaded"
-        material="src: #my-image"
-        visible="true"></a-entity>
+        <a-assets>
+            <img id="my-image">
+        </a-assets>
+
+        <a-image src="#my-image"
+                 position="-0.05 1.5 -7" height="2" width="2" visible="false">
+        </a-image>
+       
 
     </a-scene>
     <div class="ui">
@@ -108,5 +107,5 @@
         take_photo_btn.classList.add("disabled");
     }
 
-    alert("対象のコンテンツは、只今作成中です。2344。。");
+    alert("対象のコンテンツは、只今作成中です。。。");
 </script>
