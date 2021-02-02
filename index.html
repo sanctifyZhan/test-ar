@@ -1,83 +1,47 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE>
 <html>
-<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-<!-- we import arjs version without NFT but with marker + location based support -->
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<style>
 
-    .ui {
-        position: absolute;
-        z-index: 100;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 10px 15px 30px;
-        text-align: center;
-        box-sizing: border-box;
-    }
+<head>
+    <title>A-FRAME DEMO</title>
+    <script src="https://aframe.io/releases/0.9.0/aframe.js"></script>
+</head>
 
-        .ui a {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background-color: #ffffff;
-            line-height: 100%;
-            color: #303030;
-            margin: 10px 3px;
-            border-radius: 50%;
-            position: relative;
-        }
+<body>
 
-            .ui a i {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-            }
+    <a-scene>
 
-            .ui a:active {
-                color: #ff0000;
-            }
+        <a-assets>
+            <img id="button" src="icons/button.png">
+        </a-assets>
 
-            .ui a.disabled {
-                pointer-events: none;
-                color: #cccccc;
-            }
-</style>
-<body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
-        <video id="vid"
-               src="Dance.mp4"
-               preload="auto"
-               respose-type="arraybuffer"
-               loop="true"
-               playsinline
-               crossorigin
-               webkit-playsinline
-               muted
-               autoplay>
-        </video>
+        <a-camera position="0 2 0" wasd-controls-enabled="false">
+            <a-cursor color="blue" />
+        </a-camera>
 
-        <a-marker type='pattern'
-                  url='pattern-13.patt'
-                  videohandler>
-            <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2"></a-video>
-        </a-marker>
-    
-            <a-entity camera></a-entity>
+        <a-sky color="#FFF"></a-sky>
+
+        <a-plane id="plane1" color="#000" height="4" width="20" position="0 0 -9" transparent="true" opacity="0.5" visible="false">
+            <a-text value="Some Random Text." align="center" color="white" width="10" position="0 0 2"></a-text>
+            <a-image id="cancel_tc" src="#cancel" position="9.5 3 0"></a-image>
+        </a-plane>
+
+        <a-image id="button_click" slidehandler1 src="#button" height="1" width="1" position="0 -1.6 -7"></a-image>
+
     </a-scene>
-    <div class="ui">
-        <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
-    </div>
+
+    <script>
+
+        AFRAME.registerComponent('slidehandler1', {
+            init: function () {
+                var pln = document.querySelector("#plane1");
+                this.el.addEventListener('click', () => {
+                    pln.setAttribute('visible', true);
+                    //pln.setAttribute("position",{x:0,y:5,z:-9});
+                    pln.setAttribute('animation', 'property: position; dur: 1000; from: 0 0 -9; to: 0 5 -9');
+                });
+            }
+        });
+
+    </script>
 </body>
 </html>
-<script>
-    var video = document.getElementById("vid");
-    video.play();
-
-    alert("対象のコンテンツは、只今作成中です。s325。。");
-</script>
