@@ -102,18 +102,13 @@
         choosePic();
     });
     function choosePic() {
+        let myEl = document.querySelector("#my-image");
+        myEl.setAttribute("visible", "true");
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
 
-    alert("対象のコンテンツは、只今作成中です。4。。");
-
-    document.querySelector('#take-phot').addEventListener('mouseenter', myEventHandler);
-
-    myEventHandler: function (evt) {
-        let myEl = document.querySelector("#my-image");
-        myEl.setAttribute("visible", "true");
-    }
+    alert("対象のコンテンツは、只今作成中です。4。3。");
 
 </script>
