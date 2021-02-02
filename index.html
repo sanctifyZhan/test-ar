@@ -72,7 +72,7 @@
 
         </a-assets>
         <a-image src="#my-image"
-                 position="0 1.6 -2">
+                 position="0 1.6 -2" height="3"  width="3" >
         </a-image>
         <!--
         <a-marker preset="hiro">
@@ -101,11 +101,12 @@
     var take_photo_btn = document.querySelector('#take-phot');
     take_photo_btn.addEventListener("click", function (e) {
         choosePic();
+        alert("対象のコンテンツは、只今作成中です。s3。。");
     });
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("対象のコンテンツは、只今作成中です。s3。。");
+    alert("対象のコンテンツは、只今作成中です。s35。。");
 </script>
