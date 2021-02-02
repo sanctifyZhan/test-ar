@@ -120,19 +120,13 @@
     alert("対象のコンテンツは、只今作成中です2。。。");
 
 
-    AFRAME.registerComponent('photo-mode', {
-  init: function() 
-  {
-    const shutterButton = document.getElementById('shutterButton')
+    var shutterButton1 = document.querySelector('#shutterButton');
 
-    // Container starts hidden so it isn't visible when the page is still loading
-  
+   
 
-
-    shutterButton.addEventListener('click', () => {
+    shutterButton1.addEventListener('click', () => {
         alert("da click2。。。");
     })
 
-  }
-})
+
 </script>
