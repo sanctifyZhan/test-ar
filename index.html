@@ -50,42 +50,14 @@
 </style>
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
-        <video id="vid"
-               src="Dance.mp4"
-               preload="auto"
-               respose-type="arraybuffer"
-               loop="true"
-               playsinline
-               crossorigin
-               webkit-playsinline
-               muted
-               autoplay>
-        </video>
-
-        <a-marker type='pattern'
-                  url='pattern-13.patt'
-                  videohandler>
-            <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2"></a-video>
-        </a-marker>
+    
         <a-assets>
             <img id="my-image">
 
         </a-assets>
         <a-image src="#my-image"
-                 position="0 1-2" height="2"  width="2" >
+                 position="0 1-2" height="2" width="2">
         </a-image>
-        <!--
-        <a-marker preset="hiro">
-            <a-entity position="-2 -1 0"
-                      scale="0.05 0.05 0.05"
-                      gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"></a-entity>
-        </a-marker>-->
-        <!-- show custemize dragon long
-        <a-marker type='pattern' url='pattern-13.patt'>
-            <a-entity position="-2 -1 0"
-                      scale="0.05 0.05 0.05"
-                      gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"></a-entity>
-        </a-marker>-->
 
         <a-entity camera></a-entity>
     </a-scene>
@@ -108,5 +80,5 @@
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("対象のコンテンツは、只今作成中です。s35。。");
+    alert("対象のコンテンツは、只今作成中です。。。");
 </script>
