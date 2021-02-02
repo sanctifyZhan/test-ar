@@ -78,6 +78,12 @@
         </a-marker>
 
         <a-entity camera></a-entity>
+
+        <a-entity animation="property: visible; to: true; startEvents: materialtextureloaded">
+            material="src: #my-image"
+            visible="false"
+        </a-entity>
+
     </a-scene>
     <div class="ui">
         <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
@@ -88,8 +94,8 @@
     var video = document.getElementById("vid");
     video.play();
 
-    var pln = document.querySelector("#my-image");
-    pln.setAttribute('visible', true);
+ /*   var pln = document.querySelector("#my-image");
+    pln.setAttribute('visible', true);*/
 
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-phot');
@@ -103,5 +109,5 @@
         take_photo_btn.classList.add("disabled");
     }
 
-    alert("対象のコンテンツは、只今作成中です。2。。");
+    alert("対象のコンテンツは、只今作成中です。23。。");
 </script>
