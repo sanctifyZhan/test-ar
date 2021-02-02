@@ -78,7 +78,7 @@
         </a-assets>
 
         <a-image src="#my-image"
-                 position="-0.05 1.5 -7" height="2" width="2" >
+                 position="-0.05 1.5 -7" height="2" width="2" visible="false">
         </a-image>
 
 
@@ -93,6 +93,8 @@
     video.play();
 
     var pln = document.querySelector("#my-image");
+    var sceneElement = document.querySelector("a-scene");
+  
 
 
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
@@ -103,11 +105,14 @@
         choosePic();
     });
     function choosePic() {
-        pln.setAttribute('visible', false);
-      /*  pln.setAttribute('position', { x: 1, y: 2, z: -2 });*/
-
-
-     
+        pln.setAttribute('visible', true);
+      
+        let myEl = document.querySelector("#my-image");
+        myEl.setAttribute("visible", "true");
+        sceneElement.reload();
+        var randomNum = Math.floor(Math.random() * myPix.length);
+        document.getElementById("my-image").src = myPix[randomNum];
+        take_photo_btn.classList.add("disabled");
     }
 
     alert("対象のコンテンツは、只今作成中です。。。");
