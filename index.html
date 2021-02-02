@@ -71,7 +71,7 @@
 </style>
 <body style="margin : 0px; overflow: hidden;">
     <div id="shutterButton"></div>
-    <a-scene embedded arjs cursor="rayOrigin: mouse">
+    <a-scene embedded arjs photo-mode>
 
 
         <video id="vid"
@@ -106,24 +106,11 @@
     var video = document.getElementById("vid");
     video.play();
 
-    var pln = document.querySelector("#my-image");
-    var sceneElement = document.querySelector("a-scene");
-    var ass = document.querySelector("a-assets");
-    var im = document.querySelector("a-image");
   
 
 
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
-    var take_photo_btn = document.querySelector('#shutterButton');
-
-    take_photo_btn.addEventListener("click", function (e) {
-        choosePic();
-    
-       /*   let myEl = document.querySelector("#my-image");
-       myEl.setAttribute("visible", "true");   <img id="my-image">*/
-        
-       
-    });
+  
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
@@ -132,4 +119,20 @@
 
     alert("対象のコンテンツは、只今作成中です2。。。");
 
+
+    AFRAME.registerComponent('photo-mode', {
+  init: function() 
+  {
+    const shutterButton = document.getElementById('shutterButton')
+
+    // Container starts hidden so it isn't visible when the page is still loading
+  
+
+
+    shutterButton.addEventListener('click', () => {
+        alert("da click2。。。");
+    })
+
+  }
+})
 </script>
