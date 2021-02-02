@@ -51,6 +51,14 @@
 </style>
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
+        <a-assets>
+            <img id="my-image">
+        </a-assets>
+
+        <a-image src="#my-image"
+                 position="-0.05 1.5 -7" height="5" width="4">
+        </a-image>
+
         <video id="vid"
                src="Dance.mp4"
                preload="auto"
@@ -80,5 +88,17 @@
     var video = document.getElementById("vid");
     video.play();
 
-    alert("対象のコンテンツは、只今作成中です。s325。。");
+    var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
+    var take_photo_btn = document.querySelector('#take-phot');
+
+    take_photo_btn.addEventListener("click", function (e) {
+        choosePic();
+    });
+    function choosePic() {
+        var randomNum = Math.floor(Math.random() * myPix.length);
+        document.getElementById("my-image").src = myPix[randomNum];
+        take_photo_btn.classList.add("disabled");
+    }
+
+    alert("対象のコンテンツは、只今作成中です。s3225。。");
 </script>
