@@ -47,31 +47,9 @@
                 pointer-events: none;
                 color: #cccccc;
             }
-
-
-            #shutterButton {
-  position: absolute;
-  width: 15vmin;
-  height: 15vmin;
-  background-color: white;
-  bottom: 2vmax;
-  border-radius: 7.5vmin;
-  left: 50%;
-  transform: translateX(-50%);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  pointer-events: auto;
-}
-
-#shutterButton {
-  background-image: url('camera.png');
-}
-
 </style>
 <body style="margin : 0px; overflow: hidden;">
-    <div id="shutterButton"></div>
-    <a-scene embedded arjs photo-mode>
+    <a-scene embedded arjs>
 
 
         <video id="vid"
@@ -92,41 +70,50 @@
             <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2"></a-video>
         </a-marker>
 
-        <a-assets>
-            <img id="my-image" src="">
-          </a-assets>
-
         <a-entity camera></a-entity>
 
+        <a-assets>
+            <img id="my-image">
+          
+        </a-assets>
+
+        <a-image src="#my-image"
+                 position="-0.05 1.5 -7" height="2" width="2">
+        </a-image>
+
+
     </a-scene>
-    
+    <div class="ui">
+        <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
+    </div>
 </body>
 </html>
 <script>
     var video = document.getElementById("vid");
     video.play();
 
+    var pln = document.querySelector("#my-image");
+    var sceneElement = document.querySelector("a-scene");
+    var ass = document.querySelector("a-assets");
+    var im = document.querySelector("a-image");
   
 
 
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
-  
+    var take_photo_btn = document.querySelector('#take-phot');
+
+    take_photo_btn.addEventListener("click", function (e) {
+        choosePic();
+       
+        alert("2da click");
+    });
     function choosePic() {
+       
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
-        take_photo_btn.classList.add("disabled");
+        
     }
 
-    alert("対象のコンテンツは、只今作成中です2。。。");
-
-
-    var shutterButton1 = document.querySelector('#shutterButton');
-
-   
-
-    shutterButton1.addEventListener('click', () => {
-        alert("da click2。。。");
-    })
-
+    alert("対象のコンテンツは、只今作成中です。。。");
 
 </script>
