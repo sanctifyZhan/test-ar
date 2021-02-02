@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 <!-- we import arjs version without NFT but with marker + location based support -->
@@ -102,10 +101,11 @@
 
     take_photo_btn.addEventListener("click", function (e) {
         choosePic();
+        alert("１");
          let myEl = document.querySelector("#my-image");
       /*  myEl.setAttribute("visible", "true");*/
         sceneElement.reload();
-        
+        alert("2");
     });
     function choosePic() {
         pln.setAttribute('visible', true);
