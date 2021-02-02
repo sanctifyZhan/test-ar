@@ -1,88 +1,102 @@
 ﻿<!DOCTYPE html>
 <html>
-<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-<!-- we import arjs version without NFT but with marker + location based support -->
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-<script src="//jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.js"></script>
+<head>
+    <script src="//aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <!-- <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    we import arjs version without NFT but with marker + location based support -->
+    <script src="//jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
 
-<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<style>
-
-    .ui {
-        position: absolute;
-        z-index: 100;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 10px 15px 30px;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-        .ui a {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background-color: #ffffff;
-            line-height: 100%;
-            color: #303030;
-            margin: 10px 3px;
-            border-radius: 50%;
-            position: relative;
+        .ui {
+            position: absolute;
+            z-index: 100;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 10px 15px 30px;
+            text-align: center;
+            box-sizing: border-box;
         }
 
-            .ui a i {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
+            .ui a {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                background-color: #ffffff;
+                line-height: 100%;
+                color: #303030;
+                margin: 10px 3px;
+                border-radius: 50%;
+                position: relative;
             }
 
-            .ui a:active {
-                color: #ff0000;
-            }
+                .ui a i {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
 
-            .ui a.disabled {
-                pointer-events: none;
-                color: #cccccc;
-            }
-</style>
-<body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
+                .ui a:active {
+                    color: #ff0000;
+                }
 
-        <a-assets>
-            <img id="my-image">
+                .ui a.disabled {
+                    pointer-events: none;
+                    color: #cccccc;
+                }
+    </style>
+</head>
+    <body style="margin : 0px; overflow: hidden;">
+        <a-scene embedded arjs>
+            <video id="vid"
+                   src="Dance.mp4"
+                   preload="auto"
+                   respose-type="arraybuffer"
+                   loop="true"
+                   playsinline
+                   crossorigin
+                   webkit-playsinline
+                   muted
+                   autoplay>
+            </video>
 
-        </a-assets>
-        <a-image src="#my-image"
-                 position="-0.05 1.5 -2" height="5" width="4">
-        </a-image>
-
-        <a-entity camera position="0 1.6 3"></a-entity>
-    </a-scene>
-    <div class="ui">
-        <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
-    </div>
-</body>
+            <a-marker type='pattern'
+                      url='pattern-13.patt'
+                      videohandler>
+                <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2"></a-video>
+            </a-marker>
+            <a-assets>
+                <img id="my-image">
+            </a-assets>
+            <a-image src="#my-image"
+                     position="-0.05 1.5 -7" 　height="5" width="4">
+                <a-entity camera position="0 0 -1"></a-entity>
+        </a-scene>
+        <div class="ui">
+            <a id="take-phot" title="Take Phot"><i class="material-icons">photo_camera</i></a>
+        </div>
+    </body>
+</html>
 <script>
- /*   var video = document.getElementById("vid");
-    video.play();*/
+    var video = document.getElementById("vid");
+    video.play();
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-phot');
     take_photo_btn.addEventListener("click", function (e) {
         choosePic();
-        alert("対象のコンテンツは、只今作成中です。s3。。");
+        alert("click r");
     });
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("対象のコンテンツは、只今作成中です。。w。");
+    alert("対象のコンテンツは、只今作成中です。s353。。");
 </script>
-</html>
-
