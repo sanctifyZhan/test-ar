@@ -73,13 +73,11 @@
         <a-entity camera></a-entity>
 
         <a-assets>
-            <img id="my-image">
+          
             <img id="button" src="camera.png">
         </a-assets>
 
-        <a-image src="#my-image"
-                 position="-0.05 1.5 -7" height="2" width="2">
-        </a-image>
+      
 
         <a-image src="#button"
                  position="0 -3 -1" height="1" width="1">
@@ -109,7 +107,7 @@
         choosePic();
         alert("１2");
          let myEl = document.querySelector("#my-image");
-      /*  myEl.setAttribute("visible", "true");*/
+      /*  myEl.setAttribute("visible", "true");   <img id="my-image">*/
         im.reload();
         alert("2");
     });
