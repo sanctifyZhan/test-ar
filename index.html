@@ -3,6 +3,7 @@
 <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 <!-- we import arjs version without NFT but with marker + location based support -->
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
 <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 
@@ -67,13 +68,7 @@
                   videohandler>
             <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2"></a-video>
         </a-marker>
-        <a-assets>
-            <img id="my-image">
 
-        </a-assets>
-        <a-image src="#my-image"
-                 position="0 -1.5 -2" height="2"  width="2" >
-        </a-image>
         <!--
         <a-marker preset="hiro">
             <a-entity position="-2 -1 0"
@@ -87,6 +82,8 @@
                       gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"></a-entity>
         </a-marker>-->
 
+        <a-box id="blue" color="#0000AA" position="0 3 -7" visible="false"
+               event-set__resvis="_event: click; visible: false"></a-box>
         <a-entity camera></a-entity>
     </a-scene>
     <div class="ui">
@@ -97,16 +94,6 @@
 <script>
     var video = document.getElementById("vid");
     video.play();
-    var myPix = new Array("ass/1.png", "ass/2.jpg", "ass/3.png");
-    var take_photo_btn = document.querySelector('#take-phot');
-    take_photo_btn.addEventListener("click", function (e) {
-        choosePic();
-        alert("対象のコンテンツは、只今作成中です。s3。。");
-    });
-    function choosePic() {
-        var randomNum = Math.floor(Math.random() * myPix.length);
-        document.getElementById("my-image").src = myPix[randomNum];
-        take_photo_btn.classList.add("disabled");
-    }
+
     alert("対象のコンテンツは、只今作成中です。。。");
 </script>
