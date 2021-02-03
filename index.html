@@ -91,11 +91,13 @@
 
         <a-assets>
             <img id="my-image">
+
         </a-assets>
 
         <a-image src="#my-image"
                  position="0 1 -6" height="2" width="2" visible="false">
         </a-image>
+
 
     </a-scene>
     <div class="ui">
@@ -104,16 +106,22 @@
 </body>
 </html>
 <script>
-
     var video = document.getElementById("vid");
     video.play();
 
+    var pln = document.querySelector("#my-image");
+    var sceneElement = document.querySelector("a-scene");
+    var ass = document.querySelector("a-assets");
+
+
+
+
+    var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-photo');
 
     take_photo_btn.addEventListener("click", function (e) {
         var image = document.querySelector("a-image");
         var videotag = document.querySelector("video");
-        var sceneElement = document.querySelector("a-scene");
         image.setAttribute('visible', true);
         videotag.pause();
         choosePic();
@@ -122,11 +130,10 @@
     });
 
     function choosePic() {
-        var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
     }
 
-    alert("対象のコンテンツは、只今作成中です。2。。");
+    alert("対象のコンテンツは、只今作成中です。22。。");
 
 </script>
