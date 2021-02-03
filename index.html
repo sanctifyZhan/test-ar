@@ -8,6 +8,20 @@
 <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 
+    .overlay {
+        position: fixed; /* Sit on top of the page content */
+        display: none; /* Hidden by default */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer; /* Add a pointer on hover */
+    }
+
     .ui {
         position: absolute;
         z-index: 100;
@@ -53,7 +67,8 @@
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs
              device-orientation-permission-ui="enabled: false"
-             vr-mode-ui="enabled: false">
+             vr-mode-ui="enabled: false"
+             >
 
         <video id="vid"
                src="Dance.mp4"
@@ -112,6 +127,7 @@
         video.pause();
         choosePic();
         take_photo_btn.classList.add("disabled");
+        sceneElement.classList.add("overlay");
     });
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
@@ -119,6 +135,6 @@
 
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。22");
+    alert("対象のコンテンツは、只今作成中です。。9。");
 
 </script>
