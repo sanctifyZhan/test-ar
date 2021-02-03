@@ -159,7 +159,12 @@
         image.setAttribute('src', snap);
 
         image.classList.add('visible');
+         // 削除ボタンと保存ボタン有効
+        delete_photo_btn.classList.remove("disabled");
+        download_photo_btn.classList.remove("disabled");
 
+        // 保存ボタンにスナップショットを渡す
+        download_photo_btn.href = snap;
 
 
     });
@@ -213,7 +218,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。");
+    alert("対象のコンテンツは、只今作成中です。2");
 
 </script>
 </html>
