@@ -115,26 +115,19 @@
     var video = document.getElementById("vid");
     video.play();
 
-    var take_photo_btn = document.querySelector('#take-photo');
+/*    var take_photo_btn = document.querySelector('#take-photo');*/
 
-    take_photo_btn.addEventListener("click", function (e) {
-        var image = document.querySelector("a-image");
-        var videotag = document.querySelector("video");
-        var sceneElement = document.querySelector("a-scene");
-        image.setAttribute('visible', true);
-        videotag.pause();
-        choosePic();
-        take_photo_btn.classList.add("disabled");
-        sceneElement.classList.add("overlay");
+  /*  take_photo_btn.addEventListener("click", function (e) {
+      
     });
-
+*/
     function choosePic() {
         var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。1");
+    alert("対象のコンテンツは、只今作成中です。。。12");
 
 
 
@@ -144,17 +137,27 @@
 
 
             // Container starts hidden so it isn't visible when the page is still loading
-            container.style.display = 'block'
+            container.style.display = "block"
 
-            var take_photo_btn = document.querySelector('#take-photo');
+            var take_photo_btn = document.querySelector("#take-photo");
 
-            take_photo_btn.addEventListener('click', () => {
+            take_photo_btn.addEventListener("click", () => {
+                alert("対象のコンテンツは、只今作成中です。。。vao");
+                  var image = document.querySelector("a-image");
+        var videotag = document.querySelector("video");
+        var sceneElement = document.querySelector("a-scene");
+        image.setAttribute('visible', true);
+        videotag.pause();
+                choosePic();
+                alert("対象のコンテンツは、只今作成中です。。。chonse");
+        take_photo_btn.classList.add("disabled");
+        sceneElement.classList.add("overlay");
                 // Emit a screenshotrequest to the xrweb component
-                this.el.sceneEl.emit('screenshotrequest')
+                this.el.sceneEl.emit("screenshotrequest")
 
                 // Show the flash while the image is being taken
-                container.classList.add('vid')
-                container.classList.add('my-image')
+                container.classList.add("vid")
+                container.classList.add("my-image")
             })
 
          /*   this.el.sceneEl.addEventListener('screenshotready', e => {
@@ -173,7 +176,7 @@
                 // Show the photo
                 container.classList.add('photo')
             })*/
-             alert("対象のコンテンツは、只今作成中です。。。2");
+             alert("対象のコンテンツは、只今作成中です。。。23");
         }
     })
 
