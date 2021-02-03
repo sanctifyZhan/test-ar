@@ -9,6 +9,7 @@
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
 
@@ -79,13 +80,6 @@
             #snap.visible {
                 visibility: visible;
             }
-            div {
-    opacity:1;
-    transition:opacity 500ms;
-}
-div.waa {
-    opacity:0;
-}
    
 
     </style>
@@ -135,9 +129,11 @@ div.waa {
 </body>
 
 <script>
-setTimeout(function(){
-    document.getElementById('container').className = 'waa';
-}, 3000);
+
+
+$(document).ready(function() {
+  $('#container').fadeOut(5000); // 5 seconds x 1000 milisec = 5000 milisec
+});
 
     var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
@@ -231,7 +227,7 @@ setTimeout(function(){
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。44");
+    alert("対象のコンテンツは、只今作成中です。");
 
 </script>
 </html>
