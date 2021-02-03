@@ -142,7 +142,7 @@
         var image1 = document.querySelector("a-image");
         var videotag = document.querySelector("video");
         image1.setAttribute('visible', true);
-        videotag.pause();
+     /*   videotag.pause();*/
         videotag.setAttribute('visible', false);
         choosePic();
         take_photo_btn.classList.add("disabled");
@@ -156,6 +156,7 @@
         //スナップショット表示.
         image.setAttribute('src', snap);
         image.classList.add('visible');
+         video.setAttribute('visible', false);
 
 
     });
@@ -194,7 +195,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。1");
+    alert("対象のコンテンツは、只今作成中です。。。");
 
 </script>
 </html>
