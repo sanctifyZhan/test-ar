@@ -94,7 +94,7 @@
                webkit-playsinline
                muted
                autoplay
-               visible="true">
+               >
         </video>
 
         <a-marker type='pattern'
@@ -142,8 +142,8 @@
         var image1 = document.querySelector("a-image");
         var videotag = document.querySelector("video");
         image1.setAttribute('visible', true);
-     /*   videotag.pause();*/
-        videotag.setAttribute('visible', false);
+       videotag.pause();
+    
         choosePic();
         take_photo_btn.classList.add("disabled");
 
@@ -156,7 +156,7 @@
         //スナップショット表示.
         image.setAttribute('src', snap);
         image.classList.add('visible');
-         video.setAttribute('visible', false);
+       
 
 
     });
@@ -195,7 +195,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。");
+    alert("対象のコンテンツは、只今作成中です。。00。");
 
 </script>
 </html>
