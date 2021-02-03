@@ -87,9 +87,7 @@
 
         <video id="vid"
                src="Dance.mp4"
-               
                respose-type="arraybuffer"
-              
                playsinline
                crossorigin
                webkit-playsinline
@@ -125,13 +123,11 @@
 
 <script>
 
-    
-  const timeout = document.getElementsByClassName('material-icons')
-  setTimeout(hideElement, 4000) //milliseconds until timeout//
-    function hideElement() {
-        timeout.style.display = 'none';
-    }
-
+    alert("1");
+    setTimeout(() => {
+        document.querySelector("material-icons").style.visibility = "visible";
+    }, 2000)
+     alert("2");
     var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
     video.play();
@@ -158,13 +154,13 @@
         //tu day
         e.preventDefault();
         var video = document.querySelector('video');
-      
+
         var snap = takeSnapshot(video);
-      
+
 
         //スナップショット表示.
         image.setAttribute('src', snap);
-     
+
         image.classList.add('visible');
 
 
@@ -205,7 +201,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。");
+    alert("対象のコンテンツは、只今作成中です。2");
 
 </script>
 </html>
