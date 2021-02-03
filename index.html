@@ -84,7 +84,17 @@
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
 
-
+        <video id="vid"
+               src="Dance.mp4"
+               preload="auto"
+               respose-type="arraybuffer"
+               loop="true"
+               playsinline
+               crossorigin
+               webkit-playsinline
+               muted
+               autoplay>
+        </video>
 
         <a-marker type='pattern'
                   url='pattern-13.patt'
@@ -145,8 +155,7 @@
         image.setAttribute('src', snap);
         image.classList.add('visible');
 
-        var videota = document.querySelector("video");
-        videota.setAttribute('visible', false);
+
 
     });
 
@@ -184,7 +193,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。。99。");
+    alert("対象のコンテンツは、只今作成中です。。。!");
 
 </script>
 </html>
