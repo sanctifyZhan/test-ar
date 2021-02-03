@@ -40,7 +40,6 @@
             padding: 10px 15px 30px;
             text-align: center;
             box-sizing: border-box;
-           visibility: hidden;
         }
 
             .ui a {
@@ -81,10 +80,6 @@
             #snap.visible {
                 visibility: visible;
             }
-   
-div.waa {
-    opacity:1;
-}
 
 
     </style>
@@ -124,7 +119,7 @@ div.waa {
 
 
     </a-scene>
-    <div class="ui" id ="container"> 
+    <div class="ui" id ="container" visibility="hidden"> 
         <img id="snap">
         <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
@@ -138,7 +133,7 @@ div.waa {
 
 
 setTimeout(function(){
-    document.getElementById('container').className = 'waa';
+    document.getElementById('container').style.visibility = "visible";
 }, 5000);
 
     var image = document.querySelector('#snap');
@@ -233,7 +228,7 @@ setTimeout(function(){
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。3");
+    alert("対象のコンテンツは、只今作成中です。39");
 
 </script>
 </html>
