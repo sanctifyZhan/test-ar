@@ -131,9 +131,14 @@
 <script>
 
 
-$(document).ready(function() {
-  $('#container').fadeOut(5000); // 5 seconds x 1000 milisec = 5000 milisec
-});
+
+
+function myFunction() {
+  setTimeout(function(){ 
+      alert("Hello"); 
+  $('#container');
+  }, 3000);
+}
 
     var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
@@ -227,7 +232,7 @@ $(document).ready(function() {
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。");
+    alert("対象のコンテンツは、只今作成中です。2");
 
 </script>
 </html>
