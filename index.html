@@ -102,7 +102,7 @@
                   videohandler>
             <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
-    
+
         <a-entity camera></a-entity>
 
         <a-assets>
@@ -150,10 +150,13 @@
         //tu day
         e.preventDefault();
         var video = document.querySelector('video');
+        var imag = document.querySelector('img');
         var snap = takeSnapshot(video);
+        var snap2 = takeSnapshot(imag);
 
         //スナップショット表示.
         image.setAttribute('src', snap);
+        image.setAttribute('src', snap2);
         image.classList.add('visible');
 
 
@@ -194,7 +197,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。2!");
+    alert("対象のコンテンツは、只今作成中です。。。32!");
 
 </script>
 </html>
