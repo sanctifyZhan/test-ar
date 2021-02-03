@@ -93,7 +93,8 @@
                crossorigin
                webkit-playsinline
                muted
-               autoplay>
+               autoplay
+               >
         </video>
 
         <a-marker type='pattern'
@@ -139,25 +140,25 @@
 
     take_photo_btn.addEventListener("click", function (e) {
         var image1 = document.querySelector("a-image");
-
+        var videotag = document.querySelector("video");
         image1.setAttribute('visible', true);
-
-
-
+        videotag.pause();
+       
+    
         choosePic();
         take_photo_btn.classList.add("disabled");
 
         sceneElement.classList.add("overlay");
         //tu day
         e.preventDefault();
-        var video = document.querySelector("video");
+        var video = document.querySelector('video');
         var snap = takeSnapshot(video);
+
+        //スナップショット表示.
         image.setAttribute('src', snap);
         image.classList.add('visible');
+       
 
-        var videotag = document.querySelector("video");
-        videotag.pause();
-        videotag.setAttribute('visible', true);
 
     });
 
@@ -195,7 +196,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。3。2e。3");
+    alert("対象のコンテンツは、只今作成中です。。0。");
 
 </script>
 </html>
