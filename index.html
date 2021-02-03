@@ -71,7 +71,18 @@
     <!-- ③ シーンを追加 -->
     <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
         <a-marker preset='hiro'>
-            <a-box position="0 0.5 0" wireframe="true"></a-box>
+            <video id="vid"
+                   src="Dance.mp4"
+                   preload="auto"
+                   respose-type="arraybuffer"
+                   loop="true"
+                   playsinline
+                   crossorigin
+                   webkit-playsinline
+                   muted
+                   autoplay>
+            </video>
+            <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2"></a-video>
         </a-marker>
 
         <!-- ⑥ カメラを追加 -->
