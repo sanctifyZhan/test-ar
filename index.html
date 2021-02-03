@@ -126,6 +126,7 @@
         videotag.pause();
         choosePic();
         take_photo_btn.classList.add("disabled");
+        document.querySelector('a-scene').components.screenshot.capture('perspective');
         sceneElement.classList.add("overlay");
     });
 
@@ -134,6 +135,6 @@
         document.getElementById("my-image").src = myPix[randomNum];
     }
 
-    alert("対象のコンテンツは、只今作成中です。22。。");
+    alert("対象のコンテンツは、只今作成中です。。。");
 
 </script>
