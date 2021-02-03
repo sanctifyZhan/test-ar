@@ -1,84 +1,83 @@
 ﻿
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>渋沢栄一ARークーポン</title>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
 
-        .overlay {
-            position: fixed; /* Sit on top of the page content */
-            /* Hidden by default */
-            width: 100%; /* Full width (cover the whole page) */
-            height: 100%; /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer; /* Add a pointer on hover */
+
+<title>渋沢栄一ARークーポン</title>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+
+    .overlay {
+        position: fixed; /* Sit on top of the page content */
+        /* Hidden by default */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer; /* Add a pointer on hover */
+    }
+
+    .ui {
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 10px 15px 30px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+        .ui a {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            line-height: 100%;
+            color: #303030;
+            margin: 10px 3px;
+            border-radius: 50%;
+            position: relative;
         }
 
-        .ui {
-            position: absolute;
-            z-index: 100;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 10px 15px 30px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-            .ui a {
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                background-color: #ffffff;
-                line-height: 100%;
-                color: #303030;
-                margin: 10px 3px;
-                border-radius: 50%;
-                position: relative;
+            .ui a i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
             }
 
-                .ui a i {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                }
-
-                .ui a:active {
-                    color: #ff0000;
-                }
-
-                .ui a.disabled {
-                    pointer-events: none;
-                    color: #cccccc;
-                }
-
-        #snap {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            visibility: hidden;
-        }
-
-            #snap.visible {
-                visibility: visible;
+            .ui a:active {
+                color: #ff0000;
             }
-    </style>
-</head>
+
+            .ui a.disabled {
+                pointer-events: none;
+                color: #cccccc;
+            }
+
+    #snap {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        visibility: hidden;
+    }
+
+        #snap.visible {
+            visibility: visible;
+        }
+</style>
+
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs
              device-orientation-permission-ui="enabled: false"
@@ -121,7 +120,7 @@
 
     </div>
 </body>
-
+</html>
 <script>
     var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
@@ -193,7 +192,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。");
+    alert("対象のコンテンツは、只今作成中です。。。da");
 
 </script>
-</html>
+
