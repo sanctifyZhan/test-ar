@@ -78,6 +78,16 @@
             #snap.visible {
                 visibility: visible;
             }
+
+            #container {
+    overflow:hidden;
+    position:relative;
+}
+            #take-photo {
+    -webkit-animation: cssAnimation 5s forwards; 
+    animation: cssAnimation 5s forwards;
+}
+
     </style>
 </head>
 <body style="margin : 0px; overflow: hidden;">
@@ -98,7 +108,7 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+            <a-video src="#vid" position="-1 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -114,7 +124,7 @@
 
 
     </a-scene>
-    <div class="ui">
+    <div class="ui" id ="container"> 
         <img id="snap">
         <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
@@ -124,7 +134,7 @@
 </body>
 
 <script>
-
+var hiddendui = document.getElementsByClassName("");
 
     var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
@@ -150,7 +160,7 @@
         // sceneElement.classList.add("overlay");
         //tu day
         e.preventDefault();
-        var video = document.querySelector('video');
+        var video = document.querySelector('a-scene ');
 
         var snap = takeSnapshot(video);
 
@@ -218,7 +228,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。1");
+    alert("対象のコンテンツは、只今作成中です。2");
 
 </script>
 </html>
