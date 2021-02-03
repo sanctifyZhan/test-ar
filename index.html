@@ -111,11 +111,7 @@
 
     var pln = document.querySelector("#my-image");
     var sceneElement = document.querySelector("a-scene");
-    var ass = document.querySelector("a-assets");
-
-
-
-
+ 
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-photo');
 
@@ -126,7 +122,7 @@
         videotag.pause();
         choosePic();
         take_photo_btn.classList.add("disabled");
-        document.querySelector('a-scene').components.screenshot.capture('perspective');
+        document.querySelector('a-scene').components.screenshot.getCanvas('equirectangular');
         sceneElement.classList.add("overlay");
     });
 
@@ -135,6 +131,6 @@
         document.getElementById("my-image").src = myPix[randomNum];
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。");
+    alert("対象のコンテンツは、只今作成中です。234。。");
 
 </script>
