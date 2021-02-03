@@ -7,6 +7,16 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
+    .overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        opacity: 0.8;
+        z-index: 1001;
+    }
 
     .ui {
         position: absolute;
@@ -112,6 +122,10 @@
         video.pause();
         choosePic();
         take_photo_btn.classList.add("disabled");
+
+        $(document).ready(function () {
+            $(".overlay").show();
+        });
     });
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
@@ -119,6 +133,6 @@
 
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。1");
+    alert("対象のコンテンツは、只今作成中です。。。");
 
 </script>
