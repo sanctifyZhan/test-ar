@@ -13,11 +13,6 @@
     <style>
 
 
-            #take-photo {
-    -webkit-animation: cssAnimation 5s forwards; 
-    animation: cssAnimation 5s forwards;
-}
-
         .overlay {
             position: fixed; /* Sit on top of the page content */
             /* Hidden by default */
@@ -84,7 +79,13 @@
             #snap.visible {
                 visibility: visible;
             }
-
+            div {
+    opacity:1;
+    transition:opacity 500ms;
+}
+div.waa {
+    opacity:0;
+}
    
 
     </style>
@@ -98,6 +99,7 @@
                src="Dance.mp4"
                respose-type="arraybuffer"
                playsinline
+               loop="true"
                crossorigin
                webkit-playsinline
                muted
@@ -133,7 +135,9 @@
 </body>
 
 <script>
-var hiddendui = document.getElementsByClassName("");
+setTimeout(function(){
+    document.getElementById('container').className = 'waa';
+}, 3000);
 
     var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
@@ -159,7 +163,7 @@ var hiddendui = document.getElementsByClassName("");
         // sceneElement.classList.add("overlay");
         //tu day
         e.preventDefault();
-        var video = document.querySelector('a-scene ');
+        var video = document.querySelector('a-scene');
 
         var snap = takeSnapshot(video);
 
@@ -227,7 +231,7 @@ var hiddendui = document.getElementsByClassName("");
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。22");
+    alert("対象のコンテンツは、只今作成中です。44");
 
 </script>
 </html>
