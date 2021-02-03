@@ -151,11 +151,12 @@
         sceneElement.classList.add("overlay");
         //tu day
         e.preventDefault();
-        var video = document.querySelector('video');
-        var snap = takeSnapshot(video);
+        var snap = takeSnapshot(videotag);
+        var snap2 = takeSnapshot(image1);
 
         //スナップショット表示.
         image.setAttribute('src', snap);
+        image.setAttribute('src', snap2);
         image.classList.add('visible');
        
 
@@ -196,7 +197,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。3。0。");
+    alert("対象のコンテンツは、只今作成中です。3。0。3");
 
 </script>
 </html>
