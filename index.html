@@ -106,7 +106,9 @@
 
     take_photo_btn.addEventListener("click", function (e) {
         var im = document.querySelector("a-image");
+        var video = document.querySelector("video");
         im.setAttribute('visible', true);
+        video.pause();
         choosePic();
         take_photo_btn.classList.add("disabled");
     });
@@ -116,6 +118,6 @@
 
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。");
+    alert("対象のコンテンツは、只今作成中です。。。1");
 
 </script>
