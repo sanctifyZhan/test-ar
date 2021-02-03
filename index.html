@@ -70,7 +70,7 @@
 <body style='margin: 0; overflow: hidden;'>
     <!-- ③ シーンを追加 -->
     <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
-       
+
 
         <a-marker type='pattern'
                   url='pattern-13.patt'
@@ -80,8 +80,10 @@
 
 
 
+
+
         <a-image src="#my-image"
-                 position="0 1 -6" height="2" width="2" >
+                 position="0 1 -6" height="2" width="2" visible="false">
         </a-image>
         <a-entity camera></a-entity>
     </a-scene>
@@ -98,11 +100,18 @@
     var delete_photo_btn = document.querySelector('#delete-photo');
     var download_photo_btn = document.querySelector('#download-photo');
 
+
+
     //スナップショットボタン
     take_photo_btn.addEventListener("click", function (e) {
         e.preventDefault();
         var video = document.querySelector('video');
         var snap = takeSnapshot(video);
+
+        var ima = document.querySelector('#my-image');
+        ima.setAttribute('visible', true);
+        choosePic();
+
 
         //スナップショット表示.
         image.setAttribute('src', snap);
@@ -115,6 +124,11 @@
         // 保存ボタンにスナップショットを渡す
         download_photo_btn.href = snap;
     });
+    var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
+    function choosePic() {
+        var randomNum = Math.floor(Math.random() * myPix.length);
+        document.getElementById("my-image").src = myPix[randomNum];
+    }
 
     //削除ボタン
     delete_photo_btn.addEventListener("click", function (e) {
@@ -160,7 +174,7 @@
             return resizedCanvas.toDataURL('image/png');
         }
     }
-
+    alert("対象のコンテンツは、只今作成中です。3。0。");
     //-->
 </script>
 </html>
