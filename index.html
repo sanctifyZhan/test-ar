@@ -66,29 +66,20 @@
 </style>
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs
-             photo-mode
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
 
-        <div id="photoModeContainer" style="display: none">
-            <video id="vid"
-                   src="Dance.mp4"
-                   preload="auto"
-                   respose-type="arraybuffer"
-                   loop="true"
-                   playsinline
-                   crossorigin
-                   webkit-playsinline
-                   muted
-                   autoplay>
-            </video>
-
-            <a-assets>
-                <img id="my-image">
-            </a-assets>
-        </div>
-
-
+        <video id="vid"
+               src="Dance.mp4"
+               preload="auto"
+               respose-type="arraybuffer"
+               loop="true"
+               playsinline
+               crossorigin
+               webkit-playsinline
+               muted
+               autoplay>
+        </video>
 
         <a-marker type='pattern'
                   url='pattern-13.patt'
@@ -98,7 +89,9 @@
 
         <a-entity camera></a-entity>
 
-
+        <a-assets>
+            <img id="my-image">
+        </a-assets>
 
         <a-image src="#my-image"
                  position="0 1 -6" height="2" width="2" visible="false">
@@ -115,69 +108,25 @@
     var video = document.getElementById("vid");
     video.play();
 
-/*    var take_photo_btn = document.querySelector('#take-photo');*/
+    var take_photo_btn = document.querySelector('#take-photo');
 
-  /*  take_photo_btn.addEventListener("click", function (e) {
-      
+    take_photo_btn.addEventListener("click", function (e) {
+        var image = document.querySelector("a-image");
+        var videotag = document.querySelector("video");
+        var sceneElement = document.querySelector("a-scene");
+        image.setAttribute('visible', true);
+        videotag.pause();
+        choosePic();
+        take_photo_btn.classList.add("disabled");
+        sceneElement.classList.add("overlay");
     });
-*/
+
     function choosePic() {
         var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
     }
 
-    alert("対象のコンテンツは、只今作成中です。。。12");
-
-
-
-    AFRAME.registerComponent('photo-mode', {
-        init: function () {
-            const container = document.getElementById('photoModeContainer')
-
-
-            // Container starts hidden so it isn't visible when the page is still loading
-            container.style.display = "block"
-
-            var take_photo_btn = document.querySelector("#take-photo");
-
-            take_photo_btn.addEventListener("click", () => {
-                alert("対象のコンテンツは、只今作成中です。。。vao");
-                  var image = document.querySelector("a-image");
-        var videotag = document.querySelector("video");
-        var sceneElement = document.querySelector("a-scene");
-        image.setAttribute('visible', true);
-        videotag.pause();
-                choosePic();
-                alert("対象のコンテンツは、只今作成中です。。。chonse");
-        take_photo_btn.classList.add("disabled");
-        sceneElement.classList.add("overlay");
-                // Emit a screenshotrequest to the xrweb component
-                this.el.sceneEl.emit("screenshotrequest")
-
-                // Show the flash while the image is being taken
-                container.classList.add("vid")
-                container.classList.add("my-image")
-            })
-
-         /*   this.el.sceneEl.addEventListener('screenshotready', e => {
-                // Hide the flash
-                container.classList.remove('flash')
-
-                // If an error occurs while trying to take the screenshot, e.detail will be empty.
-                // We could either retry or return control to the user
-                if (!e.detail) {
-                    return
-                }
-
-                // e.detail is the base64 representation of the JPEG screenshot
-                image.src = 'data:image/jpeg;base64,' + e.detail
-
-                // Show the photo
-                container.classList.add('photo')
-            })*/
-             alert("対象のコンテンツは、只今作成中です。。。23");
-        }
-    })
+    alert("対象のコンテンツは、只今作成中です。。。92");
 
 </script>
