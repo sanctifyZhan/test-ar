@@ -116,7 +116,7 @@
 
 
     </a-scene>
-    <div class="ui" timeout="5000">
+    <div class="ui">
         <img id="snap">
         <a id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
 
@@ -124,6 +124,14 @@
 </body>
 
 <script>
+
+    
+  const timeout = document.getElementsByClassName('ui')
+  setTimeout(hideElement, 4000) //milliseconds until timeout//
+    function hideElement() {
+        timeout.style.display = 'none';
+    }
+
     var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
     video.play();
@@ -197,7 +205,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。。3。32!");
+    alert("対象のコンテンツは、只今作成中です。3。3。32!");
 
 </script>
 </html>
