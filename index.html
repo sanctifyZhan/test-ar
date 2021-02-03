@@ -23,7 +23,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color:#ffffff; /* Black background with opacity */
+            background-image: url(12.png);
+          /*   background-color:#ffffff; Black background with opacity */
             z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
             cursor: pointer; /* Add a pointer on hover */
         }
@@ -80,6 +81,13 @@
             #snap.visible {
                 visibility: visible;
             }
+            div {
+    opacity:1;
+    transition:opacity 500ms;
+}
+div.waa {
+    opacity:0;
+}
 
 
     </style>
@@ -119,7 +127,7 @@
 
 
     </a-scene>
-    <div class="ui" id ="container" visibility="hidden"> 
+    <div class="ui" id ="container"> 
         <img id="snap">
         <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
@@ -131,9 +139,8 @@
 <script>
 
 
-
 setTimeout(function(){
-    document.getElementById('container').visibility = "visible";
+    document.getElementById('container').className = 'waa';
 }, 5000);
 
     var image = document.querySelector('#snap');
@@ -228,7 +235,7 @@ setTimeout(function(){
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。3a98");
+    alert("対象のコンテンツは、只今作成中です。3aa8");
 
 </script>
 </html>
