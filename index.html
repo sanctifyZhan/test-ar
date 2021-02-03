@@ -75,7 +75,7 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <img id="my-image">
+            <img id="my-image"></img>
         </a-marker>
 
 
@@ -83,7 +83,7 @@
 
 
         <a-image src="#my-image"
-                 position="0 1 -6" height="2" width="2" >
+                 position="0 1 -6" height="2" width="2" visible="false">
         </a-image>
         <a-entity camera></a-entity>
     </a-scene>
@@ -104,13 +104,14 @@
 
     //スナップショットボタン
     take_photo_btn.addEventListener("click", function (e) {
+        var ima = document.querySelector('#my-image');
+        ima.setAttribute('visible', true);
+        choosePic();
         e.preventDefault();
         var video = document.querySelector('video');
         var snap = takeSnapshot(video);
 
-        var ima = document.querySelector('#my-image');
-        ima.setAttribute('visible', true);
-        choosePic();
+        
 
 
         //スナップショット表示.
@@ -174,7 +175,7 @@
             return resizedCanvas.toDataURL('image/png');
         }
     }
-    alert("対象のコンテンツは、只今作成中です。。0。");
+    alert("対象のコンテンツは、只今作成中です。2。0。");
     //-->
 </script>
 </html>
