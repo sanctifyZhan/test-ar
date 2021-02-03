@@ -93,7 +93,8 @@
                crossorigin
                webkit-playsinline
                muted
-               autoplay>
+               autoplay
+               >
         </video>
 
         <a-marker type='pattern'
@@ -117,18 +118,13 @@
     </a-scene>
     <div class="ui">
         <img id="snap">
-
-        <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
-        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-        <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
+        <a id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
 
     </div>
 </body>
 
 <script>
     var image = document.querySelector('#snap');
-    var delete_photo_btn = document.querySelector('#delete-photo');
-    var download_photo_btn = document.querySelector('#download-photo');
     var video = document.getElementById("vid");
     video.play();
 
@@ -143,16 +139,16 @@
     var take_photo_btn = document.querySelector('#take-photo');
 
     take_photo_btn.addEventListener("click", function (e) {
-      /*  var image1 = document.querySelector("a-image");
+        var image1 = document.querySelector("a-image");
         var videotag = document.querySelector("video");
         image1.setAttribute('visible', true);
         videotag.pause();
         videotag.setAttribute('visible', false);
-
+    
         choosePic();
-        
+        take_photo_btn.classList.add("disabled");
 
-        sceneElement.classList.add("overlay");*/
+        sceneElement.classList.add("overlay");
         //tu day
         e.preventDefault();
         var video = document.querySelector('video');
@@ -161,13 +157,7 @@
         //スナップショット表示.
         image.setAttribute('src', snap);
         image.classList.add('visible');
-        // 削除ボタンと保存ボタン有効
-        delete_photo_btn.classList.remove("disabled");
-        download_photo_btn.classList.remove("disabled");
-
-        // 保存ボタンにスナップショットを渡す
-        download_photo_btn.href = snap;
-
+       
 
 
     });
@@ -176,20 +166,6 @@
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
     }
-    //削除ボタン
-    delete_photo_btn.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        // スナップショットを隠す
-        image.setAttribute('src', "");
-        image.classList.remove("visible");
-
-        // 削除ボタンと保存ボタン無効
-        delete_photo_btn.classList.add("disabled");
-        download_photo_btn.classList.add("disabled");
-
-    });
 
     function takeSnapshot(video) {
         var resizedCanvas = document.createElement("canvas");
@@ -220,7 +196,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。。21。");
-    
+    alert("対象のコンテンツは、只今作成中です。3。0。");
+
 </script>
 </html>
