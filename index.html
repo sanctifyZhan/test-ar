@@ -127,6 +127,10 @@
     </div>
 
     <script>
+
+
+
+
         var audio = new Audio('n.mp3');
         $('#container').hide();
 
@@ -154,33 +158,10 @@
         }
 
         
-       
-
+        
         take_photo_btn.addEventListener("click", function (e) {
-            audio.play();
-            var image1 = document.querySelector("a-image");
-            var videotag = document.querySelector("video");
-            image1.setAttribute('visible', true);
-            videotag.pause();
-            videotag.setAttribute('visible', false);
-            choosePic();
-            // take_photo_btn.classList.add("disabled");
-            sceneElement.classList.add("overlay");
-            //tu day
-            e.preventDefault();
-            //スナップショット表示.
-            image.classList.add('visible');
-            // 削除ボタンと保存ボタン有効
+            document.querySelector('a-scene').components.screenshot.capture('perspective');
 
-            // 保存ボタンにスナップショットを渡す
-            //
-           
-            setTimeout(function () {
-                $('#container').fadeOut();
-            }, 0.1);
-            alert("as");
-            document.getElementsByTagName("video")[0].setAttribute('visible', false);
-            alert("as2");
         });
 
         function choosePic() {
@@ -190,7 +171,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です。。1。");
+        alert("対象のコンテンツは、只今作成中です。2。1。");
 
     </script>
 </body>
