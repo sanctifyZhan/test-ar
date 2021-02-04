@@ -171,7 +171,13 @@
             alert("1");
 
             $(document).ready(function () {
-                $('#hideMeNow').attr('visible', false);
+
+
+                var hide = document.querySelector('.hideMeNow');
+
+                hide.setAttribute('visible', false);
+
+
             });
 
 
@@ -186,7 +192,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です。。。");
+        alert("対象のコンテンツは、只今作成中です。2。。");
 
     </script>
 </body>
