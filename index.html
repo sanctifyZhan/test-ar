@@ -129,15 +129,20 @@
 
     <script>
 
-        $('#container').hide();
+    /*    $('#container').hide();
 
         setTimeout(function () {
             $('#container').fadeIn('slow');
         }, 8000);
-
+*/
+          var video = document.getElementById("vid");
+        video.addEventListener('materialvideoended', function() {
+  // show button
+            $('#container').fadeIn('slow');
+        });
 
         var image = document.querySelector('#snap');
-        var video = document.getElementById("vid");
+      
         video.play();
 
         var sceneElement = document.querySelector("a-scene");
@@ -166,10 +171,10 @@
             download_photo_btn.classList.remove("disabled");
             // 保存ボタンにスナップショットを渡す
             //----------//
-             alert("1。");
+            /* alert("1。");
             $("container").hide();
             $('#container').fadeOut();
-            alert("2。");
+            alert("2。");*/
         });
 
         function choosePic() {
@@ -179,7 +184,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です。21。8。");
+        alert("対象のコンテンツは、只今作成中です。21。28。");
 
     </script>
 </body>
