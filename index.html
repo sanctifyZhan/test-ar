@@ -72,7 +72,6 @@
                     color: #cccccc;
                 }
 
-
         #snap {
             max-width: 100%;
             height: auto;
@@ -104,7 +103,7 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-video src="#vid" position="-1.5 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+            <a-video src="#vid" position="-1.5 0 0" rotation="-90 -5 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
         <a-entity camera position="0 0 0"></a-entity>
@@ -121,7 +120,6 @@
     <div class="ui" id="container">
         <img id="snap">
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-
     </div>
 
     <script>
@@ -130,7 +128,7 @@
 
         setTimeout(function () {
             $('#container').fadeIn('slow');
-            document.getElementById("vid").style.transform = "rotate(7deg)";
+           
         }, 6000);
 
 
@@ -167,6 +165,9 @@
             setTimeout(function () {
                 $('#container').fadeOut();
             }, 0.1);
+            setTimeout(function () {
+                $('#vid').fadeOut();
+            }, 0.1);
            // alert("2");
         });
 
@@ -177,7 +178,7 @@
 
 
 
-           // alert("対象のコンテンツは、只今作成中です1。93。。");
+            alert("対象のコンテンツは、只今作成中です。。。");
 
     </script>
 </body>
