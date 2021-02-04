@@ -104,7 +104,7 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-video src="#vid" position="-1.5 0 0" rotation="-90 30 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+            <a-video src="#vid" position="-1.5 0 0" rotation="-90 0 30" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
         <a-entity camera position="0 0 0"></a-entity>
@@ -126,7 +126,7 @@
 
 
     <script>
-
+        var audio = new Audio('n.mp3');
         $('#container').hide();
 
         setTimeout(function () {
@@ -147,7 +147,7 @@
 
 
         take_photo_btn.addEventListener("click", function (e) {
-
+            audio.play();
             var image1 = document.querySelector("a-image");
             var videotag = document.querySelector("video");
             image1.setAttribute('visible', true);
@@ -165,10 +165,6 @@
             // 保存ボタンにスナップショットを渡す
 
             $("container").hide();
-
-            var audio = new Audio('n.mp3');
-     
-            audio.play();
 
         });
 
