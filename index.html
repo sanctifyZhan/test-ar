@@ -10,6 +10,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
 
@@ -70,6 +71,7 @@
                     pointer-events: none;
                     color: #cccccc;
                 }
+
 
         #snap {
             max-width: 100%;
@@ -160,26 +162,20 @@
         videotag.pause();
         videotag.setAttribute('visible', false)
         choosePic();
-        take_photo_btn.classList.add("disabled");
-
+       // take_photo_btn.classList.add("disabled");
         sceneElement.classList.add("overlay");
         //tu day
         e.preventDefault();
-        
-
-
         //スナップショット表示.
-    
-
         image.classList.add('visible');
         // 削除ボタンと保存ボタン有効
         delete_photo_btn.classList.remove("disabled");
         download_photo_btn.classList.remove("disabled");
-
         // 保存ボタンにスナップショットを渡す
-       
-
-
+       //----------//
+        alert("1");
+    $( "div" ).hide();
+        alert("2");
     });
 
   
@@ -192,7 +188,7 @@
 
   
 
-    alert("対象のコンテンツは、只今作成中です。1");
+    alert("対象のコンテンツは、只今作成中です。end");
 
 </script>
 </html>
