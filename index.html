@@ -84,85 +84,76 @@
     <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
-        <a-camera position="2 0 3">
-            <a-entity cursor="fuse: true; maxDistance: 30; timeout: 1000">
-            </a-entity>
-        </a-camera>
-        <a-entity id="scene1">
-            <a-cube color="red" onclick="nextScene()"> </a-cube>
-            <video id="vid"
-                   src="Dance.mp4"
-                   respose-type="arraybuffer"
-                   playsinline
-                   crossorigin
-                   webkit-playsinline
-                   muted
-                   autoplay>
-            </video>
 
-            <a-marker type='pattern'
-                      url='pattern-13.patt'
-                      videohandler>
-                <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
-            </a-marker>
+
+        <a-cube color="red" onclick="nextScene()"> </a-cube>
+        <video id="vid"
+               src="Dance.mp4"
+               respose-type="arraybuffer"
+               playsinline
+               crossorigin
+               webkit-playsinline
+               muted
+               autoplay>
+        </video>
+
+        <a-marker type='pattern'
+                  url='pattern-13.patt'
+                  videohandler>
+            <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+        </a-marker>
 
 
 
-            <a-assets>
-                <img id="my-image">
+        <a-assets>
+            <img id="my-image">
 
-            </a-assets>
+        </a-assets>
 
-            <a-image src="#my-image"
-                     position="0 1 -6" height="2" width="2" visible="false">
-            </a-image>
-        </a-entity>
+        <a-image src="#my-image"
+                 position="0 1 -6" height="2" width="2" visible="false">
+        </a-image>
 
-        <a-entity id="scene2" visible="false">
-            <a-cube color="green" position="0 2 -5"> </a-cube>
-            <a-cube color="yellow" position="5 0 -5"> </a-cube>
-            <a-cube color="blue" position="0 0 -1"> </a-cube>
-        </a-entity>
+        <a-entity camera></a-entity>
+
     </a-scene>
     <div class="ui" id="uitong">
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
     </div>
+
+
+    <script>
+
+
+        var video = document.getElementById("vid");
+        video.play();
+
+
+
+        var sceneElement = document.querySelector("a-scene");
+
+        var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
+        var take_photo_btn = document.querySelector('#take-photo');
+
+        take_photo_btn.addEventListener("click", function (e) {
+
+            var image1 = document.querySelector("a-image");
+            image1.setAttribute('visible', true);
+
+            choosePic();
+            take_photo_btn.classList.add("disabled");
+
+        });
+
+
+        function choosePic() {
+            var randomNum = Math.floor(Math.random() * myPix.length);
+            document.getElementById("my-image").src = myPix[randomNum];
+        }
+
+
+        alert("対象のコンテンツは、只今作成中です。");
+
+    </script>
 </body>
-
-<script>
-     function nextScene() {
-    document.getElementById('scene1').setAttribute('visible', 'false')
-    document.getElementById('scene2').setAttribute('visible', 'true')
-  }
-
-    var video = document.getElementById("vid");
-    video.play();
-
-
-
-    var sceneElement = document.querySelector("a-scene");
-
-    var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
-    var take_photo_btn = document.querySelector('#take-photo');
-
-    take_photo_btn.addEventListener("click", function (e) {
-
-        var image1 = document.querySelector("a-image");
-        image1.setAttribute('visible', true);
-
-        choosePic();
-        take_photo_btn.classList.add("disabled");
-
-    });
-
-
-    function choosePic() {
-        var randomNum = Math.floor(Math.random() * myPix.length);
-        document.getElementById("my-image").src = myPix[randomNum];
-    }
-
-
-    alert("対象のコンテンツは、只今作成中です。21");
-
-</script>
 </html>
