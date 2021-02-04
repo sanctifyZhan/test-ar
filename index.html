@@ -84,8 +84,8 @@
             }
     </style>
 </head>
-<body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
+<body>
+    <a-scene 
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
 
@@ -142,10 +142,7 @@
         var myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
         var take_photo_btn = document.querySelector('#take-photo');
 
-        alert("13");
-        
-            
-           alert("2");
+       
 
         take_photo_btn.addEventListener("click", function (e) {
             audio.play();
@@ -167,6 +164,11 @@
             setTimeout(function () {
                 $('#container').fadeOut();
             }, 0.1);
+
+             alert("13");
+        
+            
+           alert("2");
             
         });
 
@@ -177,7 +179,7 @@
 
 
 
-            alert("対象のコンテンツは、只今作成中です。1。。");
+            alert("対象のコンテンツは、只今作成中です。12。。");
 
     </script>
 </body>
