@@ -71,16 +71,7 @@
                     color: #cccccc;
                 }
 
- 
-
-        div {
-            opacity: 1;
-            transition: opacity 500ms;
-        }
-
-            div.waa {
-                opacity: 0;
-            }
+     
     </style>
 </head>
 <body style="margin : 0px; overflow: hidden;">
@@ -118,10 +109,12 @@
 
 
     </a-scene>
-    <div class="ui" id="container">
-     
+    <div class="ui" >
+
+
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-       
+  
+
     </div>
 </body>
 
@@ -139,29 +132,20 @@
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-photo');
 
-  
 
     take_photo_btn.addEventListener("click", function (e) {
 
         var image1 = document.querySelector("a-image");
-      
-       
-     
+        var videotag = document.querySelector("video");
         image1.setAttribute('visible', true);
         videotag.pause();
 
-
-   
+        choosePic();
         take_photo_btn.classList.add("disabled");
 
-        //sceneElement.classList.add("overlay");
-   
-
-             choosePic();
-
-        //スナップショット表示.
-   
-    
+        sceneElement.classList.add("overlay");
+        //tu day
+      
 
 
     });
@@ -172,8 +156,9 @@
         document.getElementById("my-image").src = myPix[randomNum];
     }
 
+  
 
-    alert("対象のコンテンツは、只今作成中です。");
+    alert("対象のコンテンツは、只今作成中です。00");
 
 </script>
 </html>
