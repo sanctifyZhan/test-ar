@@ -111,10 +111,7 @@
 
         <a-assets>
             <img id="my-image">
-            <audio id="river" src="river.mp3"> </audio>
         </a-assets>
-
-        <a-entity sound = "src: #river" > </ a-entity>
 
         <a-image src="#my-image"
                  position="0 0 -5" visible="false">
@@ -124,7 +121,7 @@
     <div class="ui" id="container">
         <img id="snap">
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-     
+
     </div>
 
 
@@ -146,8 +143,8 @@
 
         var myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
         var take_photo_btn = document.querySelector('#take-photo');
-     
-    
+
+
 
         take_photo_btn.addEventListener("click", function (e) {
 
@@ -164,15 +161,17 @@
             //スナップショット表示.
             image.classList.add('visible');
             // 削除ボタンと保存ボタン有効
-        
+
             // 保存ボタンにスナップショットを渡す
             //----------//
-             alert("1。");
+            alert("1。");
             $("container").hide();
-            
+
             alert("2。");
-                    var audio = document.getElementById("river");
-            audio.components.sound.playSound();
+            var audio = new Audio('m.mp3');
+             alert("3。");
+            audio.play();
+             alert("4。");
         });
 
         function choosePic() {
