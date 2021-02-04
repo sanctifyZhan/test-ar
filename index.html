@@ -142,15 +142,17 @@
         var myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
         var take_photo_btn = document.querySelector('#take-photo');
 
-
+        alert("13");
+        
+            
+           alert("2");
 
         take_photo_btn.addEventListener("click", function (e) {
             audio.play();
             var image1 = document.querySelector("a-image");
-            var videotag = document.querySelector("video");
             image1.setAttribute('visible', true);
             videotag.pause();
-            videotag.setAttribute('visible', false)
+          
             choosePic();
             // take_photo_btn.classList.add("disabled");
             sceneElement.classList.add("overlay");
@@ -165,11 +167,7 @@
             setTimeout(function () {
                 $('#container').fadeOut();
             }, 0.1);
-             alert("1");
-            setTimeout(function () {
-                $('#vid').fadeOut();
-            }, 0.1);
-           alert("2");
+            
         });
 
         function choosePic() {
