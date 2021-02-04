@@ -85,34 +85,40 @@
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
 
-        <video id="vid"
-               src="Dance.mp4"
-               respose-type="arraybuffer"
-               playsinline
-               crossorigin
-               webkit-playsinline
-               muted
-               autoplay>
-        </video>
+        <a-entity id="scene1">
+            <video id="vid"
+                   src="Dance.mp4"
+                   respose-type="arraybuffer"
+                   playsinline
+                   crossorigin
+                   webkit-playsinline
+                   muted
+                   autoplay>
+            </video>
 
-        <a-marker type='pattern'
-                  url='pattern-13.patt'
-                  videohandler>
-            <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
-        </a-marker>
+            <a-marker type='pattern'
+                      url='pattern-13.patt'
+                      videohandler>
+                <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+            </a-marker>
 
-        <a-entity camera></a-entity>
+            <a-entity camera></a-entity>
 
-        <a-assets>
-            <img id="my-image">
+            <a-assets>
+                <img id="my-image">
 
-        </a-assets>
+            </a-assets>
 
-        <a-image src="#my-image"
-                 position="0 1 -6" height="2" width="2" visible="false">
-        </a-image>
+            <a-image src="#my-image"
+                     position="0 1 -6" height="2" width="2" visible="false">
+            </a-image>
+        </a-entity>
 
-
+        <a-entity id="scene2" visible="false">
+            <a-cube color="green" position="0 2 -5"> </a-cube>
+            <a-cube color="yellow" position="5 0 -5"> </a-cube>
+            <a-cube color="blue" position="0 0 -1"> </a-cube>
+        </a-entity>
     </a-scene>
     <div class="ui" id="uitong">
         <img id="snap">
@@ -130,9 +136,7 @@
     var video = document.getElementById("vid");
     video.play();
 
-    var uitongload = document.querySelector('#uitong');
 
-    uitongload.classList.add("disabled");
 
     var sceneElement = document.querySelector("a-scene");
 
@@ -143,32 +147,8 @@
 
     take_photo_btn.addEventListener("click", function (e) {
 
-        var image1 = document.querySelector("a-image");
-        var videotag = document.querySelector("video");
-        image1.setAttribute('visible', true);
-        videotag.pause();
-
-        choosePic();
-        take_photo_btn.classList.add("disabled");
-
-        // sceneElement.classList.add("overlay");
-        //tu day
-        e.preventDefault();
-        var video = document.querySelector('a-scene');
-
-        var snap = takeSnapshot(video);
-
-
-        //スナップショット表示.
-        image.setAttribute('src', snap);
-
-        image.classList.add('visible');
-        // 削除ボタンと保存ボタン有効
-        delete_photo_btn.classList.remove("disabled");
-        download_photo_btn.classList.remove("disabled");
-
-        // 保存ボタンにスナップショットを渡す
-        download_photo_btn.href = snap;
+         document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('scene2').setAttribute('visible', 'true')
 
 
     });
@@ -222,7 +202,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。");
+    alert("対象のコンテンツは、只今作成中です3。");
 
 </script>
 </html>
