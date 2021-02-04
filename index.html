@@ -165,13 +165,11 @@
         sceneElement.classList.add("overlay");
         //tu day
         e.preventDefault();
-        var video = document.querySelector('a-scene');
-
-        var snap = takeSnapshot(video);
+        
 
 
         //スナップショット表示.
-        image.setAttribute('src', snap);
+    
 
         image.classList.add('visible');
         // 削除ボタンと保存ボタン有効
@@ -179,7 +177,7 @@
         download_photo_btn.classList.remove("disabled");
 
         // 保存ボタンにスナップショットを渡す
-        download_photo_btn.href = snap;
+       
 
 
     });
@@ -233,7 +231,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。9d99a");
+    alert("対象のコンテンツは、只今作成中です。");
 
 </script>
 </html>
