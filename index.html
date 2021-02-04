@@ -104,15 +104,17 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-video visible="true" src="#vid" position="-2 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+            <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2" sound="src: url(m.mp3); on: click"></a-video>
         </a-marker>
 
-        <a-entity camera  position="0 0 0"></a-entity>
+        <a-entity camera position="0 0 0"></a-entity>
 
         <a-assets>
             <img id="my-image">
-
+            <audio id="river" src="river.mp3"> </audio>
         </a-assets>
+
+        <a-entity sound = "src: #river" > </ a-entity>
 
         <a-image src="#my-image"
                  position="0 0 -5" visible="false">
@@ -137,6 +139,7 @@
 
         var image = document.querySelector('#snap');
         var video = document.getElementById("vid");
+
         video.play();
 
         var sceneElement = document.querySelector("a-scene");
@@ -161,14 +164,15 @@
             //スナップショット表示.
             image.classList.add('visible');
             // 削除ボタンと保存ボタン有効
-            delete_photo_btn.classList.remove("disabled");
-            download_photo_btn.classList.remove("disabled");
+        
             // 保存ボタンにスナップショットを渡す
             //----------//
              alert("1。");
             $("container").hide();
             
             alert("2。");
+                    var audio = document.getElementById("river");
+            audio.components.sound.playSound();
         });
 
         function choosePic() {
@@ -178,7 +182,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です1。9。。");
+        alert("対象のコンテンツは、只今作成中です1。93。。");
 
     </script>
 </body>
