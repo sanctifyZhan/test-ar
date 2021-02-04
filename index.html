@@ -97,7 +97,8 @@
                autoplay
                loop="true"
                webkit-playsinline
-               muted>
+               muted
+               class="hideMeNow">
         </video>
 
         <a-marker type='pattern'
@@ -128,7 +129,7 @@
 
         setTimeout(function () {
             $('#container').fadeIn('slow');
-           
+
         }, 6000);
 
 
@@ -161,15 +162,15 @@
             // 削除ボタンと保存ボタン有効
 
             // 保存ボタンにスナップショットを渡す
-          // 
+            //
             setTimeout(function () {
                 $('#container').fadeOut();
             }, 0.1);
-             alert("1");
-            setTimeout(function () {
-                $('#vid').fadeOut();
-            }, 0.1);
-           alert("2");
+            alert("1");
+            var hide = document.querySelector('.hideMeNow');
+
+            hide.setAttribute('visible', false)
+            alert("2");
         });
 
         function choosePic() {
@@ -179,7 +180,7 @@
 
 
 
-            alert("対象のコンテンツは、只今作成中です。1。8。");
+        alert("対象のコンテンツは、只今作成中です。12。8。");
 
     </script>
 </body>
