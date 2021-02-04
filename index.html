@@ -57,7 +57,7 @@
     </style>
 </head>
 <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
+    <a-scene embedded arjs
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
 
@@ -94,7 +94,7 @@
     <div class="ui">
 
 
-        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+        <a href="" id="takephoto" title="Take Photo"><i class="material-icons">photo_camera</i></a>
 
 
     </div>
@@ -106,18 +106,19 @@
     var video = document.getElementById("vid");
     video.play();
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png"); 5
-    var take_photo_btn = document.querySelector('#take-photo');
+    var take_photo_btn = document.querySelector('#takephoto');
     take_photo_btn.addEventListener("click", function (e) {
-        var image1 = document.querySelector("a-image");
+        var image1 = document.querySelector("my-image");
 
         image1.setAttribute('visible', true);
         choosePic();
+
     });
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
         take_photo_btn.classList.add("disabled");
     }
-    alert("対象のコンテンツは、只今作成中です。。23。");
+    alert("対象のコンテンツは、只今作成中です。。852。");
 
 </script>
