@@ -94,11 +94,9 @@
                src="Dance.mp4"
                respose-type="arraybuffer"
                playsinline
-               
                crossorigin
                webkit-playsinline
-               muted
-               >
+               muted>
         </video>
 
         <a-marker type='pattern'
@@ -162,9 +160,11 @@
             // 削除ボタンと保存ボタン有効
 
             // 保存ボタンにスナップショットを渡す
-
-            $("container").hide();
-
+            alert("1");
+            setTimeout(function () {
+                $('#container').fadeOut();
+            }, 10);
+            alert("2");
         });
 
         function choosePic() {
@@ -174,7 +174,7 @@
 
 
 
-       // alert("対象のコンテンツは、只今作成中です1。93。。");
+           // alert("対象のコンテンツは、只今作成中です1。93。。");
 
     </script>
 </body>
