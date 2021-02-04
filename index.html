@@ -88,7 +88,8 @@
             <a-entity cursor="fuse: true; maxDistance: 30; timeout: 1000">
             </a-entity>
         </a-camera>
-        <a-entity id="scene1" visible="false">
+        <a-entity id="scene1">
+            <a-cube color="red" onclick="nextScene()"> </a-cube>
             <video id="vid"
                    src="Dance.mp4"
                    respose-type="arraybuffer"
@@ -105,7 +106,7 @@
                 <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
             </a-marker>
 
-           
+
 
             <a-assets>
                 <img id="my-image">
@@ -117,7 +118,7 @@
             </a-image>
         </a-entity>
 
-        <a-entity id="scene2" visible="true">
+        <a-entity id="scene2" visible="false">
             <a-cube color="green" position="0 2 -5"> </a-cube>
             <a-cube color="yellow" position="5 0 -5"> </a-cube>
             <a-cube color="blue" position="0 0 -1"> </a-cube>
@@ -129,7 +130,10 @@
 </body>
 
 <script>
-
+     function nextScene() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('scene2').setAttribute('visible', 'true')
+  }
 
     var video = document.getElementById("vid");
     video.play();
@@ -158,7 +162,7 @@
     }
 
 
-    alert("対象のコンテンツは、只今作成中です。921");
+    alert("対象のコンテンツは、只今作成中です。21");
 
 </script>
 </html>
