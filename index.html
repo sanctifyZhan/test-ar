@@ -111,7 +111,7 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-video src="#vid" position="-1 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+            <a-video visible="true" src="#vid" position="-1 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2" ></a-video>
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -158,7 +158,7 @@
         var videotag = document.querySelector("video");
         image1.setAttribute('visible', true);
         videotag.pause();
-
+        videotag.setAttribute('visible', false)
         choosePic();
         take_photo_btn.classList.add("disabled");
 
@@ -233,7 +233,7 @@
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。999a");
+    alert("対象のコンテンツは、只今作成中です。9d99a");
 
 </script>
 </html>
