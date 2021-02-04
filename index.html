@@ -97,7 +97,7 @@
                playsinline
                crossorigin
                autoplay
-               loop="true"
+               
                webkit-playsinline
                muted
                class="hideMeNow">
@@ -129,10 +129,10 @@
         var audio = new Audio('n.mp3');
         $('#container').hide();
 
-        setTimeout(function () {
+        /*setTimeout(function () {
             $('#container').fadeIn('slow');
 
-        }, 6000);
+        }, 6000);*/
 
 
         var image = document.querySelector('#snap');
@@ -144,8 +144,14 @@
 
         var myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
         var take_photo_btn = document.querySelector('#take-photo');
-
-
+        alert("22");
+        document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
+        function yourFunction(e) {
+           // cp.show("take-photo");
+            alert ("Hello");
+            
+        }
+        alert("2255");
 
         take_photo_btn.addEventListener("click", function (e) {
             audio.play();
@@ -169,8 +175,7 @@
                 $('#container').fadeOut();
             }, 0.1);
             alert("1");
-            var video2 = document.getElementById("vid");
-            video2.setAttribute('position','3 0 35' );
+            
             alert("2");
         });
 
@@ -181,7 +186,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です。2432。。");
+        alert("対象のコンテンツは、只今作成中です。aa2432。。");
 
     </script>
 </body>
