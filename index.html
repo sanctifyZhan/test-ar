@@ -157,10 +157,10 @@
         take_photo_btn.addEventListener("click", function (e) {
             audio.play();
             var image1 = document.querySelector("a-image");
-           // var videotag = document.querySelector("video");
+            var videotag = document.querySelector("video");
             image1.setAttribute('visible', true);
             videotag.pause();
-           // videotag.setAttribute('visible', false);
+            videotag.setAttribute('visible', false);
             choosePic();
             // take_photo_btn.classList.add("disabled");
             sceneElement.classList.add("overlay");
@@ -172,7 +172,7 @@
 
             // 保存ボタンにスナップショットを渡す
             //
-            document.getElementsByTagName("video").setAttribute('visible', false);
+           
             setTimeout(function () {
                 $('#container').fadeOut();
             }, 0.1);
@@ -186,7 +186,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です。。。OK");
+        alert("対象のコンテンツは、只今作成中です。。。");
 
     </script>
 </body>
