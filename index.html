@@ -107,11 +107,11 @@
             <a-video visible="true" src="#vid" position="-2 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
-        <a-entity camera position="0 0 0"></a-entity>
-        <a-entity sound="src: #river"></a-entity>
+        <a-entity camera  position="0 0 0"></a-entity>
+
         <a-assets>
             <img id="my-image">
-            <audio id="river" src="river.mp3" preload="auto"></audio>
+
         </a-assets>
 
         <a-image src="#my-image"
@@ -127,8 +127,7 @@
 
 
     <script>
-        var entity = document.querySelector('audio');
-        entity.components.sound.playSound();
+
         $('#container').hide();
 
         setTimeout(function () {
@@ -179,7 +178,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です1。。。");
+        alert("対象のコンテンツは、只今作成中です1。9。。");
 
     </script>
 </body>
