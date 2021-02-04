@@ -9,10 +9,8 @@
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-
 
         .overlay {
             position: fixed; /* Sit on top of the page content */
@@ -23,8 +21,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url("12.png");
-          /*   background-color:#ffffff; Black background with opacity */
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
             z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
             cursor: pointer; /* Add a pointer on hover */
         }
@@ -81,15 +78,6 @@
             #snap.visible {
                 visibility: visible;
             }
-            div {
-    opacity:1;
-    transition:opacity 500ms;
-}
-div.waa {
-    opacity:0;
-}
-
-
     </style>
 </head>
 <body style="margin : 0px; overflow: hidden;">
@@ -101,7 +89,6 @@ div.waa {
                src="Dance.mp4"
                respose-type="arraybuffer"
                playsinline
-               loop="true"
                crossorigin
                webkit-playsinline
                muted
@@ -111,7 +98,7 @@ div.waa {
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-video src="#vid" position="-1 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+            <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -127,11 +114,11 @@ div.waa {
 
 
     </a-scene>
-    <div class="ui" id ="container"> 
+    <div class="ui" id="uitong">
         <img id="snap">
         <a href="#" id="delete-photo" title="Delete Photo" class="disabled"><i class="material-icons">delete</i></a>
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-        <a id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
+        <a href="#" id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
 
     </div>
 </body>
@@ -139,11 +126,13 @@ div.waa {
 <script>
 
 
-
-
     var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
     video.play();
+
+    var uitongload = document.querySelector('#uitong');
+
+    uitongload.classList.add("disabled");
 
     var sceneElement = document.querySelector("a-scene");
 
@@ -162,7 +151,7 @@ div.waa {
         choosePic();
         take_photo_btn.classList.add("disabled");
 
-         sceneElement.classList.add("overlay");
+        // sceneElement.classList.add("overlay");
         //tu day
         e.preventDefault();
         var video = document.querySelector('a-scene');
@@ -174,7 +163,7 @@ div.waa {
         image.setAttribute('src', snap);
 
         image.classList.add('visible');
-         // 削除ボタンと保存ボタン有効
+        // 削除ボタンと保存ボタン有効
         delete_photo_btn.classList.remove("disabled");
         download_photo_btn.classList.remove("disabled");
 
@@ -233,7 +222,7 @@ div.waa {
         }
     }
 
-    alert("対象のコンテンツは、只今作成中です。3a2a8");
+    alert("対象のコンテンツは、只今作成中です。");
 
 </script>
 </html>
