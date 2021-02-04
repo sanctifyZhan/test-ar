@@ -131,7 +131,6 @@
 <script>
 
 
-    var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
     video.play();
 
@@ -145,26 +144,10 @@
     take_photo_btn.addEventListener("click", function (e) {
 
         var image1 = document.querySelector("a-image");
-        var videotag = document.querySelector("video");
         image1.setAttribute('visible', true);
-        videotag.pause();
 
         choosePic();
         take_photo_btn.classList.add("disabled");
-
-    });
-
-    delete_photo_btn.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        // スナップショットを隠す
-        image.setAttribute('src', "");
-        image.classList.remove("visible");
-
-        // 削除ボタンと保存ボタン無効
-        delete_photo_btn.classList.add("disabled");
-        download_photo_btn.classList.add("disabled");
 
     });
 
@@ -175,7 +158,7 @@
     }
 
 
-    alert("対象のコンテンツは、只今作成中です。91");
+    alert("対象のコンテンツは、只今作成中です。921");
 
 </script>
 </html>
