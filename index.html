@@ -128,10 +128,9 @@
 
     </a-scene>
     <div class="ui" id="container">
-        <img id="snap">
+     
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-        <a id="download-photo" download="selfie.png" title="Save Photo" class="disabled" target="_blank"><i class="material-icons">file_download</i></a>
-
+       
     </div>
 </body>
 
@@ -149,7 +148,7 @@
     var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
     var take_photo_btn = document.querySelector('#take-photo');
 
-    var download_photo_btn = document.querySelector('#download-photo');
+  
 
     take_photo_btn.addEventListener("click", function (e) {
 
@@ -167,21 +166,11 @@
         sceneElement.classList.add("overlay");
         //tu day
 
-        var video = document.querySelector('img');
-
-        var snap = takeSnapshot(video);
 
 
         //スナップショット表示.
-        image.setAttribute('src', snap);
-
-        image.classList.add('visible');
-        // 削除ボタンと保存ボタン有効
-
-        download_photo_btn.classList.remove("disabled");
-
-        // 保存ボタンにスナップショットを渡す
-        download_photo_btn.href = snap;
+   
+    
 
 
     });
@@ -193,7 +182,7 @@
     }
 
 
-    alert("対象のコンテンツは、只今作成中です。9");
+    alert("対象のコンテンツは、只今作成中です。912");
 
 </script>
 </html>
