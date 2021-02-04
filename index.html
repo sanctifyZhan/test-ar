@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>渋沢栄一ARークーポン</title>
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
+    <!-- we import arjs version without NFT but with marker + location based support
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
 
@@ -167,9 +169,7 @@
                 $('#container').fadeOut();
             }, 0.1);
             alert("1");
-            var hide = document.querySelector('.hideMeNow');
-
-            hide.setAttribute('visible', false)
+             $('#hideMeNow').attr('visible', 'false');
             alert("2");
         });
 
@@ -180,7 +180,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です。12。8。");
+        alert("対象のコンテンツは、只今作成中です。。8。");
 
     </script>
 </body>
