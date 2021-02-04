@@ -84,7 +84,10 @@
     <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
-
+        <a-camera position="2 0 3">
+            <a-entity cursor="fuse: true; maxDistance: 30; timeout: 1000">
+            </a-entity>
+        </a-camera>
         <a-entity id="scene1" visible="false">
             <video id="vid"
                    src="Dance.mp4"
@@ -102,7 +105,7 @@
                 <a-video src="#vid" position="-2 0 0" rotation="-90 0 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
             </a-marker>
 
-            <a-entity camera></a-entity>
+           
 
             <a-assets>
                 <img id="my-image">
@@ -172,7 +175,7 @@
     }
 
 
-    alert("対象のコンテンツは、只今作成中です。9");
+    alert("対象のコンテンツは、只今作成中です。91");
 
 </script>
 </html>
