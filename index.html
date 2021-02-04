@@ -94,7 +94,7 @@
                src="Dance.mp4"
                respose-type="arraybuffer"
                playsinline
-             
+               loop="true"
                crossorigin
                webkit-playsinline
                muted
@@ -104,7 +104,7 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-videosphere  loop="true" src="#vid" position="-1 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2"></a-videosphere>
+            <a-video visible="true" src="#vid" position="-1 0 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
         <a-entity camera></a-entity>
@@ -129,21 +129,15 @@
 
     <script>
 
-       $('#container').hide();
+        $('#container').hide();
 
-     /*   setTimeout(function () {
+        setTimeout(function () {
             $('#container').fadeIn('slow');
         }, 8000);
-*/
-          var video = document.getElementById("vid");
-        video.addEventListener('materialvideoended', function() {
-  // show button
-            alert("het video。");
-            $('#container').fadeIn('slow');
-        });
+
 
         var image = document.querySelector('#snap');
-      
+        var video = document.getElementById("vid");
         video.play();
 
         var sceneElement = document.querySelector("a-scene");
@@ -172,10 +166,10 @@
             download_photo_btn.classList.remove("disabled");
             // 保存ボタンにスナップショットを渡す
             //----------//
-            /* alert("1。");
+             alert("1。");
             $("container").hide();
-            $('#container').fadeOut();
-            alert("2。");*/
+            
+            alert("2。");
         });
 
         function choosePic() {
@@ -185,7 +179,7 @@
 
 
 
-        alert("対象のコンテンツは、只今作成中です。92。2。");
+        alert("対象のコンテンツは、只今作成中です。21。8。");
 
     </script>
 </body>
