@@ -140,7 +140,11 @@
 
 <script>
 
+    $('#container').hide();
 
+    setTimeout(function(){
+        $('#container').fadeIn('slow');
+    },5000);
 
 
     var image = document.querySelector('#snap');
@@ -176,8 +180,7 @@
         alert("1");
     $( "div" ).hide();
         alert("2");
-        $("video").hide();
-        alert("3");
+       
     });
 
   
@@ -190,7 +193,7 @@
 
   
 
-    alert("対象のコンテンツは、只今作成中です。end1");
+    alert("対象のコンテンツは、只今作成中です。end2");
 
 </script>
 </html>
