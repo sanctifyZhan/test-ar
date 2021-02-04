@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>渋沢栄一ARークーポン</title>
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
@@ -12,6 +13,21 @@
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
 
+
+        .overlay {
+            position: fixed; /* Sit on top of the page content */
+            /* Hidden by default */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("12.png");
+            /*   background-color:#ffffff; Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+        }
 
         .ui {
             position: absolute;
@@ -54,6 +70,18 @@
                     pointer-events: none;
                     color: #cccccc;
                 }
+
+        #snap {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            visibility: hidden;
+        }
+
+            #snap.visible {
+                visibility: visible;
+            }
+
     </style>
 </head>
 <body style="margin : 0px; overflow: hidden;">
@@ -86,38 +114,62 @@
         </a-assets>
 
         <a-image src="#my-image"
-                 position="0 1 -6" height="2" width="2">
+                 position="0 1 -6" height="2" width="2" visible="false">
         </a-image>
 
 
     </a-scene>
     <div class="ui">
 
-
-        <a href="" id="take-phot" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-
+        <img id="snap">
+        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+      
 
     </div>
 </body>
-</html>
 
 <script>
 
+
+
+
+  var image = document.querySelector('#snap');
     var video = document.getElementById("vid");
     video.play();
-    var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
-    var take_photo_btn = document.querySelector('#take-phot');
-    take_photo_btn.addEventListener("click", function (e) {
-     
 
-     
+    var sceneElement = document.querySelector("a-scene");
+
+    var myPix = new Array("ass/5.png", "ass/10.png", "ass/20.png", "ass/30.png");
+    var take_photo_btn = document.querySelector('#take-photo');
+
+
+    take_photo_btn.addEventListener("click", function (e) {
+
+        var image1 = document.querySelector("a-image");
+        var videotag = document.querySelector("video");
+        image1.setAttribute('visible', true);
+        videotag.pause();
+
         choosePic();
+        take_photo_btn.classList.add("disabled");
+
+        sceneElement.classList.add("overlay");
+        image.classList.add('visible');
+   
+
+
     });
+
+   
+
+
     function choosePic() {
         var randomNum = Math.floor(Math.random() * myPix.length);
         document.getElementById("my-image").src = myPix[randomNum];
-        take_photo_btn.classList.add("disabled");
     }
-    alert("対象のコンテンツは、只今作成中です。。33a2。");
+
+
+    alert("対象のコンテンツは、只今作成中です。99");
 
 </script>
+</html>
