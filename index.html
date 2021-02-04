@@ -71,16 +71,7 @@
                     color: #cccccc;
                 }
 
-        #snap {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            visibility: hidden;
-        }
-
-            #snap.visible {
-                visibility: visible;
-            }
+ 
 
         div {
             opacity: 1;
@@ -153,20 +144,20 @@
     take_photo_btn.addEventListener("click", function (e) {
 
         var image1 = document.querySelector("a-image");
-        var videotag = document.querySelector("video");
-        videotag.setAttribute("visible", false);
-        alert("dis video");
+      
+       
+     
         image1.setAttribute('visible', true);
         videotag.pause();
 
 
-        choosePic();
+   
         take_photo_btn.classList.add("disabled");
 
         //sceneElement.classList.add("overlay");
-        //tu day
+   
 
-
+             choosePic();
 
         //スナップショット表示.
    
@@ -182,7 +173,7 @@
     }
 
 
-    alert("対象のコンテンツは、只今作成中です。912a2");
+    alert("対象のコンテンツは、只今作成中です。");
 
 </script>
 </html>
