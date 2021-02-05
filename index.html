@@ -126,22 +126,17 @@
     </div>
 
     <script>
-
-
-
-
+        // declare variables and initialize  audio capture
         var audio = new Audio('n.mp3');
         $('#container').hide();
-
+        // use time check in ui
         /*setTimeout(function () {
             $('#container').fadeIn('slow');
         }, 6000);*/
 
 
         var image = document.querySelector('#snap');
-        var video = document.getElementById("vid");
-
-        video.play();
+     
 
         var sceneElement = document.querySelector("a-scene");
 
@@ -178,12 +173,10 @@
 
             $('#container').fadeOut();
 
-            alert("do");
-          /*  let myEl = document.querySelector("#hand-overview-chart");
-            myEl.setAttribute("visible", "false");*/
+            let myEl = document.querySelector("#hand-overview-chart");
+            myEl.setAttribute("visible", "false");
 
 
-            alert("ra");
         });
 
         function choosePic() {
@@ -191,7 +184,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中です。232");
+        // alert("対象のコンテンツは、只今作成中です。");
 
     </script>
 </body>
