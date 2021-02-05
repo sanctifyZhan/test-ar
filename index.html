@@ -95,8 +95,7 @@
                playsinline
                crossorigin
                webkit-playsinline
-               muted
-              >
+               muted>
         </video>
 
         <a-marker type='pattern'
@@ -157,9 +156,9 @@
         take_photo_btn.addEventListener("click", function (e) {
             audio.play();
             var image1 = document.querySelector("a-image");
-       
+
             image1.setAttribute('visible', true);
-         
+
             choosePic();
             // take_photo_btn.classList.add("disabled");
             sceneElement.classList.add("overlay");
@@ -171,11 +170,13 @@
 
             // 保存ボタンにスナップショットを渡す
 
-          
-                $('#container').fadeOut();
-           
+
+            $('#container').fadeOut();
+
             alert("do");
 
+            var sphere = document.querySelector('video');
+            sphere.parentNode.removeChild(sphere);
 
 
             alert("ra");
@@ -186,7 +187,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中です。22。3。");
+        alert("対象のコンテンツは、只今作成中ですs。");
 
     </script>
 </body>
