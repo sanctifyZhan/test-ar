@@ -123,7 +123,6 @@
         //declare variables and initialize
         let audio = new Audio('n.mp3');
         let video = document.getElementById("vid");
-   
         let sceneElement = document.querySelector("a-scene");
         let take_photo_btn = document.querySelector('#take-photo');
         let myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
@@ -151,8 +150,6 @@
             choosePic();
             //take_photo_btn.classList.add("disabled");
             sceneElement.classList.add("overlay");
-            e.preventDefault();
-          
             $('#container').fadeOut();
             myEl.setAttribute("visible", "false");
         });
@@ -162,7 +159,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-            // alert("対象のコンテンツは、只今作成中です。");
+         alert("対象のコンテンツは、只今作成中です。2");
     </script>
 </body>
 </html>
