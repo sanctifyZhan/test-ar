@@ -171,11 +171,13 @@
             // 削除ボタンと保存ボタン有効
 
             // 保存ボタンにスナップショットを渡す
-            //
 
             setTimeout(function () {
                 $('#container').fadeOut();
             }, 0.1);
+            alert("1");
+            document.getElementsByTagName("video")[0].hidden;
+            alert("2");
         });
 
         function choosePic() {
