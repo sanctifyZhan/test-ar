@@ -150,6 +150,7 @@
             choosePic();
             //take_photo_btn.classList.add("disabled");
             sceneElement.classList.add("overlay");
+            e.preventDefault();
             $('#container').fadeOut();
             myEl.setAttribute("visible", "false");
         });
