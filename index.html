@@ -87,7 +87,12 @@
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
              device-orientation-permission-ui="enabled: false"
-             vr-mode-ui="enabled: false">
+             vr-mode-ui="enabled: false"
+             xrextras-almost-there
+             xrextras-loading
+             xrextras-runtime-error
+             xrextras-tap-recenter
+             xrweb>
 
         <video id="vid"
                src="dan.mp4"
@@ -187,7 +192,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中ですs。");
+        alert("対象のコンテンツは、只今作成中です。");
 
     </script>
 </body>
