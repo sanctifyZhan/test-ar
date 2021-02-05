@@ -179,9 +179,8 @@
             $('#container').fadeOut();
 
             alert("do");
-
-            var sphere = document.querySelector('video');
-            sphere.parentNode.removeChild(sphere);
+            var videoPlayer = $("#vid")[0]; 
+            $(videoPlayer).remove(); 
 
 
             alert("ra");
@@ -192,7 +191,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中です。");
+        alert("対象のコンテンツは、只今作成中です。3");
 
     </script>
 </body>
