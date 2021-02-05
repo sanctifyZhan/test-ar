@@ -13,11 +13,11 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
 
         .overlay {
             position: fixed; /* Sit on top of the page content */
-            /* Hidden by default */
             width: 100%; /* Full width (cover the whole page) */
             height: 100%; /* Full height (cover the whole page) */
             top: 0;
@@ -106,7 +106,7 @@
         <a-marker type='pattern'
                   url='pattern-13.patt'
                   videohandler>
-            <a-video id="hand-overview-chart" src="#vid" position="-1.5 0 0" rotation="-90 -5 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2" autoplay></a-video>
+            <a-video id="aVideoHide" src="#vid" position="-1.5 0 0" rotation="-90 -5 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2" autoplay></a-video>
         </a-marker>
 
         <a-entity camera position="0 0 0"></a-entity>
@@ -126,68 +126,50 @@
     </div>
 
     <script>
-        // declare variables and initialize  audio capture
-        var audio = new Audio('n.mp3');
+
+        //declare variables and initialize
+        let audio = new Audio('n.mp3');
+        let video = document.getElementById("vid");
+        let image = document.querySelector('#snap');
+        let sceneElement = document.querySelector("a-scene");
+        let take_photo_btn = document.querySelector('#take-photo');
+        let myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
+
         $('#container').hide();
-        // use time check in ui
+        video.play();
+
+        //use check appear of ui by time if you want
         /*setTimeout(function () {
             $('#container').fadeIn('slow');
         }, 6000);*/
 
-
-        var image = document.querySelector('#snap');
-        var video = document.getElementById("vid");
-
-        video.play();
-
-        var sceneElement = document.querySelector("a-scene");
-
-        var myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
-        var take_photo_btn = document.querySelector('#take-photo');
-
+        //Check video ended
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
         function yourFunction(e) {
-            // cp.show("take-photo");
-            // alert ("Hello");
             $('#container').fadeIn('slow');
-
         }
 
-
-
+        //event click button capture
         take_photo_btn.addEventListener("click", function (e) {
+            let imageTrue = document.querySelector("a-image");
+            let myEl = document.querySelector("#aVideoHide");
             audio.play();
-            var image1 = document.querySelector("a-image");
-
-            image1.setAttribute('visible', true);
-
+            imageTrue.setAttribute('visible', true);
             choosePic();
-            // take_photo_btn.classList.add("disabled");
+            //take_photo_btn.classList.add("disabled");
             sceneElement.classList.add("overlay");
-            //tu day
             e.preventDefault();
-            //スナップショット表示.
             image.classList.add('visible');
-            // 削除ボタンと保存ボタン有効
-
-            // 保存ボタンにスナップショットを渡す
-
-
             $('#container').fadeOut();
-
-            let myEl = document.querySelector("#hand-overview-chart");
             myEl.setAttribute("visible", "false");
-
-
         });
 
         function choosePic() {
-            var randomNum = Math.floor(Math.random() * myPix.length);
+            let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        // alert("対象のコンテンツは、只今作成中です。");
-
+            // alert("対象のコンテンツは、只今作成中です。");
     </script>
 </body>
 </html>
