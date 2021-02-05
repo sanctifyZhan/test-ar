@@ -175,8 +175,9 @@
             setTimeout(function () {
                 $('#container').fadeOut();
             }, 0.1);
-            alert("1");
-            document.getElementsByTagName("video")[0].hidden;
+            alert("11");
+            var elems = document.getElementsByTagName('video');
+            elems.style.visibility = "hidden";
             alert("2");
         });
 
