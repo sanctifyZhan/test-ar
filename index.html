@@ -74,8 +74,7 @@
 
         .ui2 {
             position: absolute;
-      
-            top:0;
+            top: 0;
             bottom: 0;
             left: 0;
             right: 0;
@@ -92,11 +91,9 @@
                 display: inline-block;
                 width: 160px;
                 height: 160px;
-        
                 line-height: 100%;
                 color: #303030;
-                margin-top: 455px ;
-               
+                margin-top: 455px;
                 position: relative;
             }
     </style>
@@ -135,9 +132,18 @@
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
     </div>
     <div class="ui2" id="container2">
-        <button type="button">Click Me!</button>
+        <button id="myButton" type="button">Click Me!</button>
     </div>
     <script>
+
+        $('#container').hide();
+        let moveShu = document.querySelector('#myButton');
+
+        moveShu.addEventListener("click", function (e) {
+            $('#container').fadeIn();
+            $('#container2').hide();
+        });
+
 
         //declare variables and initialize
         let audio = new Audio('n.mp3');
@@ -151,7 +157,7 @@
 
         //use check appear of ui by time if you want
         /*setTimeout(function () {
-            $('#container').fadeIn('slow');
+        $('#container').fadeIn('slow');
         }, 6000);*/
 
         //Check video ended
