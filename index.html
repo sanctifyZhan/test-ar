@@ -79,34 +79,29 @@
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
 
-        <a-assets>
-            <img id="my-image">
-        </a-assets>
-
         <video id="vid"
                src="dan.mp4"
                playsinline
                webkit-playsinline
                muted>
         </video>
-        <a-entity id="links1" position="0 0 -6" 　visible="false">
-            <a-text value="Some Random Text." align="center" color="white" width="10" position="0 0 -3"></a-text>
-        </a-entity>
 
+        <a-marker type='pattern'
+                  url='pattern-13.patt'
+                  videohandler>
+            <a-video id="aVideoHide" src="#vid" position="-2 -4 0" rotation="-80 -5 0" scale="6 6 6" material="shader: chromakey; color: 0.1 0.9 0.2" autoplay></a-video>
+        </a-marker>
 
-        <a-entity id="links2" position="0 0 -2" visible="false">
-            <a-marker type='pattern'
-                      url='pattern-13.patt'
-                      videohandler>
-                <a-video id="aVideoHide" src="#vid" position="-2 -4 0" rotation="-80 -5 0" scale="6 6 6" material="shader: chromakey; color: 0.1 0.9 0.2" autoplay></a-video>
-            </a-marker>
+        <a-entity camera position="0 0 0"></a-entity>
 
+        <a-assets>
+            <img id="my-image">
+        </a-assets>
 
-            <a-image src="#my-image"
-                     position="0 0 -3" visible="false">
-            </a-image>
-        </a-entity>
-        <a-entity camera position="0 0 -2"></a-entity>
+        <a-image src="#my-image"
+                 position="0 0 -3" visible="false">
+        </a-image>
+
     </a-scene>
     <div class="ui" id="container">
      
@@ -155,7 +150,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中です。");
+        alert("対象のコンテンツは、只今作成中ですす。");
         
     </script>
 </body>
