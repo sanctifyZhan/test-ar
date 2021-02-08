@@ -89,7 +89,12 @@
                webkit-playsinline
                muted>
         </video>
-        <a-entity id="links"  position="0 0 0"　visible="false">
+        <a-entity id="links1" position="0 0 -2" 　visible="true">
+            <a-text value="Some Random Text." align="center" color="white" width="10" position="0 0 -3"></a-text>
+        </a-entity>
+
+
+        <a-entity id="links2" position="0 0 -2" 　visible="false">
             <a-marker type='pattern'
                       url='pattern-13.patt'
                       videohandler>
@@ -101,7 +106,7 @@
                      position="0 0 -3" visible="false">
             </a-image>
         </a-entity>
-            <a-entity camera position="0 0 0"></a-entity>
+        <a-entity camera position="0 0 -2"></a-entity>
     </a-scene>
     <div class="ui" id="container">
      
