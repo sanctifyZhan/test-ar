@@ -1,36 +1,157 @@
 ﻿<!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>A-FrameとAR.js - スナップショットを撮る</title>
-    <!-- ① A-Frame を読み込む -->
-    <script src="//aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <!-- ② AR.js を読み込む -->
-    <script src="//jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <title>渋沢栄一ARの格言</title>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   
-       
+
+    <style>
+
+        .overlay {
+            position: fixed; /* Sit on top of the page content */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("while.PNG");
+            /*   background-color:#ffffff; Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+        }
+
+        .ui {
+            position: absolute;
+            z-index: 100;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 10px 15px 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+            .ui a {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                background-color: #ffffff;
+                line-height: 100%;
+                color: #303030;
+                margin: 10px 3px;
+                border-radius: 50%;
+                position: relative;
+            }
+
+                .ui a i {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+
+                .ui a:active {
+                    color: #ff0000;
+                }
+
+                .ui a.disabled {
+                    pointer-events: none;
+                    color: #cccccc;
+                }
+
+    </style>
 </head>
-<body>
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
+             device-orientation-permission-ui="enabled: false"
+             vr-mode-ui="enabled: false">
 
-  <a-scene cursor="rayOrigin: mouse">
-    <a-box position="0 0 0" color="blue"></a-box>
-    <a-entity position="0 1 -4" link="highlighted: true; highlightedColor:#000000; backgroundColor: red; href: https://github.com/sanctifyZhan/test-ar/blob/main/index.html; titleColor: black; title: Back to website;image: https://github.com/sanctifyZhan/test-ar/blob/main/close.png  "></a-entity>
+        <video id="vid"
+               src="dan.mp4"
+               playsinline
+               webkit-playsinline
+               muted>
+        </video>
 
-  </a-scene>
-   
+        <a-marker type='pattern'
+                  url='pattern-13.patt'
+                  videohandler>
+            <a-video id="aVideoHide" src="#vid" position="-2 -4 0" rotation="-80 -5 0" scale="6 6 6" material="shader: chromakey; color: 0.1 0.9 0.2" autoplay></a-video>
+        </a-marker>
+
+        <a-entity camera position="0 0 0"></a-entity>
+
+        <a-assets>
+            <img id="my-image">
+        </a-assets>
+
+        <a-image src="#my-image"
+                 position="0 0 -3" visible="false">
+        </a-image>
+
+    </a-scene>
+    <div class="ui" id="container">
+     
+        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+    </div>
+
+    <script>
+
+        //declare variables and initialize
+        let audio = new Audio('n.mp3');
+        let video = document.getElementById("vid");
+        let sceneElement = document.querySelector("a-scene");
+        let take_photo_btn = document.querySelector('#take-photo');
+        let myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
+
+        $('#container').hide();
+        video.play();
+
+        //use check appear of ui by time if you want
+        /*setTimeout(function () {
+            $('#container').fadeIn('slow');
+        }, 6000);*/
+
+        //Check video ended
+        document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
+        function yourFunction(e) {
+            $('#container').fadeIn('slow');
+        }
+
+        //event click button capture
+        take_photo_btn.addEventListener("click", function (e) {
+            let imageTrue = document.querySelector("a-image");
+            let myEl = document.querySelector("#aVideoHide");
+            audio.play();
+            imageTrue.setAttribute('visible', true);
+            choosePic();
+            //take_photo_btn.classList.add("disabled");
+            sceneElement.classList.add("overlay");
+            e.preventDefault();
+            $('#container').fadeOut();
+            myEl.setAttribute("visible", "false");
+        });
+
+        function choosePic() {
+            let randomNum = Math.floor(Math.random() * myPix.length);
+            document.getElementById("my-image").src = myPix[randomNum];
+        }
+
+        alert("対象のコンテンツは、只今作成中ですす。");
+        
+    </script>
 </body>
-
-<script>
-  AFRAME.registerComponent("mylink", {
-    init: function() {
-    this.el.addEventListener("click", (e)=> {
-          window.location = this.data.href;
-    })
-    }
-  })
-</script>
-
-
 </html>
