@@ -12,32 +12,17 @@
    
        
 </head>
+<body>
 
-<body style='margin: 0; overflow: hidden;'>
-    <!-- ③ シーンを追加 -->
-    <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
+  <a-scene cursor="rayOrigin: mouse">
+    <a-box position="0 0 -2" color="blue"></a-box>
+    <a-text color="black" position="1 1 -2" value="goToSchatzkin" mylink="href: https://schatzkin.com;"></a-text>
+    <a-entity position="0 1.6 -2" link="highlighted: true; highlightedColor:#000000; backgroundColor: red; href: https://schatzkin.com; titleColor: black; title: Back to website;image: https://i.imgur.com/wjobVTN.jpg  "></a-entity>
 
-
-           <a-entity position="0 .6 4">
-        <a-camera>
-            <a-entity id="mycursor" cursor="fuse: true; fuseTimeout: 500; max-distance: 30;"
-            position="0 0 -5"
-			mylink="href: https://google.com;"
-            geometry="primitive: ring"
-            material="color: blue; shader: flat">
-            </a-entity>
-        </a-camera>
-    </a-entity>
-
-    <!-- "button" -->
-    <a-entity id="refresh-button" geometry="primitive: box" material="color: red" position="0 0 -2"></a>
-
-		
-		
-    </a-scene>
+  </a-scene>
    
 </body>
-<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+
 <script>
   AFRAME.registerComponent("mylink", {
     init: function() {
