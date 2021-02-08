@@ -81,9 +81,7 @@
 
         
         <a-entity id="links1" position="0 0 -6" 　visible="false">
-            <a-assets>
-                <a-text value="Some Random Text." align="center" color="white" width="10" position="0 0 -3"></a-text>
-            </a-assets>
+            <a-text value="Some Random Text." align="center" color="white" width="10" position="0 0 -3"></a-text>
         </a-entity>
 
 
@@ -109,14 +107,13 @@
             <a-image src="#my-image"
                      position="0 0 -3" visible="false">
             </a-image>
-            <div class="ui" id="container">
-
-                <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
-            </div>
         </a-entity>
         <a-entity camera position="0 0 -2"></a-entity>
     </a-scene>
-  
+    <div class="ui" id="container">
+     
+        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+    </div>
 
     <script>
 
@@ -160,7 +157,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中です。12");
+        alert("対象のコンテンツは、只今作成中です。");
         
     </script>
 </body>
