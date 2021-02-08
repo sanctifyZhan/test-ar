@@ -174,7 +174,7 @@
 
 
         let video = document.getElementById("vid");
-        AFRAME.registerComponent('markerhandler', {
+      /*  AFRAME.registerComponent('markerhandler', {
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT
@@ -186,14 +186,14 @@
                 }
 
             }
-        });
+        });*/
 
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
         function yourFunction(e) {
             $('#container').fadeIn('slow');
             $('#container2').hide();
             $('#container3').hide();
-            video.pause();
+           
         }
 
         //declare variables and initialize
@@ -204,7 +204,7 @@
         let myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
 
         $('#container').hide();
-        //video.play();
+        video.play();
 
         //use check appear of ui by time if you want
         setTimeout(function () {
