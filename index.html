@@ -72,6 +72,33 @@
                     color: #cccccc;
                 }
 
+        .ui2 {
+            position: absolute;
+      
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 10px 15px 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+
+            .ui2 button {
+                display: inline-block;
+                width: 160px;
+                height: 160px;
+                background-color: #ffffff;
+                line-height: 100%;
+                color: #303030;
+                margin: 5px 5px;
+                border-radius: 50%;
+                position: relative;
+            }
     </style>
 </head>
 <body style="margin : 0px; overflow: hidden;">
@@ -104,10 +131,12 @@
 
     </a-scene>
     <div class="ui" id="container">
-     
+
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
     </div>
-
+    <div class="ui2" id="container2">
+        <button type="button">Click Me!</button>
+    </div>
     <script>
 
         //declare variables and initialize
@@ -151,7 +180,7 @@
         }
 
         alert("対象のコンテンツは、只今作成中ですす。");
-        
+
     </script>
 </body>
 </html>
