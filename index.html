@@ -104,7 +104,7 @@
             margin: 50px auto;
             border: 1px solid black;
             max-width: 150px;
-            background-color: #EEEEEF; 
+            background-color: #bebebf; 
         }
 
         .child {
@@ -142,10 +142,12 @@
         <a-image src="#my-image"
                  position="0 0 -3" visible="false">
         </a-image>
-        <div class="parent">
+        <div class="parent" id="container3">
             <div class=child> CSS Table Technique to align center vertically!</div>
         </div>
-
+        <div class="ui2" id="container2">
+            <button id="myButton" type="button">スタート</button>
+        </div>
     </a-scene>
 
     <div class="ui" id="container">
@@ -153,9 +155,7 @@
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
     </div>
 
-    <div class="ui2" id="container2">
-        <button id="myButton" type="button">スタート</button>
-    </div>
+   
 
 
     <script>
@@ -164,7 +164,7 @@
         let moveShu = document.querySelector('#myButton');
 
         moveShu.addEventListener("click", function (e) {
-
+             $('#container3').hide();
             $('#container2').hide();
         });
 
@@ -196,6 +196,7 @@
         function yourFunction(e) {
             $('#container').fadeIn('slow');
             $('#container2').hide();
+            $('#container3').hide();
         }
 
         //event click button capture
