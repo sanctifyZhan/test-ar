@@ -104,7 +104,7 @@
             margin: 50px auto;
             border: 1px solid black;
             max-width: 150px;
-            background-color: #bebebf; 
+            background-color: #bebebf;
         }
 
         .child {
@@ -163,6 +163,7 @@
     <script>
 
         $('#container').hide();
+        $('#container2').hide();
         let moveShu = document.querySelector('#myButton');
 
         moveShu.addEventListener("click", function (e) {
@@ -183,7 +184,7 @@
 
         //use check appear of ui by time if you want
         setTimeout(function () {
-        $('#container2').fadeIn('slow');
+            $('#container2').fadeIn('slow');
         }, 4000);
 
 
