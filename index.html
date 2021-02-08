@@ -171,12 +171,20 @@
             $('#container3').hide();
             $('#container2').hide();
         });
-          let video = document.getElementById("vid");
+
+
+        let video = document.getElementById("vid");
         AFRAME.registerComponent('markerhandler', {
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT
                     video.play();
+                    document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
+                    function yourFunction(e) {
+                        $('#container').fadeIn('slow');
+                        $('#container2').hide();
+                        $('#container3').hide();
+                    }
                 } else {
                     // MARKER IS HIDDEN
                     video.pause();
@@ -186,7 +194,7 @@
 
         //declare variables and initialize
         let audio = new Audio('n.mp3');
-      
+
         let sceneElement = document.querySelector("a-scene");
         let take_photo_btn = document.querySelector('#take-photo');
         let myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
@@ -208,12 +216,7 @@
           }
 */
         //Check video ended
-        document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
-        function yourFunction(e) {
-            $('#container').fadeIn('slow');
-            $('#container2').hide();
-            $('#container3').hide();
-        }
+
 
         //event click button capture
         take_photo_btn.addEventListener("click", function (e) {
