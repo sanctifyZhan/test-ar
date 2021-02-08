@@ -160,6 +160,13 @@
         $('#container').fadeIn('slow');
         }, 6000);*/
 
+
+         //Check video ended
+        document.getElementsByTagName("video")[0].addEventListener("play", yourFunction, false);
+        function yourFunction(e) {
+           alert("start roi");
+        }
+
         //Check video ended
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
         function yourFunction(e) {
@@ -186,7 +193,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中ですす。");
+        alert("対象のコンテンツは、只今作成中です。");
 
     </script>
 </body>
