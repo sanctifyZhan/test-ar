@@ -92,14 +92,25 @@
                 height: 50px;
                 line-height: 100%;
                 color: #303030;
-                margin-top: 455px;
+                margin-bottom: 50px;
                 position: relative;
             }
 
-        .center2 {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20%;
+
+        .parent {
+            display: table;
+            height: 300px;
+            text-align: center;
+            margin-top: 120px;
+            border: 1px solid black;
+            max-width: 350px;
+        }
+
+        .child {
+            font-size: 2em;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 50px;
         }
     </style>
 </head>
@@ -132,28 +143,9 @@
         </a-image>
 
     </a-scene>
-    <table class="center2" style="background-color:#C6C9CA">
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Age</th>
-        </tr>
-        <tr>
-            <td>Jill</td>
-            <td>Smith</td>
-            <td>50</td>
-        </tr>
-        <tr>
-            <td>Eve</td>
-            <td>Jackson</td>
-            <td>94</td>
-        </tr>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>80</td>
-        </tr>
-    </table>
+    <div class="parent">
+        <div class=child> CSS Table Technique to align center vertically!</div>
+    </div>
     <div class="ui" id="container">
 
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
@@ -223,7 +215,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中です。2");
+        alert("対象のコンテンツは、只今作成中です。");
 
     </script>
 </body>
