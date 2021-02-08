@@ -184,14 +184,15 @@
                     // MARKER IS HIDDEN
                     video.pause();
                 }
-                document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
-                function yourFunction(e) {
-                    $('#container').fadeIn('slow');
-                    $('#container2').hide();
-                    $('#container3').hide();
-                }
+
             }
         });
+        document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
+        function yourFunction(e) {
+            $('#container').fadeIn('slow');
+            $('#container2').hide();
+            $('#container3').hide();
+        }
 
         //declare variables and initialize
         let audio = new Audio('n.mp3');
