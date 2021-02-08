@@ -79,22 +79,24 @@
              device-orientation-permission-ui="enabled: false"
              vr-mode-ui="enabled: false">
 
-        <a-assets>
-            <img id="my-image">
-        </a-assets>
-
-        <video id="vid"
-               src="dan.mp4"
-               playsinline
-               webkit-playsinline
-               muted>
-        </video>
+        
         <a-entity id="links1" position="0 0 -6" 　visible="false">
             <a-text value="Some Random Text." align="center" color="white" width="10" position="0 0 -3"></a-text>
         </a-entity>
 
 
         <a-entity id="links2" position="0 0 -2" visible="false">
+            <a-assets>
+                <img id="my-image">
+            </a-assets>
+
+            <video id="vid"
+                   src="dan.mp4"
+                   playsinline
+                   webkit-playsinline
+                   muted>
+            </video>
+
             <a-marker type='pattern'
                       url='pattern-13.patt'
                       videohandler>
@@ -155,7 +157,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("対象のコンテンツは、只今作成中です。");
+        alert("対象のコンテンツは、只今作成中です。1");
         
     </script>
 </body>
