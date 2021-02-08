@@ -187,11 +187,13 @@
 
             }
         });
+
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
         function yourFunction(e) {
             $('#container').fadeIn('slow');
             $('#container2').hide();
             $('#container3').hide();
+            video.pause();
         }
 
         //declare variables and initialize
