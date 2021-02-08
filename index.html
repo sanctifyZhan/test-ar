@@ -140,7 +140,7 @@
         let moveShu = document.querySelector('#myButton');
 
         moveShu.addEventListener("click", function (e) {
-          
+
             $('#container2').hide();
         });
 
@@ -164,6 +164,7 @@
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
         function yourFunction(e) {
             $('#container').fadeIn('slow');
+            $('#container2').hide();
         }
 
         //event click button capture
