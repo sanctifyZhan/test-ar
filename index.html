@@ -10,65 +10,7 @@
     <script src="//jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    
-           <style>
-
-        .overlay {
-            position: fixed; /* Sit on top of the page content */
-            width: 100%; /* Full width (cover the whole page) */
-            height: 100%; /* Full height (cover the whole page) */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("while.PNG");
-            /*   background-color:#ffffff; Black background with opacity */
-            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer; /* Add a pointer on hover */
-        }
-
-        .ui {
-            position: absolute;
-            z-index: 100;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: auto;
-            margin: 0;
-            padding: 10px 15px 30px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-            .ui a {
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                background-color: #ffffff;
-                line-height: 100%;
-                color: #303030;
-                margin: 10px 3px;
-                border-radius: 50%;
-                position: relative;
-            }
-
-                .ui a i {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                }
-
-                .ui a:active {
-                    color: #ff0000;
-                }
-
-                .ui a.disabled {
-                    pointer-events: none;
-                    color: #cccccc;
-                }
-
-    </style>
+       
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
@@ -76,46 +18,35 @@
     <a-scene embedded arjs='debugUIEnabled:false;trackingMethod: best;' vr-mode-ui="enabled: false">
 
 
-        <a-assets>
-            <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
-            <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
-        </a-assets>
+           <a-entity position="0 .6 4">
+        <a-camera>
+            <a-entity id="mycursor" cursor="fuse: true; fuseTimeout: 500; max-distance: 30;"
+            position="0 0 -5"
+			mylink="href: https://google.com;"
+            geometry="primitive: ring"
+            material="color: blue; shader: flat">
+            </a-entity>
+        </a-camera>
+    </a-entity>
 
-        <a-camera position="0 4 10"></a-camera>
-        <!-- ⑥ カメラを追加 -->
+    <!-- "button" -->
+    <a-entity id="refresh-button" geometry="primitive: box" material="color: red" position="0 0 -2"></a>
 
-        <a-entity gltf-model="#flyingSaucerModel" scale="100 100 100" position="1 5 0"></a-entity>
-
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <a-sky color="#ECECEC"></a-sky>
 		
 		
     </a-scene>
-    <div class="ui">
-        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>      
-    </div>
-</body>
-<script>
-
-    var take_photo_btn = document.querySelector('#take-photo');
-
-    //スナップショットボタン
-    take_photo_btn.addEventListener("click", function (e) {
-        e.preventDefault();
-    link="href: index1.html; 
-
-        // 削除ボタンと保存ボタン有効
-  
- 
-    });
-
    
-    //スナップショットを撮る
-
-
-    //-->
+</body>
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<script>
+  AFRAME.registerComponent("mylink", {
+    init: function() {
+    this.el.addEventListener("click", (e)=> {
+          window.location = this.data.href;
+    })
+    }
+  })
 </script>
+
+
 </html>
