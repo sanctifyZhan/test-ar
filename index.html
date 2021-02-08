@@ -145,9 +145,7 @@
         <div class="parent" id="container3">
             <div class=child> CSS Table Technique to align center vertically!</div>
         </div>
-        <div class="ui2" id="container2">
-            <button id="myButton" type="button">スタート</button>
-        </div>
+
     </a-scene>
 
     <div class="ui" id="container">
@@ -155,7 +153,11 @@
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
     </div>
 
-   
+    <div class="ui2" id="container2">
+        <button id="myButton" type="button">スタート</button>
+    </div>
+
+
 
 
     <script>
@@ -164,7 +166,7 @@
         let moveShu = document.querySelector('#myButton');
 
         moveShu.addEventListener("click", function (e) {
-             $('#container3').hide();
+            $('#container3').hide();
             $('#container2').hide();
         });
 
@@ -180,9 +182,9 @@
         video.play();
 
         //use check appear of ui by time if you want
-        /*setTimeout(function () {
-        $('#container').fadeIn('slow');
-        }, 6000);*/
+        setTimeout(function () {
+        $('#container2').fadeIn('slow');
+        }, 4000);
 
 
         //Check video ended
