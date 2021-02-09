@@ -195,10 +195,12 @@
 
         function yourFunction(e) {
             $('#container').fadeIn('slow');
-            let imageendTrue = document.querySelector("a-image")[1];
-            imageendTrue.setAttribute('visible', true);
+
             let myEl = document.querySelector("#aVideoHide");
             myEl.setAttribute("visible", "false");
+            // let imageendTrue = document.querySelector("a-image")[1];
+            //  imageendTrue.setAttribute('visible', true);
+
             //      $('#container2').hide();
             //      $('#container3').hide();
         }
@@ -243,7 +245,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("1123921");
+        alert("0");
 
     </script>
 </body>
