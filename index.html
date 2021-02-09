@@ -96,7 +96,6 @@
                 position: relative;
             }
 
-
         .parent {
             display: table;
             height: 150px;
@@ -142,6 +141,7 @@
         <a-image src="#my-image"
                  position="0 0 -3" visible="false">
         </a-image>
+
         <div class="parent" id="container3">
             <div class=child> CSS Table Technique to align center vertically!</div>
         </div>
@@ -157,9 +157,6 @@
         <button id="myButton" type="button">スタート</button>
     </div>
 
-
-
-
     <script>
 
         $('#container').hide();
@@ -172,28 +169,26 @@
             $('#container2').hide();
         });
 
-
         let video = document.getElementById("vid");
-      /*  AFRAME.registerComponent('markerhandler', {
+        AFRAME.registerComponent('markerhandler', {
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT
                     video.play();
-
                 } else {
                     // MARKER IS HIDDEN
                     video.pause();
+                    alert("pause");
                 }
-
             }
-        });*/
+        });
 
+        //Check video ended
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
         function yourFunction(e) {
             $('#container').fadeIn('slow');
             $('#container2').hide();
             $('#container3').hide();
-           
         }
 
         //declare variables and initialize
@@ -204,7 +199,7 @@
         let myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
 
         $('#container').hide();
-        video.play();
+        //video.play();
 
         //use check appear of ui by time if you want
         setTimeout(function () {
@@ -212,15 +207,11 @@
             $('#container3').fadeIn('slow');
         }, 4000);
 
-
         //Check video ended
         /*  document.getElementsByTagName("video")[0].addEventListener("play", yourFunction, true);
           function yourFunction(e) {
              alert("start roi");
-          }
-*/
-        //Check video ended
-
+          }*/
 
         //event click button capture
         take_photo_btn.addEventListener("click", function (e) {
