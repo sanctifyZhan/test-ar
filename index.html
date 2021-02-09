@@ -175,6 +175,13 @@
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT
                     video.play();
+                    if (document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false) = true) {
+                        function yourFunction(e) {
+                            $('#container').fadeIn('slow');
+                            $('#container2').hide();
+                            $('#container3').hide();
+                        }
+                    }
                 } else {
                     // MARKER IS HIDDEN
                     video.pause();
@@ -184,12 +191,8 @@
         });
 
         //Check video ended
-        document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
-        function yourFunction(e) {
-            $('#container').fadeIn('slow');
-            $('#container2').hide();
-            $('#container3').hide();
-        }
+        //document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false)
+
 
         //declare variables and initialize
         let audio = new Audio('n.mp3');
