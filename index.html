@@ -183,13 +183,15 @@
                         $('#container').fadeIn('slow');
                         $('#container2').hide();
                         $('#container3').hide();
-
+                        video1.pause();
+                        video.pause();
                     };
-                    video1.pause();
+
 
                 } else {
                     // MARKER IS HIDDEN
                     video.pause();
+                    video1.pause();
                     //alert("pause");
                 }
             }
