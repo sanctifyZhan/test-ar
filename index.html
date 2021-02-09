@@ -142,9 +142,9 @@
                  position="0 0 -3" visible="false">
         </a-image>
 
-        <div class="parent" id="container3">
-            <div class=child> CSS Table Technique to align center vertically!</div>
-        </div>
+        <!--<div class="parent" id="container3">
+                <div class=child> CSS TITLE!</div>
+            </div> -->
 
     </a-scene>
 
@@ -153,9 +153,9 @@
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
     </div>
 
-    <div class="ui2" id="container2">
-        <button id="myButton" type="button">スタート</button>
-    </div>
+    <!--<div class="ui2" id="container2">
+            <button id="myButton" type="button">スタート</button>
+        </div>-->
 
     <script>
 
@@ -170,16 +170,16 @@
         });
 
         let video = document.getElementById("vid");
-        let dem = 1;
+
         AFRAME.registerComponent('markerhandler', {
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT, RUN video
                     video.play();
-                    dem = dem + 1;
+
                 } else {
                     // MARKER IS HIDDEN , pause video
-                    document.getElementById('vid').pause();
+
                     //alert("pause");
                 }
             }
@@ -238,7 +238,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("chot2");
+       // alert("chot22");
 
     </script>
 </body>
