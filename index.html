@@ -136,7 +136,7 @@
 
         <a-assets>
             <img id="my-image">
-            <img id="my-imageend" src="12.png">
+            <img id="my-imageend" src="shi.png">
         </a-assets>
 
         <a-image src="#my-image"
@@ -144,7 +144,7 @@
         </a-image>
 
         <a-image src="#my-imageend"
-                 position="-1 1 -3" rotation="-80 -5 0" visible="false" scale="6 6 6">
+                 position="-1 1 -3" rotation="-80 -5 0" visible="false" scale="2 2 2">
         </a-image>
 
         <!--<div class="parent" id="container3">
@@ -198,8 +198,8 @@
 
             let myEl = document.querySelector("#aVideoHide");
             myEl.setAttribute("visible", "false");
-             let imageendTrue = document.getElementsByTagName("a-image")[1];
-              imageendTrue.setAttribute('visible', true);
+            let imageendTrue = document.getElementsByTagName("a-image")[1];
+            imageendTrue.setAttribute('visible', true);
 
             //      $('#container2').hide();
             //      $('#container3').hide();
@@ -231,6 +231,8 @@
         take_photo_btn.addEventListener("click", function (e) {
             let imageTrue = document.getElementsByTagName("a-image")[0];
             let myEl = document.querySelector("#aVideoHide");
+            let imageendTrue = document.getElementsByTagName("a-image")[1];
+            imageendTrue.setAttribute('visible', false);
             audio.play();
             imageTrue.setAttribute('visible', true);
             choosePic();
@@ -245,7 +247,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("091");
+        alert("ok");
 
     </script>
 </body>
