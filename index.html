@@ -173,10 +173,10 @@
         AFRAME.registerComponent('markerhandler', {
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
-                    // MARKER IS PRESENT
+                    // MARKER IS PRESENT, RUN video
                     video.play();
                 } else {
-                    // MARKER IS HIDDEN
+                    // MARKER IS HIDDEN , pause video
                     document.getElementById('vid').pause();
                     //alert("pause");
                 }
@@ -189,6 +189,7 @@
             $('#container').fadeIn('slow');
             $('#container2').hide();
             $('#container3').hide();
+            video.pause();
         }
 
         //declare variables and initialize
@@ -231,7 +232,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("pause");
+        alert("chot");
 
     </script>
 </body>
