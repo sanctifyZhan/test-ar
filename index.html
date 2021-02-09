@@ -248,13 +248,18 @@
             e.preventDefault();
             $('#container').fadeOut();
             myEl.setAttribute("visible", "false");
+
+            var elem = document.querySelector('a-marker');
+            elem.parentNode.removeChild(elem);
+
+
         });
 
         function choosePic() {
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-
+        alert("123");
     </script>
 </body>
 </html>
