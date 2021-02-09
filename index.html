@@ -184,10 +184,8 @@
                     let video = document.getElementById("vid");
                     video.play();
                 } else {
-                    setTimeout(function () {
-                        // MARKER IS HIDDEN , pause video
-                        alert("マーカをカメラで向いてしてください！");
-                    }, 3000);
+                    // MARKER IS HIDDEN , pause video
+                    // alert("マーカをカメラで向いてしてください！");
                 }
             }
         });
@@ -252,9 +250,9 @@
             $('#container').fadeOut();
             myEl.setAttribute("visible", "false");
 
-            var elem = document.querySelector('a-marker');
-            elem.parentNode.removeChild(elem);
-
+            //remove dom 
+           /* var elem = document.querySelector('a-marker');
+            elem.parentNode.removeChild(elem);*/
 
         });
 
@@ -262,7 +260,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("113");
+  
     </script>
 </body>
 </html>
