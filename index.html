@@ -174,32 +174,22 @@
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT
-                    video.play();
-
-                    var video1 = document.getElementsByTagName('video')[0];
-
-                    video1.onended = function (e) {
-                        /*Do things here!*/
-                        $('#container').fadeIn('slow');
-                        $('#container2').hide();
-                        $('#container3').hide();
-                        video1.pause();
-                       
-                    };
-                     video1.pause();
-
+                    //video.play();
                 } else {
                     // MARKER IS HIDDEN
-                    video1.pause();
-                   
+                    video.pause();
                     //alert("pause");
                 }
             }
         });
 
         //Check video ended
-        //document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false)
-
+        document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
+        function yourFunction(e) {
+            $('#container').fadeIn('slow');
+            $('#container2').hide();
+            $('#container3').hide();
+        }
 
         //declare variables and initialize
         let audio = new Audio('n.mp3');
@@ -242,7 +232,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-        alert("12");
+
     </script>
 </body>
 </html>
