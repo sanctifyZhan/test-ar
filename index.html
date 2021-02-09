@@ -190,12 +190,14 @@
         });
 
         //Check video ended
-          let imageendTrue = document.querySelector("#my-imageend");
+
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
         function yourFunction(e) {
             $('#container').fadeIn('slow');
+            let imageendTrue = document.querySelector("#my-imageend");
             imageendTrue.setAttribute('visible', true);
-            video.setAttribute('visible', false);
+            let myEl = document.querySelector("#aVideoHide");
+            myEl.setAttribute("visible", "false");
             //      $('#container2').hide();
             //      $('#container3').hide();
         }
@@ -240,7 +242,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("chot232");
+        alert("ád");
 
     </script>
 </body>
