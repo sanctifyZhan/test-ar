@@ -229,7 +229,7 @@
 
         //event click button capture
         take_photo_btn.addEventListener("click", function (e) {
-            let imageTrue = document.querySelector("a-image")[0];
+            let imageTrue = document.getElementsByTagName("a-image")[0];
             let myEl = document.querySelector("#aVideoHide");
             audio.play();
             imageTrue.setAttribute('visible', true);
@@ -245,7 +245,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("0");
+        alert("01");
 
     </script>
 </body>
