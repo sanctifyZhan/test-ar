@@ -174,10 +174,10 @@
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT
-                    //video.play();
+                    video.play();
                 } else {
                     // MARKER IS HIDDEN
-                    video.pause();
+                    document.getElementById('vid').pause();
                     //alert("pause");
                 }
             }
@@ -231,7 +231,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-
+        alert("pause");
 
     </script>
 </body>
