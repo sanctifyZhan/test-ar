@@ -170,11 +170,13 @@
         });
 
         let video = document.getElementById("vid");
+        let dem = 1;
         AFRAME.registerComponent('markerhandler', {
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT, RUN video
                     video.play();
+                    dem = dem + 1;
                 } else {
                     // MARKER IS HIDDEN , pause video
                     document.getElementById('vid').pause();
@@ -182,6 +184,10 @@
                 }
             }
         });
+
+        if (dem == 2) {
+            video.pause();
+        }
 
         //Check video ended
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
@@ -232,7 +238,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("chot");
+        alert("chot2");
 
     </script>
 </body>
