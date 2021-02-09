@@ -195,8 +195,8 @@
 
         function yourFunction(e) {
             $('#container').fadeIn('slow');
-            let imageendTrue = document.getElementById("my-imageend");
-            imageendTrue.setAttribute('visible', "true");
+            let imageendTrue = document.querySelector("a-image")[1];
+            imageendTrue.setAttribute('visible', true);
             let myEl = document.querySelector("#aVideoHide");
             myEl.setAttribute("visible", "false");
             //      $('#container2').hide();
@@ -227,7 +227,7 @@
 
         //event click button capture
         take_photo_btn.addEventListener("click", function (e) {
-            let imageTrue = document.getElementById("my-image");
+            let imageTrue = document.querySelector("a-image")[0];
             let myEl = document.querySelector("#aVideoHide");
             audio.play();
             imageTrue.setAttribute('visible', true);
@@ -243,7 +243,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("14121");
+        alert("1123921");
 
     </script>
 </body>
