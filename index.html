@@ -160,15 +160,15 @@
     <script>
 
         $('#container').hide();
-        $('#container2').hide();
-        $('#container3').hide();
-        let moveShu = document.querySelector('#myButton');
+        /*     $('#container2').hide();
+               $('#container3').hide();
+               let moveShu = document.querySelector('#myButton');
 
-        moveShu.addEventListener("click", function (e) {
-            $('#container3').hide();
-            $('#container2').hide();
-        });
-
+               moveShu.addEventListener("click", function (e) {
+                   $('#container3').hide();
+                   $('#container2').hide();
+               });
+       */
         let video = document.getElementById("vid");
 
         AFRAME.registerComponent('markerhandler', {
@@ -185,15 +185,15 @@
             }
         });
 
-  
+
 
         //Check video ended
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
         function yourFunction(e) {
             $('#container').fadeIn('slow');
-            $('#container2').hide();
-            $('#container3').hide();
-          
+     //       $('#container2').hide(); 
+      //      $('#container3').hide();
+
         }
 
         //declare variables and initialize
@@ -207,10 +207,11 @@
         //video.play();
 
         //use check appear of ui by time if you want
-        setTimeout(function () {
+
+      /*  setTimeout(function () {
             $('#container2').fadeIn('slow');
             $('#container3').fadeIn('slow');
-        }, 4000);
+        }, 4000);*/
 
         //Check video ended
         /*  document.getElementsByTagName("video")[0].addEventListener("play", yourFunction, true);
@@ -236,7 +237,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("chot22");
+        alert("chot232");
 
     </script>
 </body>
