@@ -185,9 +185,7 @@
             }
         });
 
-        if (dem == 2) {
-            video.pause();
-        }
+  
 
         //Check video ended
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
@@ -195,7 +193,7 @@
             $('#container').fadeIn('slow');
             $('#container2').hide();
             $('#container3').hide();
-            video.pause();
+          
         }
 
         //declare variables and initialize
@@ -238,7 +236,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       // alert("chot22");
+        alert("chot22");
 
     </script>
 </body>
