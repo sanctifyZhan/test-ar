@@ -175,13 +175,18 @@
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT
                     video.play();
-                    if (document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false) = "true") {
-                        function yourFunction(e) {
-                            $('#container').fadeIn('slow');
-                            $('#container2').hide();
-                            $('#container3').hide();
-                        }
-                    }
+
+                    var video1 = document.getElementsByTagName('video')[0];
+
+                    video1.onended = function (e) {
+                        /*Do things here!*/
+                        $('#container').fadeIn('slow');
+                        $('#container2').hide();
+                        $('#container3').hide();
+
+                    };
+                    video1.pause();
+
                 } else {
                     // MARKER IS HIDDEN
                     video.pause();
@@ -235,7 +240,7 @@
             document.getElementById("my-image").src = myPix[randomNum];
         }
 
-
+        alert("1");
     </script>
 </body>
 </html>
