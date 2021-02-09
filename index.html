@@ -165,6 +165,8 @@
     <script>
 
         $('#container').hide();
+        //start webar, hide button start and title, if click button modeshu, then button and title hide
+
         /*     $('#container2').hide();
                $('#container3').hide();
                let moveShu = document.querySelector('#myButton');
@@ -175,16 +177,15 @@
                });
        */
 
-        let video = document.getElementById("vid");
-
         AFRAME.registerComponent('markerhandler', {
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT, RUN video
+                    let video = document.getElementById("vid");
                     video.play();
                 } else {
                     // MARKER IS HIDDEN , pause video
-                    //alert("pause");
+                    alert("pause");
                 }
             }
         });
@@ -196,22 +197,25 @@
         function yourFunction(e) {
             $('#container').fadeIn('slow');
 
-            let myEl = document.querySelector("#aVideoHide");
-            myEl.setAttribute("visible", "false");
-            let imageendTrue = document.getElementsByTagName("a-image")[1];
-            imageendTrue.setAttribute('visible', true);
+            //hide video when ended video after show image
+            /*let myEl = document.querySelector("#aVideoHide");
+             myEl.setAttribute("visible", "false");
+             let imageendTrue = document.getElementsByTagName("a-image")[1];
+             imageendTrue.setAttribute('visible', true);*/
 
-            //      $('#container2').hide();
-            //      $('#container3').hide();
+            //Title : hide title when video ended include button start and title
+            /*$('#container2').hide();
+            $('#container3').hide();*/
         }
 
         //declare variables and initialize
-        let audio = new Audio('n.mp3');
 
+        let audio = new Audio('n.mp3');
         let sceneElement = document.querySelector("a-scene");
         let take_photo_btn = document.querySelector('#take-photo');
         let myPix = new Array("ass/11.png", "ass/44.png", "ass/33.jpg");
         $('#container').hide();
+
         //video.play();
 
         //use check appear of ui by time if you want
@@ -231,8 +235,11 @@
         take_photo_btn.addEventListener("click", function (e) {
             let imageTrue = document.getElementsByTagName("a-image")[0];
             let myEl = document.querySelector("#aVideoHide");
-            let imageendTrue = document.getElementsByTagName("a-image")[1];
-            imageendTrue.setAttribute('visible', false);
+
+            //hide image when click button capture
+            /*let imageendTrue = document.getElementsByTagName("a-image")[1];
+             imageendTrue.setAttribute('visible', false);*/
+
             audio.play();
             imageTrue.setAttribute('visible', true);
             choosePic();
@@ -247,7 +254,6 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("o");
 
     </script>
 </body>
