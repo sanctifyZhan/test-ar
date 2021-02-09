@@ -176,19 +176,20 @@
                    $('#container2').hide();
                });
        */
-
-        AFRAME.registerComponent('markerhandler', {
-            tick: function () {
-                if (document.querySelector("a-marker").object3D.visible == true) {
-                    // MARKER IS PRESENT, RUN video
-                    let video = document.getElementById("vid");
-                    video.play();
-                } else {
-                    // MARKER IS HIDDEN , pause video
-                     alert("マーカをカメラで向いてしてください！");
+        setTimeout(function () {
+            AFRAME.registerComponent('markerhandler', {
+                tick: function () {
+                    if (document.querySelector("a-marker").object3D.visible == true) {
+                        // MARKER IS PRESENT, RUN video
+                        let video = document.getElementById("vid");
+                        video.play();
+                    } else {
+                        // MARKER IS HIDDEN , pause video
+                        alert("マーカをカメラで向いてしてください！");
+                    }
                 }
-            }
-        });
+            });
+        }, 7000);
 
         //Check video ended
 
@@ -259,7 +260,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("1");
+        alert("13");
     </script>
 </body>
 </html>
