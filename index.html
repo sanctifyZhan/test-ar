@@ -136,17 +136,22 @@
 
         <a-assets>
             <img id="my-image">
-            <img id="my-imageend" src="shi.png">
+
+            <!-- image for show after ended video
+
+            <img id="my-imageend" src="shi.png">-->
         </a-assets>
 
         <a-image src="#my-image"
                  position="0 0 -3" visible="false">
         </a-image>
 
+
+        <!-- show image after ended video
+
         <a-image src="#my-imageend"
                  position="-0.2 -0.5 -3" rotation="0 -5 0" visible="false" scale="2 2 2">
-        </a-image>
-
+        </a-image>-->
         <!--<div class="parent" id="container3">
             <div class=child> CSS TITLE!</div>
         </div> -->
@@ -183,6 +188,11 @@
                     // MARKER IS PRESENT, RUN video
                     let video = document.getElementById("vid");
                     video.play();
+                    video.object3D.position.set(1, 2, -3);
+                    if (document.querySelector("a-marker").object3D.visible == true) {
+                        alert("マーカをカメラで向いてしてください！");
+                    }
+
                 } else {
                     // MARKER IS HIDDEN , pause video
                     // alert("マーカをカメラで向いてしてください！");
@@ -250,9 +260,9 @@
             $('#container').fadeOut();
             myEl.setAttribute("visible", "false");
 
-            //remove dom 
-           /* var elem = document.querySelector('a-marker');
-            elem.parentNode.removeChild(elem);*/
+            //remove dom
+            /* var elem = document.querySelector('a-marker');
+             elem.parentNode.removeChild(elem);*/
 
         });
 
@@ -260,7 +270,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-  
+
     </script>
 </body>
 </html>
