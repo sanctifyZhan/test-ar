@@ -187,18 +187,25 @@
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT, RUN video
                     let video = document.getElementById("vid");
-                    video.setAttribute('visible', true);
+                    // video.setAttribute('visible', true);
                     //   alert("1");
-                    video.setAttribute('position', { x: 0, y: 0, z: -5 });
+                    //  video.setAttribute('position', { x: 0, y: 0, z: -5 });
                     video.play();
+
+                    video.addEventListener("playing", function () {
+                         alert("start");
+                    });
+
+
                     //   alert("2");
                     if (document.querySelector("a-marker").object3D.visible == false) {
                         alert("マーカをカメラで向いてしてください！");
-                        video.setAttribute('visible', true);
-                        
+                        //  video.setAttribute('visible', true);
+
                     }
-                    //     alert("3");
-                } else {
+                    if
+                        //     alert("3");
+                    } else {
                     // MARKER IS HIDDEN , pause video
                     // alert("マーカをカメラで向いてしてください！");
                 }
@@ -277,7 +284,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("end");
+        alert("end12");
     </script>
 </body>
 </html>
