@@ -250,15 +250,19 @@
             audio.play();
             imageTrue.setAttribute('visible', true);
             choosePic();
-            take_photo_btn.classList.add("disabled");
+            //take_photo_btn.classList.add("disabled");
             sceneElement.classList.add("overlay");
             e.preventDefault();
-            $('#container').fadeOut();
+           // $('#container').fadeOut();
             myEl.setAttribute("visible", "false");
 
             //remove dom
             /* var elem = document.querySelector('a-marker');
              elem.parentNode.removeChild(elem);*/
+
+            var myobj = document.getElementById("container");
+            myobj.remove();
+
 
         });
 
