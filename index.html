@@ -189,7 +189,7 @@
                     let video = document.getElementById("vid");
                     video.play();
                     alert("1");
-                    video.object3D.position.set(1, 2, -3);
+                    video.setAttribute('position', {x: 0, y: -1, z: -3});
                     alert("2");
                     if (document.querySelector("a-marker").object3D.visible == true) {
                         alert("マーカをカメラで向いてしてください！");
@@ -273,7 +273,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("end");
+        alert("endd");
     </script>
 </body>
 </html>
