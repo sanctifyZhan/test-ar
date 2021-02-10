@@ -191,13 +191,12 @@
                     alert("1");
                     video.setAttribute('position', {x: 1, y: -1, z: -3});
                     alert("2");
-                    if (document.querySelector("a-marker").object3D.visible == false) {
-                        alert("マーカをカメラで向いてしてください！");
-                    }
+                  
                   
                 } else {
                     // MARKER IS HIDDEN , pause video
                     // alert("マーカをカメラで向いてしてください！");
+                    alert("マーカをカメラで向いてしてください！");
                 }
          
             }
@@ -273,7 +272,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("end");
+        alert("end3");
     </script>
 </body>
 </html>
