@@ -143,7 +143,7 @@
         </a-assets>
 
         <a-image src="#my-image"
-                 position="0 0 -3" visible="false">
+                 position="0 0 0" visible="false">
         </a-image>
 
 
@@ -250,7 +250,7 @@
             audio.play();
             imageTrue.setAttribute('visible', true);
             choosePic();
-            //take_photo_btn.classList.add("disabled");
+            take_photo_btn.classList.add("disabled");
             sceneElement.classList.add("overlay");
             e.preventDefault();
             $('#container').fadeOut();
