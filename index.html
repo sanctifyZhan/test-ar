@@ -189,10 +189,12 @@
                     let video = document.getElementById("vid");
                     video.play();
                     alert("1");
-                    video.setAttribute('position', {x: 0, y: -1, z: -3});
+                    video.setAttribute('position', { x: 0, y: -1, z: -3 });
+                    video.play();
                     alert("2");
                     if (document.querySelector("a-marker").object3D.visible == false) {
                         alert("マーカをカメラで向いてしてください！");
+                        video.play();
                     }
                     alert("3");
                 } else {
@@ -200,6 +202,7 @@
                     // alert("マーカをカメラで向いてしてください！");
                 }
                 alert("4");
+                video.play();
             }
         });
 
@@ -273,7 +276,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("end");
+        alert("end1");
     </script>
 </body>
 </html>
