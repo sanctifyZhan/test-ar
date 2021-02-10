@@ -187,7 +187,7 @@
                 if (document.querySelector("a-marker").object3D.visible == true) {
                     // MARKER IS PRESENT, RUN video
                     let video = document.getElementById("vid");
-                    video.play();
+                   
                     alert("1");
                     video.setAttribute('position', { x: 0, y: -1, z: -3 });
                     video.play();
@@ -202,7 +202,7 @@
                     // alert("マーカをカメラで向いてしてください！");
                 }
                 alert("4");
-                video.play();
+                
             }
         });
 
@@ -276,7 +276,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("end1");
+        alert("end");
     </script>
 </body>
 </html>
