@@ -191,7 +191,7 @@
                     alert("1");
                     video.setAttribute('position', {x: 0, y: -1, z: -3});
                     alert("2");
-                    if (document.querySelector("a-marker").object3D.visible == true) {
+                    if (document.querySelector("a-marker").object3D.visible == false) {
                         alert("マーカをカメラで向いてしてください！");
                     }
                     alert("3");
@@ -273,7 +273,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-        alert("endd");
+        alert("end");
     </script>
 </body>
 </html>
