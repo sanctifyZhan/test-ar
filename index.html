@@ -129,10 +129,10 @@
         <a-marker type='pattern'
                   url='pattern-ma.patt'
                   markerhandler>
-            <a-video id="aVideoHide" src="#vid" position="-2 -4 0" scale="2 2 2" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+            <a-video id="aVideoHide" src="#vid" position="-3 -4 0" rotation="-90 0 0" scale="1 1 1" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
-        <a-entity camera></a-entity>
+        <a-entity camera position="0 0 1"></a-entity>
 
         <a-assets>
             <img id="my-image">
@@ -143,7 +143,7 @@
         </a-assets>
 
         <a-image src="#my-image"
-                 position="0 0 0" visible="false">
+                 position="0 0 -2" visible="false">
         </a-image>
 
 
@@ -262,6 +262,7 @@
 
             var myobj = document.getElementById("container");
             myobj.remove();
+
 
         });
 
