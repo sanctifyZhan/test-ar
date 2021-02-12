@@ -4,14 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>渋沢栄一ARの格言</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
@@ -217,10 +214,10 @@
 
         //declare variables and initialize
 
-        let audio = new Audio('n.mp3');
+        let audio = new Audio('captureSound.mp3');
         let sceneElement = document.querySelector("a-scene");
         let take_photo_btn = document.querySelector('#take-photo');
-        let myPix = new Array("ass/01.png", "ass/02.png", "ass/03.png");
+        let myPix = new Array("Assets/01.png", "Assets/02.png", "Assets/03.png");
         $('#container').hide();
 
         //video.play();
