@@ -112,48 +112,48 @@
     </style>
 </head>
 <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
+             device-orientation-permission-ui="enabled: false"
+             vr-mode-ui="enabled: false">
 
-    <div id="photoModeContainer" style="display: none">
-        <img id="photoModeImage">
-        <div id="flash"></div>
-        <div id="shutterButton"></div>
-        <div id="closeButton"></div>
-      </div>
-    <a-scene
-    photo-mode
-    xrextras-almost-there
-    xrextras-loading
-    xrextras-runtime-error
-    xrextras-tap-recenter
-    xrweb>
+        <video id="vid"
+               src="testA.mp4"
+               playsinline
+               webkit-playsinline
+               muted>
+        </video>
 
-    <!-- We can define assets here to be loaded when A-Frame initializes -->
-    <a-assets>
-      <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
-      <a-asset-item id="flyingSaucerModel" src="flying-saucer.glb"></a-asset-item>
-    </a-assets>
+        <a-marker type='pattern'
+                  url='patter.patt'
+                  markerhandler>
+            <a-video id="aVideoHide" src="#vid" position="-3 -1 0" rotation="-90 0 0" height="10px" width="10px" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+        </a-marker>
 
-    <a-camera position="0 4 10"></a-camera>
+        <a-entity camera position="0 0 1"></a-entity>
 
-    <a-entity
-      light="type: directional;
-             intensity: 0.8;"
-      position="1 4.3 2.5">
-    </a-entity>
+        <a-assets>
+            <img id="my-image">
 
-    <a-light type="ambient" intensity="1"></a-light>
+            <!-- image for show after ended video
 
-    <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
+            <img id="my-imageend" src="shi.png">-->
+        </a-assets>
 
-    <a-cylinder
-      geometry="segments-radial: 8"
-      material="transparent:true; opacity: 0.5; color: #33ff33"
-      open-ended="true"
-      height="7"
-      radius="1.5"
-      position="0 3.5 0"></a-cylinder>
+        <a-image src="#my-image"
+                 position="0 0 -0.05" visible="false">
+        </a-image>
 
-  </a-scene>
+
+        <!-- show image after ended video
+
+        <a-image src="#my-imageend"
+                 position="-0.2 -0.5 -3" rotation="0 -5 0" visible="false" scale="2 2 2">
+        </a-image>-->
+        <!--<div class="parent" id="container3">
+            <div class=child> CSS TITLE!</div>
+        </div> -->
+
+    </a-scene>
 
     <div class="ui" id="container">
 
@@ -165,7 +165,7 @@
         </div>-->
 
     <script>
-         alert("中中");
+         alert("中中中");
 
         $('#container').hide();
         //start webar, hide button start and title, if click button modeshu, then button and title hide
