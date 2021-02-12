@@ -1,61 +1,275 @@
 ﻿<!DOCTYPE html>
-<!-- dia bay -->
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Capture a photo</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="photo-mode.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>渋沢栄一ARの格言</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+        .overlay {
+            position: fixed; /* Sit on top of the page content */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("backgroundWhile.PNG");
+            /*   background-color:#ffffff; Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+        }
+
+        .ui {
+            position: absolute;
+            z-index: 100;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 10px 15px 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+            .ui a {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                background-color: #ffffff;
+                line-height: 100%;
+                color: #303030;
+                margin: 10px 3px;
+                border-radius: 50%;
+                position: relative;
+            }
+
+                .ui a i {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+
+                .ui a:active {
+                    color: #ff0000;
+                }
+
+                .ui a.disabled {
+                    pointer-events: none;
+                    color: #cccccc;
+                }
+
+        .ui2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 10px 15px 30px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+            .ui2 button {
+                display: inline-block;
+                width: 160px;
+                height: 50px;
+                line-height: 100%;
+                color: #303030;
+                margin-top: 455px;
+                position: relative;
+            }
+
+        .parent {
+            display: table;
+            height: 150px;
+            text-align: center;
+            margin: 50px auto;
+            border: 1px solid black;
+            max-width: 190px;
+            background-color: #bebebf;
+        }
+
+        .child {
+            font-size: 2em;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 50px;
+        }
+    </style>
 </head>
-<body>
-    <!-- These HTML elements are used to show an UI laid over the scene -->
-    <div id="photoModeContainer" style="display: none">
-        <img id="photoModeImage">
-        <div id="flash"></div>
-        <div id="shutterButton"></div>
-        <div id="closeButton"></div>
-        <div id="meo"></div>
-        <div id="dado"></div>
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
+             device-orientation-permission-ui="enabled: false"
+             vr-mode-ui="enabled: false">
 
-    </div>
+        <video id="vid"
+               src="testA.mp4"
+               playsinline
+               webkit-playsinline
+               muted>
+        </video>
 
-    <a-scene photo-mode
-             xrextras-almost-there
-             xrextras-loading
-             xrextras-runtime-error
-             xrextras-tap-recenter
-             xrweb>
+        <a-marker type='pattern'
+                  url='patter.patt'
+                  markerhandler>
+            <a-video id="aVideoHide" src="#vid" position="-3 -1 0" rotation="-90 0 0" height="10px" width="10px" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+        </a-marker>
 
-        <!-- We can define assets here to be loaded when A-Frame initializes -->
+        <a-entity camera position="0 0 1"></a-entity>
+
         <a-assets>
-            <!-- Credit to Poly by Google for the model: https://poly.google.com/view/fojR5i3h_nh -->
-            <a-asset-item id="flyingSaucerModel" src="plane.glb"></a-asset-item>
+            <img id="my-image">
 
+            <!-- image for show after ended video
+
+            <img id="my-imageend" src="shi.png">-->
         </a-assets>
 
-        <a-camera position="0 4 10"></a-camera>
+        <a-image src="#my-image"
+                 position="0 0 -0.05" visible="false">
+        </a-image>
 
-        <a-entity light="type: directional;
-               intensity: 0.8;"
-                  position="1 4.3 2.5">
-        </a-entity>
 
-        <a-light type="ambient" intensity="1"></a-light>
+        <!-- show image after ended video
 
-        <a-entity gltf-model="#flyingSaucerModel" scale="300 300 300" position="0 7 0"></a-entity>
-
-        <a-cylinder geometry="segments-radial: 8"
-                    material="transparent:true; opacity: 0.5; color: #33ff33"
-                    open-ended="true"
-                    height="7"
-                    radius="1.5"
-                    position="0 3.5 0"></a-cylinder>
+        <a-image src="#my-imageend"
+                 position="-0.2 -0.5 -3" rotation="0 -5 0" visible="false" scale="2 2 2">
+        </a-image>-->
+        <!--<div class="parent" id="container3">
+            <div class=child> CSS TITLE!</div>
+        </div> -->
 
     </a-scene>
+
+    <div class="ui" id="container">
+
+        <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
+    </div>
+
+    <!--<div class="ui2" id="container2">
+            <button id="myButton" type="button">スタート</button>
+        </div>-->
+
+    <script>
+        
+
+        $('#container').hide();
+        //start webar, hide button start and title, if click button modeshu, then button and title hide
+
+        /*     $('#container2').hide();
+               $('#container3').hide();
+               let moveShu = document.querySelector('#myButton');
+
+               moveShu.addEventListener("click", function (e) {
+                   $('#container3').hide();
+                   $('#container2').hide();
+               });
+       */
+
+        AFRAME.registerComponent('markerhandler', {
+            tick: function () {
+                if (document.querySelector("a-marker").object3D.visible == true) {
+                    // MARKER IS PRESENT, RUN video
+                    let video = document.getElementById("vid");
+                    video.play();
+
+                } else {
+                    // MARKER IS HIDDEN , pause video
+                    // alert("マーカをカメラで向いてしてください！");
+                }
+            }
+        });
+
+
+        //Check video ended
+
+        document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
+
+        function yourFunction(e) {
+            $('#container').fadeIn('slow');
+
+            //hide video when ended video after show image
+            /*let myEl = document.querySelector("#aVideoHide");
+             myEl.setAttribute("visible", "false");
+             let imageendTrue = document.getElementsByTagName("a-image")[1];
+             imageendTrue.setAttribute('visible', true);*/
+
+            //Title : hide title when video ended include button start and title
+            /*$('#container2').hide();
+            $('#container3').hide();*/
+        }
+
+        //declare variables and initialize
+
+        let audio = new Audio('captureSound.mp3');
+        let sceneElement = document.querySelector("a-scene");
+        let take_photo_btn = document.querySelector('#take-photo');
+        let myPix = new Array("Assets/01.png", "Assets/02.png", "Assets/03.png");
+        $('#container').hide();
+
+        //video.play();
+
+        //use check appear of ui by time if you want
+
+        /*  setTimeout(function () {
+              $('#container2').fadeIn('slow');
+              $('#container3').fadeIn('slow');
+          }, 4000);*/
+
+        //Check video ended
+        /*  document.getElementsByTagName("video")[0].addEventListener("play", yourFunction, true);
+          function yourFunction(e) {
+             alert("start roi");
+          }*/
+
+        //event click button capture
+        take_photo_btn.addEventListener("click", function (e) {
+            let imageTrue = document.getElementsByTagName("a-image")[0];
+            let myEl = document.querySelector("#aVideoHide");
+
+            //hide image when click button capture
+            /*let imageendTrue = document.getElementsByTagName("a-image")[1];
+             imageendTrue.setAttribute('visible', false);*/
+
+            audio.play();
+            imageTrue.setAttribute('visible', true);
+            choosePic();
+            //take_photo_btn.classList.add("disabled");
+            sceneElement.classList.add("overlay");
+            e.preventDefault();
+            // $('#container').fadeOut();
+            myEl.setAttribute("visible", "false");
+
+            //remove dom
+            /* var elem = document.querySelector('a-marker');
+             elem.parentNode.removeChild(elem);*/
+
+            var myobj = document.getElementById("container");
+            myobj.remove();
+
+
+        });
+
+        function choosePic() {
+            let randomNum = Math.floor(Math.random() * myPix.length);
+            document.getElementById("my-image").src = myPix[randomNum];
+        }
+
+       
+    </script>
 </body>
 </html>
-
