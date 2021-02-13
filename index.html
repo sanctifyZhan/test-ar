@@ -197,6 +197,10 @@
                     let video = document.getElementById("vid");
                     video.play();
 
+                    setTimeout(function () {
+                    $('#container').fadeIn('slow');
+                }, 20000);
+
                 } else {
                     // MARKER IS HIDDEN , pause video
                     // alert("マーカをカメラで向いてしてください！");
