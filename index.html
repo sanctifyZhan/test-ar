@@ -147,9 +147,10 @@
         <div>Loading, please wait...</div>
       </div>
 
-    <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
-             device-orientation-permission-ui="enabled: false"
-             vr-mode-ui="enabled: false">
+    <a-scene vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 
         <video id="vid"
                src="sampleB_45mm.mp4"
