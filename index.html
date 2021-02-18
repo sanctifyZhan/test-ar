@@ -171,9 +171,14 @@
             myEl.setAttribute("visible", "false");
             var myobj = document.getElementById("container");
             myobj.remove();
-            let imageTrue1 = document.getElementById("#my-image1");
+
+
+            //let imageTrue1 = document.getElementById("#my-image1");
             //imageTrue1.remove();
-            imageTrue1.setAttribute('visible', false);
+
+            var elem = document.querySelector('#my-image1');
+            elem.style.display = 'none';
+           
         });
 
         function choosePic() {
