@@ -90,12 +90,14 @@
         </a-marker>
 
         <a-entity camera position="0 0 1"></a-entity>
-
+        <a-entity>
         <a-assets>
             <img id="my-image">
-            <img id="my-image1" src="1.png">
+           
 
         </a-assets>
+        </a-entity >
+        <a-entity> <img id="my-image1" src="1.png"> </a-entity >
 
         <a-image src="#my-image"
                  position="0 0 -0.45" visible="false" height="0.9" width="1.2">
@@ -163,8 +165,6 @@
         take_photo_btn.addEventListener("click", function (e) {
             let imageTrue = document.getElementsByTagName("a-image")[0];
             let myEl = document.querySelector("#aVideoHide");
-            var sphere1 = document.querySelector('a-image');
-            sphere1.parentNode.removeChild(sphere1);
             audio.play();
             imageTrue.setAttribute('visible', true);
             choosePic();
@@ -182,7 +182,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("143");
+       alert("asd1412321321adsadsa");
     </script>
 </body>
 </html>
