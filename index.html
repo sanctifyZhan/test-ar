@@ -120,7 +120,7 @@
         setTimeout(function () {
             let imageTrue = document.getElementsByTagName("a-image")[1];
         imageTrue.setAttribute('visible', true);
-                    }, 5000);
+                    }, 6000);
 
         AFRAME.registerComponent('markerhandler', {
             tick: function () {
@@ -135,7 +135,8 @@
                     }, 20000);
 
                 } else {
-                    
+                    let imageTrue = document.getElementsByTagName("a-image")[1];
+                    imageTrue.setAttribute('visible', true);
                 }
             }
         });
