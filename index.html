@@ -90,14 +90,17 @@
         </a-marker>
 
         <a-entity camera position="0 0 1"></a-entity>
-        <a-entity>
-        <a-assets>
-            <img id="my-image">
-           
 
-        </a-assets>
-        </a-entity >
-        <a-entity> <img id="my-image1" src="1.png"> </a-entity >
+        <a-entity id="id1">
+            <img id="my-image">
+
+        </a-entity>
+
+        <a-entity id="id2">
+            <img id="my-image1" src="1.png">
+
+        </a-entity>
+        
 
         <a-image src="#my-image"
                  position="0 0 -0.45" visible="false" height="0.9" width="1.2">
@@ -182,7 +185,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("asd1412321321adsadsa");
+       alert("asd141232199321adsadsa");
     </script>
 </body>
 </html>
