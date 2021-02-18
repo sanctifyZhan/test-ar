@@ -171,12 +171,12 @@
             myEl.setAttribute("visible", "false");
             var myobj = document.getElementById("container");
             myobj.remove();
-            $( "img" ).remove("#my-image1" );
+           
+            let imageTrue1 = document.getElementsByTagName("a-image")[1];
 
-
-            //let imageTrue1 = document.getElementById("#my-image1");
-            //imageTrue1.remove();
-           // var span = document.getElementsByClassName("close")[1];
+            
+            imageTrue1.remove();
+         
            
            
         });
@@ -185,7 +185,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("1");
+       alert("12");
     </script>
 </body>
 </html>
