@@ -171,8 +171,9 @@
             e.preventDefault();
             myEl.setAttribute("visible", "false");
             var myobj = document.getElementById("container");
-            myobj.remove();
             let aimage1 = document.querySelector("#aimage1");
+            myobj.remove();
+            
             aimage1.remove();
          
            
@@ -182,7 +183,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("13");
+       alert("413");
     </script>
 </body>
 </html>
