@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -93,11 +93,18 @@
 
         <a-assets>
             <img id="my-image">
+            <img id="myimage1" src="1.png">
+
         </a-assets>
 
         <a-image src="#my-image"
                  position="0 0 -0.45" visible="false" height="0.9" width="1.2">
         </a-image>
+
+        <a-image src="#myimage1"
+        position="0 1.5 -0.45" visible="true" height="0.9" width="1.2">
+</a-image>
+
 
     </a-scene>
 
@@ -119,7 +126,7 @@
 
                     setTimeout(function () {
                     $('#container').fadeIn('slow');
-                }, 22000);
+                }, 20000);
 
                 } else {
                 }
