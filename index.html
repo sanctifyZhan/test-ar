@@ -132,7 +132,7 @@
 
                     setTimeout(function () {
                     $('#container').fadeIn('slow');
-                    }, 20000);
+                    }, 2000);
 
                 } else if(document.querySelector("a-marker").object3D.visible == false) {
               
@@ -171,7 +171,7 @@
             myEl.setAttribute("visible", "false");
             var myobj = document.getElementById("container");
             myobj.remove();
-            $( "img" ).remove( "#my-image1" );
+            $( "img" ).remove("#my-image1" );
 
 
             //let imageTrue1 = document.getElementById("#my-image1");
@@ -185,7 +185,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       
+       alert("1");
     </script>
 </body>
 </html>
