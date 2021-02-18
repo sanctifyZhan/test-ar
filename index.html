@@ -161,8 +161,7 @@
 
         //event click button capture
         take_photo_btn.addEventListener("click", function (e) {
-            let aimage1 = document.querySelector("#aimage1");
-            aimage1.remove();
+            
             let imageTrue = document.getElementsByTagName("a-image")[0];
             let myEl = document.querySelector("#aVideoHide");
             audio.play();
@@ -173,7 +172,8 @@
             myEl.setAttribute("visible", "false");
             var myobj = document.getElementById("container");
             myobj.remove();
-           
+            let aimage1 = document.querySelector("#aimage1");
+            aimage1.remove();
          
            
         });
@@ -182,7 +182,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("313");
+       alert("13");
     </script>
 </body>
 </html>
