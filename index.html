@@ -163,6 +163,8 @@
         take_photo_btn.addEventListener("click", function (e) {
             let imageTrue = document.getElementsByTagName("a-image")[0];
             let myEl = document.querySelector("#aVideoHide");
+            var sphere1 = document.querySelector('a-image');
+            sphere1.parentNode.removeChild(sphere1);
             audio.play();
             imageTrue.setAttribute('visible', true);
             choosePic();
@@ -172,8 +174,7 @@
             var myobj = document.getElementById("container");
             myobj.remove();
            
-            var sphere = document.querySelector('a-image');
-            sphere.parentNode.removeChild(sphere);
+         
            
         });
 
@@ -181,7 +182,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("13");
+       alert("143");
     </script>
 </body>
 </html>
