@@ -101,7 +101,7 @@
                  position="0 0 -0.45" visible="false" height="0.9" width="1.2">
         </a-image>
 
-        <a-image src="#my-image1"
+        <a-image src="#my-image1" id="aimage1"
         position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image>
 
@@ -171,7 +171,8 @@
             myEl.setAttribute("visible", "false");
             var myobj = document.getElementById("container");
             myobj.remove();
-           
+            let aimage1 = document.querySelector("#aimage1");
+            aimage1.setAttribute("visible", "false");
          
            
         });
@@ -180,7 +181,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("143");
+       alert("1433");
     </script>
 </body>
 </html>
