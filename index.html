@@ -136,7 +136,10 @@
 
                 } else if(document.querySelector("a-marker").object3D.visible == false) {
                     let imageTrue = document.getElementsByTagName("a-image")[1];
+
+                    setTimeout(function () {
                     imageTrue.setAttribute('visible', true);
+                }, 10000);
                 }
             }
         });
