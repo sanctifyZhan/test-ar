@@ -168,14 +168,16 @@
             imageTrue.setAttribute('visible', true);
             choosePic();
             sceneElement.classList.add("overlay");
+            alert("1");
             e.preventDefault();
             myEl.setAttribute("visible", "false");
             var myobj = document.getElementById("container");
             let aimage1 = document.querySelector("#aimage1");
+            alert("2");
             myobj.remove();
-            
+            alert("3");
             aimage1.remove();
-         
+            alert("4");
            
         });
 
@@ -183,7 +185,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("413");
+       alert("43");
     </script>
 </body>
 </html>
