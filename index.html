@@ -94,7 +94,7 @@
         <a-assets>
             <img id="my-image">
             <img id="my-image1" src="1.png">
-
+            <img id="my-image2" src="2.png">
         </a-assets>
 
         <a-image src="#my-image"
@@ -102,6 +102,10 @@
         </a-image>
 
         <a-image src="#my-image1" id="aimage1"
+        position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
+        </a-image>
+
+        <a-image src="#my-image2" id="aimage2"
         position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image>
 
@@ -149,6 +153,11 @@
 
         function yourFunction(e) {
             $('#container').fadeIn('slow');
+            let imageTrue = document.getElementsByTagName("a-image")[2];
+        imageTrue.setAttribute('visible', true);
+          
+          
+
         }
 
         //declare variables and initialize
@@ -175,13 +184,18 @@
             let aimage1 = document.querySelector("#aimage1");
             myobj.remove();   
             aimage1.setAttribute('position', '-15 -15 9');
+
+            setTimeout(function () {
+                        let imageTrue = document.getElementsByTagName("a-image")[1];
+                    imageTrue.setAttribute('visible', true);
+                }, 5000);
         });
 
         function choosePic() {
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("4");
+       alert("14");
     </script>
 </body>
 </html>
