@@ -102,7 +102,7 @@
         </a-image>
 
         <a-image src="#my-image1"
-        position="0 1.5 -0.45" visible="true" height="1" width="1">
+        position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image>
 
     </a-scene>
@@ -115,19 +115,27 @@
     <script>
 
         $('#container').hide();
+       
+
+        setTimeout(function () {
+            let imageTrue = document.getElementsByTagName("a-image")[1];
+        imageTrue.setAttribute('visible', true);
+                    }, 2000);
 
         AFRAME.registerComponent('markerhandler', {
             tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
-
+                    let imageTrue = document.getElementsByTagName("a-image")[1];
                     let video = document.getElementById("vid");
+                    imageTrue.setAttribute('visible', false);
                     video.play();
 
                     setTimeout(function () {
                     $('#container').fadeIn('slow');
-                }, 20000);
+                    }, 20000);
 
                 } else {
+                    
                 }
             }
         });
