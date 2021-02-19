@@ -135,7 +135,8 @@
                     AFRAME.registerComponent('clickhandler', {
         init: function() {
             this.el.addEventListener('click', () => {
-                alert('Clicked!')
+                let aimage3 = document.querySelector("#aimage3");   
+            aimage3.setAttribute('position', '-15 -15 9');
             });
     }});
 
@@ -219,7 +220,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("1265");
+       alert("15");
     </script>
 </body>
 </html>
