@@ -153,10 +153,16 @@
 
         function yourFunction(e) {
             $('#container').fadeIn('slow');
-            let aimage11 = document.querySelector("#aimage1");
-            aimage11.setAttribute('position', '-15 -15 9');
+          //  let aimage11 = document.querySelector("#aimage1");
+         //   aimage11.setAttribute('position', '-15 -15 9');
+
+            let imageTrue4 = document.getElementsByTagName("a-image")[1];
+        imageTrue4.setAttribute('visible', false);
+
+
             let imageTrue = document.getElementsByTagName("a-image")[2];
         imageTrue.setAttribute('visible', true);
+        
           
           
 
@@ -196,7 +202,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("1");
+       alert("12");
     </script>
 </body>
 </html>
