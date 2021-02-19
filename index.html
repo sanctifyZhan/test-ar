@@ -132,13 +132,10 @@
                     }, 7000);
 
 
-                    AFRAME.registerComponent('clickhandler', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-                let aimage3 = document.querySelector("#aimage3");   
-            aimage3.setAttribute('position', '-15 -15 9');
-            });
-    }});
+                    var boxEl = document.querySelector('a-image')[3];
+  boxEl.addEventListener('mouseenter', function () {
+    boxEl.setAttribute('position', '-15 -15 9');
+  });
 
 
         AFRAME.registerComponent('markerhandler', {
@@ -220,7 +217,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("115");
+       alert("1");
     </script>
 </body>
 </html>
