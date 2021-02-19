@@ -91,14 +91,14 @@
 
         <a-entity camera position="0 0 1"></a-entity>
 
-        <a-assets clickhandlerImage>
+        <a-assets>
             <img id="my-image">
             <img id="my-image1" src="1.png">
             <img id="my-image2" src="2.png">
             <img id="my-image3" src="3.png">
         </a-assets>
 
-        <a-image src="#my-image" id="aimage" 
+        <a-image src="#my-image" id="aimage" clickhandler
                  position="0 0 -0.45" visible="false" height="0.9" width="1.2">
         </a-image>
 
@@ -132,7 +132,7 @@
                     }, 7000);
 
 
-                    AFRAME.registerComponent('clickhandlerImage', {
+                    AFRAME.registerComponent('clickhandler', {
         init: function() {
             this.el.addEventListener('click', () => {
                 alert('Clicked!')
@@ -219,7 +219,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("0");
+       alert("1265");
     </script>
 </body>
 </html>
