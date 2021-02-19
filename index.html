@@ -95,6 +95,7 @@
             <img id="my-image">
             <img id="my-image1" src="1.png">
             <img id="my-image2" src="2.png">
+            <img id="my-image3" src="3.png">
         </a-assets>
 
         <a-image src="#my-image"
@@ -106,6 +107,10 @@
         </a-image>
 
         <a-image src="#my-image2" id="aimage2"
+        position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
+        </a-image>
+
+        <a-image src="#my-image3" id="aimage3"
         position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image>
 
@@ -153,13 +158,9 @@
 
         function yourFunction(e) {
             $('#container').fadeIn('slow');
-          //  let aimage11 = document.querySelector("#aimage1");
-         //   aimage11.setAttribute('position', '-15 -15 9');
-
-            let imageTrue4 = document.getElementsByTagName("a-image")[1];
-        imageTrue4.setAttribute('visible', false);
-
-
+            let aimage11 = document.querySelector("#aimage1");
+            aimage11.setAttribute('position', '-15 -15 9');
+            
             let imageTrue = document.getElementsByTagName("a-image")[2];
         imageTrue.setAttribute('visible', true);
         
@@ -195,6 +196,13 @@
             aimage1.setAttribute('position', '-15 -15 9');
             aimage2.setAttribute('position', '-15 -15 9');
 
+
+            setTimeout(function () {
+                let imageTrue = document.getElementsByTagName("a-image")[3];
+        imageTrue.setAttribute('visible', true);
+                    }, 10000);
+
+
        
         });
 
@@ -202,7 +210,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("12");
+       alert("1256");
     </script>
 </body>
 </html>
