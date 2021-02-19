@@ -132,10 +132,18 @@
                     }, 7000);
 
 
-                    var boxEl = document.querySelector('a-image')[3];
-  boxEl.addEventListener('mouseenter', function () {
-    boxEl.setAttribute('position', '-15 -15 9');
-  });
+                   // var els = sceneEl.querySelectorAll('*');
+
+                   var sceneEl = document.querySelector('a-scene');
+                   sceneEl.addEventListener("click", function (e) {
+                    let aimage5 = document.querySelector("#aimage3");
+        
+            aimage5.setAttribute('position', '-15 -15 9');
+           
+       
+        });
+
+
 
 
         AFRAME.registerComponent('markerhandler', {
@@ -217,7 +225,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("1");
+       alert("11");
     </script>
 </body>
 </html>
