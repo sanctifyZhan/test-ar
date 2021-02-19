@@ -91,14 +91,14 @@
 
         <a-entity camera position="0 0 1"></a-entity>
 
-        <a-assets>
+        <a-assets clickhandlerImage>
             <img id="my-image">
             <img id="my-image1" src="1.png">
             <img id="my-image2" src="2.png">
             <img id="my-image3" src="3.png">
         </a-assets>
 
-        <a-image src="#my-image" id="aimage" clickhandlerImage
+        <a-image src="#my-image" id="aimage" 
                  position="0 0 -0.45" visible="false" height="0.9" width="1.2">
         </a-image>
 
@@ -219,7 +219,7 @@
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       alert("1265");
+       alert("0");
     </script>
 </body>
 </html>
