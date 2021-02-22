@@ -1,5 +1,6 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,19 +13,23 @@
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
-
         .overlay {
-            position: fixed; /* Sit on top of the page content */
-            width: 100%; /* Full width (cover the whole page) */
-            height: 100%; /* Full height (cover the whole page) */
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background-image: url("backgroundWhile.PNG");
             /*   background-color:#ffffff; Black background with opacity */
-            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer; /* Add a pointer on hover */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
         }
 
         .ui {
@@ -41,52 +46,46 @@
             box-sizing: border-box;
         }
 
-            .ui a {
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                background-color: #ffffff;
-                line-height: 100%;
-                color: #303030;
-                margin: 10px 3px;
-                border-radius: 50%;
-                position: relative;
-            }
+        .ui a {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            line-height: 100%;
+            color: #303030;
+            margin: 10px 3px;
+            border-radius: 50%;
+            position: relative;
+        }
 
-                .ui a i {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                }
+        .ui a i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-                .ui a:active {
-                    color: #ff0000;
-                }
+        .ui a:active {
+            color: #ff0000;
+        }
 
-                .ui a.disabled {
-                    pointer-events: none;
-                    color: #cccccc;
-                }
-        
+        .ui a.disabled {
+            pointer-events: none;
+            color: #cccccc;
+        }
     </style>
 </head>
+
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
-             device-orientation-permission-ui="enabled: false"
-             vr-mode-ui="enabled: false">
+        device-orientation-permission-ui="enabled: false" vr-mode-ui="enabled: false">
 
-        <video id="vid"
-               src="cutA.mp4"
-               playsinline
-               webkit-playsinline
-               muted>
+        <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
         </video>
 
-        <a-marker type='pattern'
-                  url='patter.patt'
-                  markerhandler>
-            <a-video id="aVideoHide" src="#vid" position="-2 -1 1.5" rotation="-90 0 0" height="7px" width="7px" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+        <a-marker type='pattern' url='patter.patt' markerhandler>
+            <a-video id="aVideoHide" src="#vid" position="-2 -1 1.5" rotation="-90 0 0" height="7px" width="7px"
+                material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
         <a-entity camera position="0 0 1"></a-entity>
@@ -98,53 +97,39 @@
             <img id="my-image3" src="3.png">
         </a-assets>
 
-        <a-image src="#my-image" id="aimage"
-                 position="0 0 -0.45" visible="false" height="0.9" width="1.2">
+        <a-image src="#my-image" id="aimage" position="0 0 -0.45" visible="false" height="0.9" width="1.2">
         </a-image>
 
-        <a-image src="#my-image1" id="aimage1"
-        position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
+        <a-image src="#my-image1" id="aimage1" position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image>
 
-        <a-image src="#my-image2" id="aimage2"
-        position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
+        <a-image src="#my-image2" id="aimage2" position="0 0.45 -0.45" visible="false" height="0.2" width="0.6">
         </a-image>
 
-        <a-image clickhandler src="#my-image3" id="aimage3"
-        position="0 0.45 -0.45" visible="false" height="0.2" width="1.3">
+        <a-image clickhandler src="#my-image3" id="aimage3" position="0 0.45 -0.45" visible="false" height="0.2"
+            width="1.3">
         </a-image>
 
     </a-scene>
 
     <div class="ui" id="container">
-
         <a href="" id="take-photo" title="Take Photo"><i class="material-icons">photo_camera</i></a>
     </div>
 
     <script>
 
         $('#container').hide();
-       
-
+        let sceneEl = document.querySelector('a-scene');
         setTimeout(function () {
             let imageTrue = document.getElementsByTagName("a-image")[1];
-        imageTrue.setAttribute('visible', true);
-                    }, 7000);
+            imageTrue.setAttribute('visible', true);
+        }, 7000);
 
-
-                   // var els = sceneEl.querySelectorAll('*');
-
-                   var sceneEl = document.querySelector('a-scene');
-                   sceneEl.addEventListener("click", function (e) {
-                    let aimage5 = document.querySelector("#aimage3");
-        
+        // var els = sceneEl.querySelectorAll('*');
+        sceneEl.addEventListener("click", function (e) {
+            let aimage5 = document.querySelector("#aimage3");
             aimage5.setAttribute('position', '-15 -15 9');
-           
-       
         });
-
-
-
 
         AFRAME.registerComponent('markerhandler', {
             tick: function () {
@@ -154,17 +139,21 @@
                     imageTrue.setAttribute('visible', false);
                     video.play();
 
-                    setTimeout(function () {
-                    $('#container').fadeIn('slow');
-                    }, 14000);
+                    // setTimeout(function () {
+                    //     $('#container').fadeIn('slow');
+                    // }, 14000);
 
-                } else if(document.querySelector("a-marker").object3D.visible == false) {
-              
+                } else if (document.querySelector("a-marker").object3D.visible == false) {
 
+                    let video = document.getElementById("vid");
+                    video.pause();
+                    
                     setTimeout(function () {
                         let imageTrue = document.getElementsByTagName("a-image")[1];
-                    imageTrue.setAttribute('visible', true);
-                }, 5000);
+                        imageTrue.setAttribute('visible', true);
+                    }, 5000);
+              
+            
                 }
             }
         });
@@ -172,16 +161,13 @@
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
 
         function yourFunction(e) {
+
             $('#container').fadeIn('slow');
             let aimage11 = document.querySelector("#aimage1");
-            aimage11.setAttribute('position', '-15 -15 9');
-            
             let imageTrue = document.getElementsByTagName("a-image")[2];
-        imageTrue.setAttribute('visible', true);
-        
-          
-          
 
+            aimage11.setAttribute('position', '-15 -15 9');
+            imageTrue.setAttribute('visible', true);
         }
 
         //declare variables and initialize
@@ -194,38 +180,36 @@
 
         //event click button capture
         take_photo_btn.addEventListener("click", function (e) {
-            
+
             let imageTrue = document.getElementsByTagName("a-image")[0];
             let myEl = document.querySelector("#aVideoHide");
+            let aimage1 = document.querySelector("#aimage1");
+            let aimage2 = document.querySelector("#aimage2");
+            let myobj = document.getElementById("container");
+
             audio.play();
             imageTrue.setAttribute('visible', true);
             choosePic();
             sceneElement.classList.add("overlay");
-        
+
             e.preventDefault();
             myEl.setAttribute("visible", "false");
-            var myobj = document.getElementById("container");
-            let aimage1 = document.querySelector("#aimage1");
-            let aimage2 = document.querySelector("#aimage2");
-            myobj.remove();   
+            myobj.remove();
             aimage1.setAttribute('position', '-15 -15 9');
             aimage2.setAttribute('position', '-15 -15 9');
 
 
             setTimeout(function () {
                 let imageTrue = document.getElementsByTagName("a-image")[3];
-        imageTrue.setAttribute('visible', true);
-                    }, 10000);
-
-
-       
+                imageTrue.setAttribute('visible', true);
+            }, 10000);
         });
 
         function choosePic() {
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-      
+
     </script>
 </body>
 </html>
