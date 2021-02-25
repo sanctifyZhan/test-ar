@@ -1,41 +1,38 @@
-﻿﻿<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-<head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-49144727-5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-49144727-5');
-</script>
 
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <meta charset="utf-8">
-           <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
-    <title>渋沢栄一ARの格言</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
 
-
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
-
         .overlay {
-            position: fixed; /* Sit on top of the page content */
-            width: 100%; /* Full width (cover the whole page) */
-            height: 100%; /* Full height (cover the whole page) */
+            position: fixed;
+            /* Sit on top of the page content */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background-image: url("backgroundWhile.PNG");
             /*   background-color:#ffffff; Black background with opacity */
-            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-            cursor: pointer; /* Add a pointer on hover */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
         }
 
         .ui {
@@ -52,52 +49,49 @@
             box-sizing: border-box;
         }
 
-            .ui a {
-                display: inline-block;
-                width: 60px;
-                height: 60px;
-                background-color: #ffffff;
-                line-height: 100%;
-                color: #303030;
-                margin: 10px 3px;
-                border-radius: 50%;
-                position: relative;
-            }
+        .ui a {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: #ffffff;
+            line-height: 100%;
+            color: #303030;
+            margin: 10px 3px;
+            border-radius: 50%;
+            position: relative;
+        }
 
-                .ui a i {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                }
+        .ui a i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-                .ui a:active {
-                    color: #ff0000;
-                }
+        .ui a:active {
+            color: #ff0000;
+        }
 
-                .ui a.disabled {
-                    pointer-events: none;
-                    color: #cccccc;
-                }
-        
+        .ui a.disabled {
+            pointer-events: none;
+            color: #cccccc;
+        }
     </style>
 </head>
-<body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs='debugUIEnabled:false; trackingMethod: best;'
-             device-orientation-permission-ui="enabled: false"
-             vr-mode-ui="enabled: false">
 
-        <video id="vid"
-               src="cutA.mp4"
-               playsinline
-               webkit-playsinline
-               muted>
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene 
+embedded arjs='debugUIEnabled:false; trackingMethod: best;'
+        device-orientation-permission-ui="enabled: false" 
+vr-mode-ui="enabled: false"
+loading-screen="enabled:false">
+
+        <video id="vid" src="cutA.mp4" playsinline webkit-playsinline muted>
         </video>
 
-        <a-marker type='pattern'
-                  url='patter.patt'
-                  markerhandler>
-            <a-video id="aVideoHide" src="#vid" position="-2 -1 2" rotation="-90 0 0" height="7px" width="7px" material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
+        <a-marker type='pattern' url='patter.patt' markerhandler>
+            <a-video id="aVideoHide" src="#vid" position="-9 9 9" rotation="-90 0 0" height="8px" width="8px"
+                material="shader: chromakey; color: 0.1 0.9 0.2"></a-video>
         </a-marker>
 
         <a-entity camera position="0 0 1"></a-entity>
@@ -106,8 +100,8 @@
             <img id="my-image">
         </a-assets>
 
-        <a-image src="#my-image"
-                 position="0 0 -0.45" scale="1 1 1" visible="false" height="0.9" width="1.2">
+        <a-image id="my-image" src="#my-image" position="0 0 -0.45" scale="1 1 1" visible="false" height="0.9"
+            width="1.2">
         </a-image>
 
     </a-scene>
@@ -120,26 +114,32 @@
     <script>
 
         $('#container').hide();
-
         AFRAME.registerComponent('markerhandler', {
+
             tick: function () {
+
+
+
                 if (document.querySelector("a-marker").object3D.visible == true) {
 
                     let video = document.getElementById("vid");
                     video.play();
+                    let vi = document.querySelector("#aVideoHide");
+                    setTimeout(function () {
+                        vi.setAttribute('position', '-2 -1 2');
+                    }, 800);
 
-                //     setTimeout(function () {
-                //     $('#container').fadeIn('slow');
-                // }, 20000);
 
-                } else if(document.querySelector("a-marker").object3D.visible == false){
- let video = document.getElementById("vid");
-video.pause();
+                    setTimeout(function () {
+                        $('#container').fadeIn();
+                    }, 18000);
 
+                } else if (document.querySelector("a-marker").object3D.visible == false) {
+                    let video = document.getElementById("vid");
+                    video.pause();
                 }
             }
         });
-
 
         document.getElementsByTagName("video")[0].addEventListener("ended", yourFunction, false);
 
@@ -174,7 +174,8 @@ video.pause();
             let randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("my-image").src = myPix[randomNum];
         }
-       
+
     </script>
 </body>
+
 </html>
