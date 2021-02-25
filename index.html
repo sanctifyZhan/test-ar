@@ -118,6 +118,7 @@ loading-screen="enabled:false">
 
         var quaydi = false;
         var is_running = false;
+        
         var count = 0;
         var counter;
         if(!is_running) {
@@ -141,20 +142,9 @@ loading-screen="enabled:false">
 
                     let video = document.getElementById("vid");
                     video.play();
-                //     let vi = document.querySelector("#aVideoHide");
-                //     setTimeout(function () {
-                //         vi.setAttribute('position', '-2 -1 2');
-                //     }, 800);
 
-                //     var i = 0; 
-           
-                // while (i < 10) { 
-                // await sleep(1000); 
-                // if(quaydi) continue; 
-                //   i++; 
-                //   if(i==9){
-                //       alert("ok");
-                //   }}
+                    let myEl1 = document.querySelector("#aVideoHide");
+                    myEl1.setAttribute('position','-2 -1 2');
                     quaydi = false; 
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
                     let video = document.getElementById("vid");
