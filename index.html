@@ -116,13 +116,13 @@ loading-screen="enabled:false">
         $('#container').hide();
 
 
-        var quaydi = false;
+        var quaydi = true;
         var is_running = false;
         
         var count = 0;
         var counter;
         if(!is_running) {
-            counter = setInterval(timer, 5000);
+            counter = setInterval(timer, 1000);
             is_running = true;
         }
         function timer() {
