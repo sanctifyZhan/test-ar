@@ -122,14 +122,14 @@ loading-screen="enabled:false">
         var count = 0;
         var counter;
         if(!is_running) {
-            counter = setInterval(timer, 1000);
+            counter = setInterval(timer, 2000);
             is_running = true;
         }
         function timer() {
             if (!quaydi) { //do something if not paused
                 count = count + 1;
                 if (count % 10 == 0) {
-                    alert("10 s");
+                    $('#container').fadeIn();
                     count = 0;
                 } 
             }
