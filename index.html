@@ -115,40 +115,47 @@ loading-screen="enabled:false">
 
         $('#container').hide();
 
-        function sleep(ms) { 
-            return new Promise(resolve => setTimeout(resolve, ms)); 
-            } 
-            var quaydi = false; 
-         
+
+        var quaydi = false;
+        var is_running = false;
+        var count = 0;
+        var counter;
+        if(!is_running) {
+            counter = setInterval(timer, 1000);
+            is_running = true;
+        }
+        function timer() {
+            if (!quaydi) { //do something if not paused
+                count = count + 1;
+                if (count % 10 == 0) {
+                    alert("10 s");
+                    count = 0;
+                } 
+            }
+        }
 
         AFRAME.registerComponent('markerhandler', {
 
-            tick: async function () {
-
-
-
+            tick: function () {
                 if (document.querySelector("a-marker").object3D.visible == true) {
 
                     let video = document.getElementById("vid");
                     video.play();
-                    let vi = document.querySelector("#aVideoHide");
-                    setTimeout(function () {
-                        vi.setAttribute('position', '-2 -1 2');
-                    }, 800);
+                //     let vi = document.querySelector("#aVideoHide");
+                //     setTimeout(function () {
+                //         vi.setAttribute('position', '-2 -1 2');
+                //     }, 800);
 
-                    var i = 0; 
+                //     var i = 0; 
            
-                while (i < 10) { 
-                await sleep(1000); 
-                if(quaydi) continue; 
-                  i++; 
-                  if(i==9){
-                      alert("ok");
-                  }}
-
-
-                   
-
+                // while (i < 10) { 
+                // await sleep(1000); 
+                // if(quaydi) continue; 
+                //   i++; 
+                //   if(i==9){
+                //       alert("ok");
+                //   }}
+                    quaydi = false; 
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
                     let video = document.getElementById("vid");
                     video.pause();
