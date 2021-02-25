@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -114,9 +114,16 @@ loading-screen="enabled:false">
     <script>
 
         $('#container').hide();
+
+        function sleep(ms) { 
+            return new Promise(resolve => setTimeout(resolve, ms)); 
+            } 
+            var quaydi = false; 
+         
+
         AFRAME.registerComponent('markerhandler', {
 
-            tick: function () {
+            tick: async function () {
 
 
 
@@ -129,14 +136,23 @@ loading-screen="enabled:false">
                         vi.setAttribute('position', '-2 -1 2');
                     }, 800);
 
+                    var i = 0; 
+           
+                while (i < 10) { 
+                await sleep(1000); 
+                if(quaydi) continue; 
+                  i++; 
+                  if(i==9){
+                      alert("ok");
+                  }}
 
-                    setTimeout(function () {
-                        $('#container').fadeIn();
-                    }, 18000);
+
+                   
 
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
                     let video = document.getElementById("vid");
                     video.pause();
+                    quaydi = true; 
                 }
             }
         });
