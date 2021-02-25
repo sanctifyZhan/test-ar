@@ -115,22 +115,16 @@ loading-screen="enabled:false">
 
         $('#container').hide();
 
-
         var quaydi = true;
-        var is_running = false;
-        
         var count = 0;
         var counter;
-        if(!is_running) {
-            counter = setInterval(timer, 1000);
-            is_running = true;
-        }
+        counter = setInterval(timer, 1000);
         function timer() {
             if (!quaydi) { //do something if not paused
                 count = count + 1;
-                if (count == 8) {
-                    $('#container').fadeIn();
-                    count = 0;
+                if (count === 10 ) {
+                    alert("10 s");
+                    clearInterval(counter);
                 } 
             }
         }
@@ -142,14 +136,15 @@ loading-screen="enabled:false">
 
                     let video = document.getElementById("vid");
                     video.play();
-
-                    let myEl1 = document.querySelector("#aVideoHide");
-                    myEl1.setAttribute('position','-2 -1 2');
-                    quaydi = false; 
+                    let vi = document.querySelector("#aVideoHide");
+                     setTimeout(function () {
+                         vi.setAttribute('position', '-2 -1 2');
+                     }, 800);
+                    quaydi = true; 
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
                     let video = document.getElementById("vid");
                     video.pause();
-                    quaydi = true; 
+                    quaydi = false; 
                 }
             }
         });
