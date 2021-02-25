@@ -122,8 +122,8 @@ loading-screen="enabled:false">
         function timer() {
             if (!quaydi) { //do something if not paused
                 count = count + 1;
-                if (count === 10 ) {
-                    alert("10 s");
+                if (count === 7 ) {
+                    alert("7 s");
                     clearInterval(counter);
                 } 
             }
@@ -140,11 +140,11 @@ loading-screen="enabled:false">
                      setTimeout(function () {
                          vi.setAttribute('position', '-2 -1 2');
                      }, 800);
-                    quaydi = true; 
+                    quaydi = false; 
                 } else if (document.querySelector("a-marker").object3D.visible == false) {
                     let video = document.getElementById("vid");
                     video.pause();
-                    quaydi = false; 
+                    quaydi = true; 
                 }
             }
         });
