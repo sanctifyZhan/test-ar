@@ -128,7 +128,7 @@ loading-screen="enabled:false">
         function timer() {
             if (!quaydi) { //do something if not paused
                 count = count + 1;
-                if (count % 10 == 8) {
+                if (count == 8) {
                     $('#container').fadeIn();
                     count = 0;
                 } 
