@@ -1,0 +1,56 @@
+{
+	"meta": {
+		"createdBy": "Area Learning - AR.js 2.1.3",
+		"createdAt": "2019-12-24T07:26:59.025Z"
+	},
+	"trackingBackend": "artoolkit",
+	"subMarkersControls": [
+		{
+			"parameters": {
+				"type": "pattern",
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterA.patt"
+			},
+			"poseMatrix": [
+				1,
+				0,
+				0,
+				0,
+				0,
+				1,
+				0,
+				0,
+				0,
+				0,
+				1,
+				0,
+				0,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"parameters": {
+				"type": "pattern",
+				"patternUrl": "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/pattern-files/pattern-letterB.patt"
+			},
+			"poseMatrix": [
+				0.9773995655285838,
+				-0.2100244194382752,
+				-0.02408026471244501,
+				0,
+				0.21012225930544362,
+				0.9526603614831508,
+				0.2197427937517808,
+				0,
+				-0.023211038207541047,
+				-0.2198363019421153,
+				0.9752606419002301,
+				0,
+				2.5179243977855927,
+				-0.2738719783400935,
+				-0.03364682665197946,
+				1
+			]		}
+	]
+}

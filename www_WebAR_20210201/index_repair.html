@@ -1,0 +1,73 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>渋沢栄一ARの格言</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body {
+  background-color: hsl(89, 43%, 51%);
+}
+</style>
+    
+</head>
+<body style="margin : 0px; overflow: hidden;">
+       <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+        <a-assets>
+         
+                <img id="my-image" src="logo.png">
+     
+
+        </a-assets>
+    
+            <a-text
+        value="Preparation complete"
+        negate="false"
+        scale="1 1 1"
+        position="-1.1 1.5 -5"
+        color="red">
+      </a-text>
+
+     <a-text
+        value="Address: 2 Chome-22-13 Central,"
+     
+        scale="1 1 1"
+        position="-1.7 0 -9"
+        color="red">
+      </a-text>
+<a-text
+        value="Nakano City, Tokyo 164-0011"
+     
+        scale="1 1 1"
+        position="-1.5 -0.3 -9"
+        color="red">
+      </a-text>
+
+<a-text
+        value="Phone: 03-5338-2851"
+      negate="false"
+        scale="1 1 1"
+        position="-1.02 -0.6 -9"
+        color="red">
+      </a-text>
+
+
+
+
+            <a-image src="#my-image"
+                     position="0 3 -7" 　height="2.5" width="2.5">
+            </a-image>
+
+
+
+            <a-entity camera position="0 1.6 0"> </a-entity>
+    </a-scene>
+  
+</body>
+</html>
